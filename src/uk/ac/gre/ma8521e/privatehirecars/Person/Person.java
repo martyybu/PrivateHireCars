@@ -6,12 +6,12 @@ package uk.ac.gre.ma8521e.privatehirecars.Person;
  */
 public class Person {
 
-    private final int PERSON_ID;
+    private final String PERSON_ID;
     private String firstName;
     private String lastName;
     private int yob;//year of brith
     private boolean male; //true if man
-
+    
     public Person(Person person1) {
         this.PERSON_ID = person1.getID();
         this.firstName = person1.getFirstName();
@@ -20,7 +20,7 @@ public class Person {
         this.male = person1.getGender();
     }
 
-    private Person(int PersonID1, String firstName1, String lastName1, int yob1, boolean gender1) {
+    private Person(String PersonID1, String firstName1, String lastName1, int yob1, boolean gender1) {
         this.PERSON_ID = PersonID1;
         this.firstName = firstName1;
         this.lastName = lastName1;
@@ -33,10 +33,10 @@ public class Person {
      *
      * @return
      */
-    public int getID() {
+    public String getID() {
         return this.PERSON_ID;
     }
-
+    
     /**
      * Returns first Name
      *
@@ -111,13 +111,13 @@ public class Person {
 
     public static final class Builder {
 
-        private int PersonID;
+        private String PersonID;
         private String firstName;
         private String lastName;
         private int yob;//year of brith
         private boolean male; //true if man
 
-        public Builder setID(int newID) {
+        public Builder setID(String newID) {
             this.PersonID = newID;
             return this;
         }
@@ -165,6 +165,7 @@ public class Person {
             this.male = newGender;
             return this;
         }
+
 
         public Person build() {
             return new Person(this.PersonID, this.firstName, this.lastName, this.yob, this.male);

@@ -11,6 +11,6 @@ public interface PersonI {
      *
      * @return
      */
-    public int getID();
+    public String getID();
     
 }

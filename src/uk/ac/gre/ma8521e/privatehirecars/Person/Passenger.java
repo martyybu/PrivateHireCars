@@ -23,7 +23,7 @@ public class Passenger extends Person implements PersonI{
 
     public Passenger(Passenger passenger) {
         super((Person) passenger);
-        this.PASSENGER_ID = passenger.getID();
+        this.PASSENGER_ID = passenger.getPassengerID();
         this.journeys = passenger.getJourneys();
         this.phoneNumber = passenger.getPhoneNumber();
         this.card = passenger.getCard();
@@ -39,8 +39,7 @@ public class Passenger extends Person implements PersonI{
         this.rating = rating1;
     }
 
-    @Override
-    public int getID() {
+    public int getPassengerID() {
         return this.PASSENGER_ID;
     }
 
@@ -126,6 +125,11 @@ public class Passenger extends Person implements PersonI{
         this.rating = rating;
     }
 
+    @Override
+    public String getID() {
+        return super.getID();
+    }
+
     public static final class Builder {
 
         private int PASSENGER_ID;
@@ -135,7 +139,7 @@ public class Passenger extends Person implements PersonI{
         private int rating;
         private Person person;
 
-        public Builder setID(int newID) {
+        public Builder setPassenger(int newID) {
             this.PASSENGER_ID = newID;
             return this;
         }

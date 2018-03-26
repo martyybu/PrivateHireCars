@@ -34,8 +34,7 @@ public class Driver extends Person implements PersonI{
         this.rating = rating1;
     }
 
-    @Override
-    public int getID() {
+    public int getDriverID() {
         return this.DRIVER_ID;
     }
 
@@ -118,6 +117,11 @@ public class Driver extends Person implements PersonI{
      */
     private void setRating(int newRating) {
         this.rating = newRating;
+    }
+
+    @Override
+    public String getID() {
+        return super.getID();
     }
 
 
