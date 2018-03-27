@@ -54,7 +54,7 @@ public class SignUp extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1080, 1920));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/privatehirecars/GUI/Images/application-form.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/application-form.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
