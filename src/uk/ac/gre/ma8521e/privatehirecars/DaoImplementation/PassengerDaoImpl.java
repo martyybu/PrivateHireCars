@@ -46,6 +46,9 @@ public class PassengerDaoImpl implements PassengerDao {
                         .setID(rs.getString("PersonID"))
                         .setYearOfBirth(rs.getInt("yob"))
                         .build();
+                Passenger passenger = new Passenger.Builder()
+                        .setPerson(person)
+                        .setCard(newCar)
                 listPerson.add(person);
             }
         } catch (SQLException e) {
