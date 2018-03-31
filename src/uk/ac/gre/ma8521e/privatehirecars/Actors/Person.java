@@ -8,6 +8,7 @@ public class Person {
 
     private final String PERSON_ID;
     private String firstName;
+    private String password;
     private String lastName;
     private int yob;//year of brith
     private boolean male; //true if man
@@ -15,13 +16,15 @@ public class Person {
     public Person(Person person1) {
         this.PERSON_ID = person1.getID();
         this.firstName = person1.getFirstName();
+        this.password = person1.getPassword();
         this.lastName = person1.getLastName();
         this.yob = person1.getYearOfBirthday();
         this.male = person1.getGender();
     }
 
-    private Person(String PersonID1, String firstName1, String lastName1, int yob1, boolean gender1) {
+    private Person(String PersonID1,String password, String firstName1, String lastName1, int yob1, boolean gender1) {
         this.PERSON_ID = PersonID1;
+        this.password = password;
         this.firstName = firstName1;
         this.lastName = lastName1;
         this.yob = yob1;
@@ -69,10 +72,15 @@ public class Person {
      *
      * @return
      */
-    public boolean getGender() {
+    public Boolean getGender() {
         return this.male;
     }
 
+
+    public String getPassword(){
+        return this.password;
+    }
+    
     /**
      * Set First Name
      *
@@ -109,9 +117,15 @@ public class Person {
         this.male = newGender;
     }
 
+    @Override
+    public String toString(){
+        return "ID: "+this.PERSON_ID+" , FirstName: "+getFirstName()+" , LastName: "+getLastName()+" ,Year of Birth:"+this.getYearOfBirthday()+" ,Gender:"+getGender();
+    }
+    
     public static final class Builder {
 
         private String PersonID;
+        private String password;
         private String firstName;
         private String lastName;
         private int yob;//year of brith
@@ -132,7 +146,7 @@ public class Person {
             this.firstName = newName;
             return this;
         }
-
+        
         /**
          * Set last name
          *
@@ -143,6 +157,12 @@ public class Person {
             this.lastName = newName;
             return this;
         }
+        
+        public Builder setPassword(String password){
+            this.password=password;
+            return this;
+        }
+        
 
         /**
          * Set year of birth
@@ -161,14 +181,14 @@ public class Person {
          * @param newGender
          * @return
          */
-        public Builder setGender(boolean newGender) {
+        public Builder setGender(Boolean newGender) {
             this.male = newGender;
             return this;
         }
 
 
         public Person build() {
-            return new Person(this.PersonID, this.firstName, this.lastName, this.yob, this.male);
+            return new Person(this.PersonID, this.password, this.firstName, this.lastName, this.yob, this.male);
         }
 
     }

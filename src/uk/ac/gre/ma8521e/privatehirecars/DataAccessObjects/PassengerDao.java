@@ -10,7 +10,7 @@ import uk.ac.gre.ma8521e.privatehirecars.Actors.Passenger;
  */
 public interface PassengerDao {
 
-    public List<Passenger> getAllStudents();
+    public List<Passenger> getAllPassengers();
 
     public Passenger getPassenger(int ID);
 

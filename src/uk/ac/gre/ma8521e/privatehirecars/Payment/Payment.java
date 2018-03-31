@@ -1,34 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package uk.ac.gre.ma8521e.privatehirecars.Payment;
 
+import java.math.BigDecimal;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
 
 /**
  *
- * @author micae
+ * @author micael
  */
 public class Payment {
     
-    int amount;
-    Journey journey;
+    BigDecimal amount;
+    final Journey journey;
     
     public Payment(Journey journey){
         this.amount = journey.getPrice();
+        this.journey = journey;
     }
     
     public String[] getReceipt(){
         return new String[4];
     }
     
-    public int getAmount(){
+    public BigDecimal getAmount(){
         return this.amount;
     }
     
-    public void setAmount(int newAmount){
+    public Journey getJourney(){
+       return this.journey;
+    }
+    
+    public void setAmount(BigDecimal newAmount){
         this.amount=newAmount;
     }
     

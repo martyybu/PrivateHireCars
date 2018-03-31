@@ -1,5 +1,7 @@
 package uk.ac.gre.ma8521e.privatehirecars.Payment;
 
+import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
+
 /**
  *
  * @author micael
@@ -8,8 +10,8 @@ public class Credit extends Payment implements ElectronicPayment{
     
     Card card;
     
-    public Credit(int amount, Card newCard) {
-        super(amount);
+    public Credit(Journey journey, Card newCard) {
+        super(journey);
         this.card=newCard;
     }
     

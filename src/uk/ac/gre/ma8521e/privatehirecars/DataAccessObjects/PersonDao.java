@@ -17,7 +17,7 @@ public interface PersonDao {
 
     public List<Person> getAll();
 
-    public Passenger getPerson(String ID);
+    public Person getPerson(String ID);
 
     public void updatePerson(Person person);
 

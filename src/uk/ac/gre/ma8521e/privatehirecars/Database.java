@@ -14,11 +14,15 @@ public class Database {
 
     private Database() {
         try {
-            instance = (Connection) DriverManager.getConnection("jdbc:mysql://176.31.122.221:3306/taxi?" + "user=taxi&password=taxi123");
+            Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+            instance = DriverManager.getConnection("jdbc:sqlserver://sql-server:1433;databaseName=ma8521e;user=ma8521e;password=!0Gondar1997;");
+            System.out.println("Connected to database !");
         } catch (SQLException ex) {
             System.out.println("SQLException: " + ex.getMessage());
             System.out.println("SQLState: " + ex.getSQLState());
             System.out.println("VendorError: " + ex.getErrorCode());
+        } catch (ClassNotFoundException e) {
+            System.out.println("Class Not Found Exception :" + e.getMessage());
         }
     }
 

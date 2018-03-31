@@ -80,11 +80,11 @@ public class Journey {
      * @return
      */
     public BigDecimal getPrice() {
-        if(this.state==JourneyState.FINISHED){
-            price = duration*0.50+4;
-            return price;
-        }else{
+        if(this.state!=JourneyState.FINISHED){
             return null;
+        }else{
+            price =new BigDecimal(duration.getMinutes()).multiply(BigDecimal.valueOf(0.4+4.0));
+            return price;
         }
     }
 
