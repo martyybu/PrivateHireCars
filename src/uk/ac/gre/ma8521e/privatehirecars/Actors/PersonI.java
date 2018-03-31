@@ -1,5 +1,5 @@
 
-package uk.ac.gre.ma8521e.privatehirecars.Person;
+package uk.ac.gre.ma8521e.privatehirecars.Actors;
 
 /**
  *

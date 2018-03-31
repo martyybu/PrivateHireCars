@@ -1,6 +1,6 @@
-package uk.ac.gre.ma8521e.privatehirecars;
+package uk.ac.gre.ma8521e.privatehirecars.Journey;
 
-import uk.ac.gre.ma8521e.privatehirecars.Person.Driver;
+import uk.ac.gre.ma8521e.privatehirecars.Actors.Driver;
 
 /**
  *

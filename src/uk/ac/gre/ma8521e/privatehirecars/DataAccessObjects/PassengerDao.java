@@ -1,8 +1,8 @@
-package uk.ac.gre.ma8521e.privatehirecars.Person.Dao;
+package uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects;
 
 
 import java.util.List;
-import uk.ac.gre.ma8521e.privatehirecars.Person.Passenger;
+import uk.ac.gre.ma8521e.privatehirecars.Actors.Passenger;
 
 /**
  *

@@ -3,24 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uk.ac.gre.ma8521e.privatehirecars.Person;
+package uk.ac.gre.ma8521e.privatehirecars.Actors;
 
-import uk.ac.gre.ma8521e.privatehirecars.Journey;
-import uk.ac.gre.ma8521e.privatehirecars.Car;
-import java.util.List;
+import uk.ac.gre.ma8521e.privatehirecars.Journey.Car;
 
 /**
  *
  * @author micae
  */
-public class Driver extends Person implements PersonI{
+public class Driver extends Person implements PersonI {
 
     private final int DRIVER_ID;
-    private List<Car> cars;
-    private List<Journey> journeys;
+    private Car car;
+    private Boolean onJourney;
     private int rating;
 
-    private Driver(Person person, int DriverID1, List<Car> cars1, List<Journey> journeys1, int rating1) {
+    private Driver(Person person, int DriverID1, Car car1, Boolean journey1, int rating1) {
         super(new Person.Builder()
                 .setID(person.getID())
                 .setFirstName(person.getFirstName())
@@ -29,9 +27,9 @@ public class Driver extends Person implements PersonI{
                 .setYearOfBirth(person.getYearOfBirthday())
                 .build());
         this.DRIVER_ID = DriverID1;
-        this.cars = cars1;
-        this.journeys = journeys1;
         this.rating = rating1;
+        this.car = car1;
+        this.onJourney = journey1;
     }
 
     public int getDriverID() {
@@ -39,21 +37,21 @@ public class Driver extends Person implements PersonI{
     }
 
     /**
-     * Returns drivers cars
+     * Returns driver's car
      *
      * @return
      */
-    public List<Car> getCars() {
-        return this.cars;
+    public Car getCar() {
+        return this.car;
     }
 
     /**
-     * Returns driver's journeys
+     * Returns if driver's journeys
      *
      * @return
      */
-    public List<Journey> getJourneys() {
-        return this.journeys;
+    public boolean isOnaJourney() {
+        return this.onJourney;
     }
 
     /**
@@ -66,39 +64,21 @@ public class Driver extends Person implements PersonI{
     }
 
     /**
-     * Adds a new car to the owned car list
+     * Add car driver is using
      *
      * @param newCar
      */
-    public void addCar(Car newCar) {
-        getCars().add(newCar);
+    public void setCar(Car newCar) {
+        this.car = newCar;
     }
 
     /**
-     * Adds a journey to the journey history
+     * Driver is on a journey
      *
      * @param newJourney
      */
-    public void addJourney(Journey newJourney) {
-        getJourneys().add(newJourney);
-    }
-
-    /**
-     * Removes car from owned list
-     *
-     * @param removeCar
-     */
-    public void removeCar(Car removeCar) {
-        getCars().remove(removeCar);
-    }
-
-    /**
-     * remove journey from your history
-     *
-     * @param removeJourney
-     */
-    public void removeJourney(Journey removeJourney) {
-        getJourneys().remove(removeJourney);
+    public void onJourney(boolean newJourney) {
+        this.onJourney = newJourney;
     }
 
     /**
@@ -124,40 +104,42 @@ public class Driver extends Person implements PersonI{
         return super.getID();
     }
 
-
     public static final class Builder {
 
         private int DRIVER_ID;
-        private List<Car> cars;
-        private List<Journey> journeys;
+        private Car car;
+        private Boolean onJourney;
         private int rating;
         private Person person;
-        
-        public Builder setID(int newID){
-            this.DRIVER_ID=newID;
-            return this;
-        }
-        
-        public Builder setCars(List<Car> newCars){
-            this.cars=newCars;
-            return this;
-        }
-        
-        public Builder setJourneys(List<Journey> newJourneys){
-            this.journeys=newJourneys;
-            return this;
-        }
-        
-        public Builder setRating(int newRate){
-            this.rating=newRate;
-            return this;
-        }
-        
-        public Builder setPerson(Person newPerson){
-            this.person=newPerson;
-            return this;
-        }
-        
-    }
 
+        public Builder setID(int newID) {
+            this.DRIVER_ID = newID;
+            return this;
+        }
+
+        public Builder setCar(Car newCar) {
+            this.car = newCar;
+            return this;
+        }
+
+        public Builder setonJourney(Boolean newJourneys) {
+            this.onJourney = newJourneys;
+            return this;
+        }
+
+        public Builder setRating(int newRate) {
+            this.rating = newRate;
+            return this;
+        }
+
+        public Builder setPerson(Person newPerson) {
+            this.person = newPerson;
+            return this;
+        }
+
+        public Driver build() {
+            return new Driver(this.person, this.DRIVER_ID,this.car, this.onJourney, this.rating);
+        }
+
+    }
 }

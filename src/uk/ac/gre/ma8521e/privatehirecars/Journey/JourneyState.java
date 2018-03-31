@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uk.ac.gre.ma8521e.privatehirecars;
+package uk.ac.gre.ma8521e.privatehirecars.Journey;
 
 /**
  *
  * @author micae
  */
-public class Payment {
-    
+public enum JourneyState {
+    EN_ROUTE,FINISHED,WAITING,CANCELLED
 }

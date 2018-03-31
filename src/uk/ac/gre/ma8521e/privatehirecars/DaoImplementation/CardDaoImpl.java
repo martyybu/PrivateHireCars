@@ -3,43 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uk.ac.gre.ma8521e.privatehirecars.Person.DaoImplementation;
+package uk.ac.gre.ma8521e.privatehirecars.DaoImplementation;
 
-import java.util.ArrayList;
-import java.util.List;
-import uk.ac.gre.ma8521e.privatehirecars.Person.Dao.DriverDao;
-import uk.ac.gre.ma8521e.privatehirecars.Person.Driver;
-import uk.ac.gre.ma8521e.privatehirecars.Person.Passenger;
+import uk.ac.gre.ma8521e.privatehirecars.Payment.Card;
+import uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects.CardDao;
 
 /**
  *
  * @author micae
  */
-public class DriverDaoImpl implements DriverDao{
+public class CardDaoImpl implements CardDao{
 
-    List<Driver> drivers;
-    
-    public DriverDaoImpl(){
-        drivers = new ArrayList<Driver>();
-    }
-    
     @Override
-    public List<Driver> getAllDrivers() {
+    public Card[] getAllCards() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Driver getDriver(int ID) {
+    public Card getCard(int userID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void updateDriver(Driver driver) {
+    public void updateCard(Card card) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deleteDriver(Passenger driver) {
+    public void deleteCard(Card card) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

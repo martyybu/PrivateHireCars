@@ -3,11 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uk.ac.gre.ma8521e.privatehirecars.Person;
+package uk.ac.gre.ma8521e.privatehirecars.Actors;
 
-import java.util.List;
-import uk.ac.gre.ma8521e.privatehirecars.Card;
-import uk.ac.gre.ma8521e.privatehirecars.Journey;
+import uk.ac.gre.ma8521e.privatehirecars.Payment.Card;
 
 /**
  *
@@ -16,7 +14,7 @@ import uk.ac.gre.ma8521e.privatehirecars.Journey;
 public class Passenger extends Person implements PersonI{
 
     private final int PASSENGER_ID;
-    private List<Journey> journeys;
+    private Boolean onJourney;
     private String phoneNumber;
     private Card card;
     private int rating;
@@ -24,16 +22,16 @@ public class Passenger extends Person implements PersonI{
     public Passenger(Passenger passenger) {
         super((Person) passenger);
         this.PASSENGER_ID = passenger.getPassengerID();
-        this.journeys = passenger.getJourneys();
+        this.onJourney = passenger.isOnJourney();
         this.phoneNumber = passenger.getPhoneNumber();
         this.card = passenger.getCard();
         this.rating = passenger.getRating();
     }
 
-    private Passenger(Person person, int PassengerID1, List<Journey> journeys1, String phoneNumber1, Card card1, int rating1) {
+    private Passenger(Person person, int PassengerID1, Boolean journeys1, String phoneNumber1, Card card1, int rating1) {
         super(person);
         this.PASSENGER_ID = PassengerID1;
-        this.journeys = journeys1;
+        this.onJourney = journeys1;
         this.phoneNumber = phoneNumber1;
         this.card = card1;
         this.rating = rating1;
@@ -44,12 +42,12 @@ public class Passenger extends Person implements PersonI{
     }
 
     /**
-     * Returns all the journeys passenger has made
+     * Returns if the passenger is on a journey
      *
      * @return
      */
-    public List<Journey> getJourneys() {
-        return journeys;
+    public Boolean isOnJourney() {
+        return this.onJourney;
     }
 
     /**
@@ -80,12 +78,12 @@ public class Passenger extends Person implements PersonI{
     }
 
     /**
-     * Add a new journey to the client history
+     * Set passenger on a journey
      *
      * @param newJourney
      */
-    public void addJourney(Journey newJourney) {
-        getJourneys().add(newJourney);
+    public void setOnJourney(Boolean newJourney) {
+        this.onJourney=newJourney;
     }
 
     /**
@@ -133,7 +131,7 @@ public class Passenger extends Person implements PersonI{
     public static final class Builder {
 
         private int PASSENGER_ID;
-        private List<Journey> journeys;
+        private Boolean journey;
         private String phoneNumber;
         private Card card;
         private int rating;
@@ -144,8 +142,8 @@ public class Passenger extends Person implements PersonI{
             return this;
         }
 
-        public Builder setJourneyHistory(List<Journey> newHistory) {
-            this.journeys = newHistory;
+        public Builder setOnJourney(Boolean onJourney) {
+            this.journey = onJourney;
             return this;
         }
 
@@ -170,7 +168,7 @@ public class Passenger extends Person implements PersonI{
         }
 
         public Passenger build() {
-            return new Passenger(this.person, this.PASSENGER_ID, this.journeys, this.phoneNumber, this.card, this.rating);
+            return new Passenger(this.person, this.PASSENGER_ID, this.journey, this.phoneNumber, this.card, this.rating);
         }
     }
 }

@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uk.ac.gre.ma8521e.privatehirecars.Person.Dao;
+package uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects;
 
 import java.util.List;
-import uk.ac.gre.ma8521e.privatehirecars.Person.Passenger;
-import uk.ac.gre.ma8521e.privatehirecars.Person.Person;
+import uk.ac.gre.ma8521e.privatehirecars.Actors.Passenger;
+import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
 
 /**
  *
@@ -17,7 +17,7 @@ public interface PersonDao {
 
     public List<Person> getAll();
 
-    public Passenger getPerson(int ID);
+    public Passenger getPerson(String ID);
 
     public void updatePerson(Person person);
 

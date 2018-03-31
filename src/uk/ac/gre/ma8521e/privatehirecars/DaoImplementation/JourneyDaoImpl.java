@@ -3,43 +3,41 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uk.ac.gre.ma8521e.privatehirecars.Person.DaoImplementation;
+package uk.ac.gre.ma8521e.privatehirecars.DaoImplementation;
 
-import java.util.ArrayList;
 import java.util.List;
-import uk.ac.gre.ma8521e.privatehirecars.Person.Dao.PassengerDao;
-import uk.ac.gre.ma8521e.privatehirecars.Person.Passenger;
+import uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects.JourneyDao;
+import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
 
 /**
  *
  * @author micae
  */
-public class PassengerDaoImpl implements PassengerDao {
-    
-    List<Passenger> passengers;
-    
-    public PassengerDaoImpl(){
-        passengers = new ArrayList<Passenger>();
-    }
+public class JourneyDaoImpl implements JourneyDao {
 
     @Override
-    public List<Passenger> getAllStudents() {
+    public Journey[] getAllJourneys() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Passenger getPassenger(int ID) {
+    public Journey getJourney(int ID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void updatePassenger(Passenger passenger) {
+    public List<Journey> getAllJourneys(int driverID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deletePassenger(Passenger passenger) {
+    public void updateJourney(Journey journey) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    public void deleteJourney(Journey journey) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }
