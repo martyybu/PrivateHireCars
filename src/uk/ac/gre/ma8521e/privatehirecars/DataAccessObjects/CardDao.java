@@ -15,10 +15,10 @@ public interface CardDao {
 
     public Card[] getAllCards();
 
-    public Card getCard(int ID);
+    public Card getCard(String ID);
 
     public void updateCard(Card card);
 
-    public void deleteCard(Card card);
+    public void createCard(Card card);
 
 }

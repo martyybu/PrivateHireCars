@@ -14,6 +14,7 @@ import uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects.PassengerDao;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Passenger;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
 import uk.ac.gre.ma8521e.privatehirecars.Database;
+import uk.ac.gre.ma8521e.privatehirecars.Payment.Card;
 import uk.ac.gre.ma8521e.privatehirecars.Utils;
 
 /**
@@ -22,15 +23,13 @@ import uk.ac.gre.ma8521e.privatehirecars.Utils;
  */
 public class PassengerDaoImpl implements PassengerDao {
 
-    List<Passenger> passengers;
 
     public PassengerDaoImpl() {
-        passengers = new ArrayList<Passenger>();
     }
 
     @Override
     public List<Passenger> getAllPassengers() {
-        List<Person> listPerson = new ArrayList<>();
+        List<Passenger> listPassenger = new ArrayList<>();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
@@ -46,10 +45,15 @@ public class PassengerDaoImpl implements PassengerDao {
                         .setID(rs.getString("PersonID"))
                         .setYearOfBirth(rs.getInt("yob"))
                         .build();
+                Card card = new CardDaoImpl().getCard(person.getID());
                 Passenger passenger = new Passenger.Builder()
                         .setPerson(person)
-                        .setCard(newCar)
-                listPerson.add(person);
+                        .setCard(card)
+                        .setOnJourney(Utils.fromStringtoBoolean(rs.getString("onJourney")))
+                        .setPassenger(rs.getInt("PassengerID"))
+                        .setRating(rs.getInt("rating"))
+                        .build();
+                listPassenger.add(passenger);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -69,7 +73,7 @@ public class PassengerDaoImpl implements PassengerDao {
                 stmt = null;
             }
         }
-        return listPerson;
+        return listPassenger;
     }
 
     @Override

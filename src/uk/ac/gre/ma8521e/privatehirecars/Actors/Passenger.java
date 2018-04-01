@@ -15,7 +15,6 @@ public class Passenger extends Person implements PersonI{
 
     private final int PASSENGER_ID;
     private Boolean onJourney;
-    private String phoneNumber;
     private Card card;
     private int rating;
 
@@ -23,16 +22,14 @@ public class Passenger extends Person implements PersonI{
         super((Person) passenger);
         this.PASSENGER_ID = passenger.getPassengerID();
         this.onJourney = passenger.isOnJourney();
-        this.phoneNumber = passenger.getPhoneNumber();
         this.card = passenger.getCard();
         this.rating = passenger.getRating();
     }
 
-    private Passenger(Person person, int PassengerID1, Boolean journeys1, String phoneNumber1, Card card1, int rating1) {
+    private Passenger(Person person, int PassengerID1, Boolean journeys1, Card card1, int rating1) {
         super(person);
         this.PASSENGER_ID = PassengerID1;
         this.onJourney = journeys1;
-        this.phoneNumber = phoneNumber1;
         this.card = card1;
         this.rating = rating1;
     }
@@ -48,15 +45,6 @@ public class Passenger extends Person implements PersonI{
      */
     public Boolean isOnJourney() {
         return this.onJourney;
-    }
-
-    /**
-     * returns passenger phonenumber
-     *
-     * @return
-     */
-    public String getPhoneNumber() {
-        return phoneNumber;
     }
 
     /**
@@ -86,14 +74,6 @@ public class Passenger extends Person implements PersonI{
         this.onJourney=newJourney;
     }
 
-    /**
-     * Set the passenger phone numbers
-     *
-     * @param newPhone
-     */
-    public void setPhoneNumber(String newPhone) {
-        phoneNumber = newPhone;
-    }
 
     /**
      * Add a new card
@@ -132,7 +112,6 @@ public class Passenger extends Person implements PersonI{
 
         private int PASSENGER_ID;
         private Boolean journey;
-        private String phoneNumber;
         private Card card;
         private int rating;
         private Person person;
@@ -146,12 +125,7 @@ public class Passenger extends Person implements PersonI{
             this.journey = onJourney;
             return this;
         }
-
-        public Builder setphoneNumber(String newphoneNumber) {
-            this.phoneNumber = newphoneNumber;
-            return this;
-        }
-
+        
         public Builder setCard(Card newCar) {
             this.card = newCar;
             return this;
@@ -168,7 +142,7 @@ public class Passenger extends Person implements PersonI{
         }
 
         public Passenger build() {
-            return new Passenger(this.person, this.PASSENGER_ID, this.journey, this.phoneNumber, this.card, this.rating);
+            return new Passenger(this.person, this.PASSENGER_ID, this.journey, this.card, this.rating);
         }
     }
 }

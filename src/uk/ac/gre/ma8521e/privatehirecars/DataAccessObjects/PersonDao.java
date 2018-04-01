@@ -6,7 +6,6 @@
 package uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects;
 
 import java.util.List;
-import uk.ac.gre.ma8521e.privatehirecars.Actors.Passenger;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
 
 /**
@@ -21,6 +20,6 @@ public interface PersonDao {
 
     public void updatePerson(Person person);
 
-    public void deletePerson(Person person);
+    public void createPerson(Person person);
 
 }

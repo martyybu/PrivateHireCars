@@ -41,6 +41,7 @@ public class PersonDaoImpl implements PersonDao {
                         .setPassword(rs.getString("password"))
                         .setGender(Utils.fromStringtoBoolean(rs.getString("male")))
                         .setID(rs.getString("PersonID"))
+                        .setPhoneNumber(rs.getString("phoneNumber"))
                         .setYearOfBirth(rs.getInt("yob"))
                         .build();
                 listPerson.add(person);
@@ -70,7 +71,7 @@ public class PersonDaoImpl implements PersonDao {
     public void updatePerson(Person person) {
         PreparedStatement stmt = null;
         try {
-            String query = "UPDATE Person SET password = ?, firstName = ?, lastName = ?, yob = ?, male = ? WHERE PersonID = ?;";
+            String query = "UPDATE Person SET password = ?, firstName = ?, lastName = ?, yob = ?, male = ?, phoneNumber= ? WHERE PersonID = ?;";
             stmt = Database.getInstance().prepareStatement(query);
             stmt.setString(1, person.getPassword());
             stmt.setString(2, person.getFirstName());
@@ -78,6 +79,7 @@ public class PersonDaoImpl implements PersonDao {
             stmt.setInt(4, person.getYearOfBirthday());
             stmt.setString(5, Utils.frommBooleanToString(person.getGender()));
             stmt.setString(6, person.getID());
+            stmt.setString(6, person.getPhoneNumber());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -93,8 +95,29 @@ public class PersonDaoImpl implements PersonDao {
     }
 
     @Override
-    public void deletePerson(Person person) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void createPerson(Person person) {
+        PreparedStatement stmt = null;
+        try {
+            String query = "INSERT INTO Person (?, ?, ?, ?, ?, ?)";
+            stmt = Database.getInstance().prepareStatement(query);
+            stmt.setString(1, person.getPassword());
+            stmt.setString(2, person.getFirstName());
+            stmt.setString(3, person.getLastName());
+            stmt.setInt(4, person.getYearOfBirthday());
+            stmt.setString(5, Utils.frommBooleanToString(person.getGender()));
+            stmt.setString(6, person.getPhoneNumber());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException sqlEx) {
+                } // ignore
+                stmt = null;
+            }
+        }
     }
 
     @Override
@@ -114,6 +137,7 @@ public class PersonDaoImpl implements PersonDao {
                         .setPassword(rs.getString("password"))
                         .setGender(Utils.fromStringtoBoolean(rs.getString("male")))
                         .setID(rs.getString("PersonID"))
+                        .setPhoneNumber(rs.getString("phoneNumber"))
                         .setYearOfBirth(rs.getInt("yob"))
                         .build();
             }

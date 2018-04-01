@@ -20,7 +20,7 @@ public class CardDaoImpl implements CardDao{
     }
 
     @Override
-    public Card getCard(int userID) {
+    public Card getCard(String userID) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -30,7 +30,7 @@ public class CardDaoImpl implements CardDao{
     }
 
     @Override
-    public void deleteCard(Card card) {
+    public void createCard(Card card) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
