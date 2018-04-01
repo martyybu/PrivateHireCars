@@ -142,7 +142,7 @@ public class PersonDaoImpl implements PersonDao {
                         .build();
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            return person;
         } finally {
             if (rs != null) {
                 try {
