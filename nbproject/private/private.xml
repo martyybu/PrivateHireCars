@@ -3,22 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/Journey/Location.java</file>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/GUI/Views/SignUpView.java</file>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/GUI/Views/Main.java</file>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/DataAccessObjects/PersonDao.java</file>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/DaoImplementation/PersonDaoImpl.java</file>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/GUI/Controllers/LoginController.java</file>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/DaoImplementation/PassengerDaoImpl.java</file>
             <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/GUI/Views/Profile.java</file>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/Actors/Driver.java</file>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/Actors/Person.java</file>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/Database.java</file>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/PasswordHash.java</file>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/GUI/Models/Session.java</file>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/PrivateHireCars.java</file>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/Login.java</file>
-            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/GUI/Views/LoginView.java</file>
+            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/GUI/Views/Main.java</file>
+            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/DaoImplementation/PersonDaoImpl.java</file>
             <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/GUI/Controllers/SignUpController.java</file>
         </group>
     </open-files>

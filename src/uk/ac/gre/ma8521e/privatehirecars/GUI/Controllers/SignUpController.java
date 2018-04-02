@@ -62,7 +62,7 @@ public class SignUpController {
                  JOptionPane.showMessageDialog(view,
                     "Signed up succefully!");
                 new PassengerDaoImpl().createPassenger(passenger);
-            } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
+            } catch (NoSuchAlgorithmException | InvalidKeySpecException | ParseException ex) {
                 Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
             }
 

@@ -9,12 +9,12 @@ package uk.ac.gre.ma8521e.privatehirecars.GUI.Views;
  *
  * @author micae
  */
-public class Main extends javax.swing.JPanel {
+public class MainView extends javax.swing.JPanel {
 
     /**
      * Creates new form Booking
      */
-    public Main() {
+    public MainView() {
         initComponents();
     }
 
@@ -26,7 +26,6 @@ public class Main extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
         bg = new javax.swing.JPanel();
         sideMenu = new javax.swing.JPanel();
