@@ -18,7 +18,7 @@ public interface JourneyDao {
 
     public Journey getJourney(int ID);
 
-    public void updateJourney(Journey journey);
+    public void insertJourney(Journey journey);
 
     public void deleteJourney(Journey journey);
 }

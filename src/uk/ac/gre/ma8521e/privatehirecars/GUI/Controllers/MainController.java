@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
+import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.BookingView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.CreateBooking;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.CreateEnquiry;
@@ -17,15 +18,20 @@ import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.Profile;
 public class MainController {
 
     MainView view;
+    public static Person person;
 
-    public MainController() {
-
+    public MainController(Person person) {
+        this.person = person;
     }
 
     public void addView(MainView view2) {
         view = view2;
         setupListener();
 
+    }
+
+    public Person getPerson() {
+        return person;
     }
 
     public void setupListener() {

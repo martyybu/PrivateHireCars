@@ -30,7 +30,40 @@ public class CarDaoImpl implements CarDao {
             stmt.setString(1, String.valueOf(ID));
             rs = stmt.executeQuery();
             while (rs.next()) {
-                Car car1 = new Car(rs.getString("VIN"), rs.getInt("plateNo"), rs.getInt("seats"), rs.getString("brand"), new DriverDaoImpl().getDriver(rs.getInt("DriverID")));
+                Car car1 = new Car(rs.getString("VIN"), rs.getInt("plateNo"), rs.getInt("seats"), rs.getString("brand"), new DriverDaoImpl().getDriver(rs.getInt("DriverID")),rs.getString("model"));
+                car.add(car1);
+            }
+        } catch (SQLException e) {
+            return null;
+        } finally {
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException sqlEx) {
+                }
+                rs = null;
+            }
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException sqlEx) {
+                } // ignore
+                stmt = null;
+            }
+        }
+        return car;
+    }
+
+    public List<Car> getAllCars() {
+        List<Car> car = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            String query = "SELECT * FROM Car";
+            stmt = Database.getInstance().prepareStatement(query);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                Car car1 = new Car(rs.getString("VIN"), rs.getInt("plateNo"), rs.getInt("seats"), rs.getString("brand"), new DriverDaoImpl().getDriver(rs.getInt("DriverID")),rs.getString("model"));
                 car.add(car1);
             }
         } catch (SQLException e) {
@@ -55,7 +88,7 @@ public class CarDaoImpl implements CarDao {
     }
 
     @Override
-    public Car getCar(int ID) {
+    public Car getCar(String ID) {
         Car car = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -65,7 +98,7 @@ public class CarDaoImpl implements CarDao {
             stmt.setString(1, String.valueOf(ID));
             rs = stmt.executeQuery();
             while (rs.next()) {
-                car = new Car(rs.getString("VIN"), rs.getInt("plateNo"), rs.getInt("seats"), rs.getString("brand"), new DriverDaoImpl().getDriver(rs.getInt("DriverID")));
+                car = new Car(rs.getString("VIN"), rs.getInt("plateNo"), rs.getInt("seats"), rs.getString("brand"), new DriverDaoImpl().getDriver(rs.getInt("DriverID")),rs.getString("model"));
             }
         } catch (SQLException e) {
             return null;

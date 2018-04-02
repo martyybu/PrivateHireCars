@@ -10,10 +10,12 @@ import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
+import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PersonDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.LoginView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.SignUpView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Models.Login;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.MainView;
+import uk.ac.gre.ma8521e.privatehirecars.PrivateHireCars;
 
 /**
  *
@@ -47,7 +49,8 @@ public class LoginController {
             mainView.setVisible(true);
             Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
             mainView.setLocation(new Point((screenSize.width / 2) - mainView.getWidth() / 2, (screenSize.height / 2) - mainView.getHeight() / 2));
-            MainController mC =new MainController();
+            MainController mC =new MainController(new PersonDaoImpl().getPerson(username));
+            MainController.person=new PersonDaoImpl().getPerson(username);
             mC.addView(mainView);
         } else {
             JOptionPane.showMessageDialog(view,

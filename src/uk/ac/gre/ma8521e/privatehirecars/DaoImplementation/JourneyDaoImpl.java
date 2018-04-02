@@ -39,10 +39,9 @@ public class JourneyDaoImpl implements JourneyDao {
                         .setFrom(rs.getString("destinationID"))
                         .setDriver(new DriverDaoImpl().getDriver(rs.getInt("DriverID")))
                         .setPassenger(new PassengerDaoImpl().getPassenger(rs.getInt("PassengerID")))
-                        .setCar(new CarDaoImpl().getCar(rs.getInt("CarID")))
+                        .setCar(new CarDaoImpl().getCar(rs.getString("CarID")))
                         .setPayment(null)
                         .setDate(rs.getDate("date"))
-                        .setTime(rs.getTime("time"))
                         .setDuration(rs.getInt("duration"))
                         .setRating(rs.getInt("rating"))
                         .setState(JourneyState.valueOf(rs.getString("journeyState")))
@@ -71,56 +70,6 @@ public class JourneyDaoImpl implements JourneyDao {
         return listJourneys;
     }
 
-    @Override
-    public Passenger getPassenger(String ID) {
-        Passenger passenger = null;
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        try {
-            String query = "SELECT * FROM Passenger FULL OUTER JOIN Person ON Passenger.PersonID = Person.PersonID WHERE Person.PersonID = ?";
-            stmt = Database.getInstance().prepareStatement(query);
-            stmt.setString(1, ID);
-            rs = stmt.executeQuery();
-            while (rs.next()) {
-                Person person = new Person.Builder()
-                        .setFirstName(rs.getString("firstName"))
-                        .setLastName(rs.getString("lastName"))
-                        .setPassword(rs.getString("password"))
-                        .setGender(Utils.fromStringtoBoolean(rs.getString("male")))
-                        .setID(rs.getString("PersonID"))
-                        .setYearOfBirth(rs.getInt("yob"))
-                        .build();
-                passenger = new Passenger.Builder()
-                        .setPerson(person)
-                        .setCard(null)
-                        .setOnJourney(Utils.fromStringtoBoolean(rs.getString("onJourney")))
-                        .setPassenger(rs.getInt("PassengerID"))
-                        .setRating(rs.getInt("rating"))
-                        .build();
-                Card card = new CardDaoImpl().getCard(passenger.getPassengerID());
-                passenger.addCard(card);
-
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            if (rs != null) {
-                try {
-                    rs.close();
-                } catch (SQLException sqlEx) {
-                }
-                rs = null;
-            }
-            if (stmt != null) {
-                try {
-                    stmt.close();
-                } catch (SQLException sqlEx) {
-                } // ignore
-                stmt = null;
-            }
-        }
-        return passenger;
-    }
 
     @Override
     public Journey getJourney(int ID) {
@@ -137,10 +86,9 @@ public class JourneyDaoImpl implements JourneyDao {
                         .setFrom(rs.getString("destinationID"))
                         .setDriver(new DriverDaoImpl().getDriver(rs.getInt("DriverID")))
                         .setPassenger(new PassengerDaoImpl().getPassenger(rs.getInt("PassengerID")))
-                        .setCar(new CarDaoImpl().getCar(rs.getInt("CarID")))
+                        .setCar(new CarDaoImpl().getCar(rs.getString("CarID")))
                         .setPayment(null)
                         .setDate(rs.getDate("date"))
-                        .setTime(rs.getTime("time"))
                         .setDuration(rs.getInt("duration"))
                         .setRating(rs.getInt("rating"))
                         .setState(JourneyState.valueOf(rs.getString("journeyState")))
@@ -169,7 +117,7 @@ public class JourneyDaoImpl implements JourneyDao {
     }
 
     @Override
-    public void updateJourney(Journey journey) {
+    public void insertJourney(Journey journey) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

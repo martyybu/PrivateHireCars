@@ -12,7 +12,6 @@ import java.util.List;
 import uk.ac.gre.ma8521e.privatehirecars.Database;
 import uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects.DriverDao;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Driver;
-import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
 import uk.ac.gre.ma8521e.privatehirecars.Utils;
 
 /**
@@ -41,7 +40,7 @@ public class DriverDaoImpl implements DriverDao {
                         .setID(rs.getInt("DriverID"))
                         .setRating(rs.getInt("rating"))
                         .setonJourney(Utils.fromStringtoBoolean(rs.getString("onJourneys")))
-                        .setCar(new CarDaoImpl().getCar(rs.getInt("Car")))
+                        .setCar(new CarDaoImpl().getCar(rs.getString("Car")))
                         .build();
                 listDrivers.add(driver);
             }
@@ -81,7 +80,7 @@ public class DriverDaoImpl implements DriverDao {
                         .setID(rs.getInt("DriverID"))
                         .setRating(rs.getInt("rating"))
                         .setPerson(new PersonDaoImpl().getPerson(rs.getString("PersonID")))
-                        .setCar(new CarDaoImpl().getCar(rs.getInt("DriverID")))
+                        .setCar(new CarDaoImpl().getCar(rs.getString("Car")))
                         .setonJourney(rs.getBoolean("onJourneys"))
                         .build();
 

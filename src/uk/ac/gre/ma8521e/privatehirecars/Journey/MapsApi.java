@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package uk.ac.gre.ma8521e.privatehirecars.GUI.Models;
-
-import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
+package uk.ac.gre.ma8521e.privatehirecars.Journey;
 
 /**
  *
  * @author micae
  */
-public class Session {
+public interface MapsApi {
     
-    Person person;
+    public Location getLocation(String string);
+    
+    public int getDistanceBetweenLocation(Location loc1,Location loc2);
     
 }

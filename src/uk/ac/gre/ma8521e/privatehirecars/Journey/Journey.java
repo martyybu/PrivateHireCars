@@ -1,8 +1,7 @@
 package uk.ac.gre.ma8521e.privatehirecars.Journey;
 
 import java.math.BigDecimal;
-import java.sql.Time;
-import java.sql.Date;
+import java.util.Date;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Driver;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Passenger;
 import uk.ac.gre.ma8521e.privatehirecars.Payment.Payment;
@@ -16,7 +15,6 @@ public class Journey {
     private String startingLocation;
     private String destination;
     private Date date2;
-    private Time time;
     private Passenger passenger;
     private Driver driver;
     private Car car;
@@ -31,7 +29,6 @@ public class Journey {
         this.startingLocation = journey.getStartingLocation();
         this.destination = journey.getDestination();
         this.date2 = journey.getDate();
-        this.time = journey.getTime();
         this.passenger = journey.getPassenger();
         this.driver = journey.getDriver();
         this.car = journey.getCar();
@@ -43,13 +40,11 @@ public class Journey {
         this.notification = journey.getNotifications();
     }
 
-    private Journey(String startingLocation, String destination, Date date,
-             Time time, Passenger passenger, Driver driver, Car car, Integer duration,
+    private Journey(String startingLocation, String destination, Date date, Passenger passenger, Driver driver, Car car, Integer duration,
             Integer rating, JourneyState state, Payment payment, BigDecimal price, JourneyNotification notification) {
         this.startingLocation = startingLocation;
         this.destination = destination;
         this.date2 = date;
-        this.time = time;
         this.passenger = passenger;
         this.driver = driver;
         this.car = car;
@@ -97,14 +92,6 @@ public class Journey {
         return this.date2;
     }
 
-    /**
-     * Returns the time of the journey
-     *
-     * @return
-     */
-    public Time getTime() {
-        return this.time;
-    }
 
     /**
      * Returns teh passenger for this journey
@@ -220,14 +207,6 @@ public class Journey {
         this.date2 = newDate;
     }
 
-    /**
-     * Set time of journey
-     *
-     * @param newTime
-     */
-    public void setTime(Time newTime) {
-        this.time = newTime;
-    }
 
     /**
      * Add a passenger toi the Journey
@@ -297,7 +276,6 @@ public class Journey {
         private String startingLocation;
         private String destination;
         private Date date2;
-        private Time time;
         private Passenger passenger;
         private Driver driver;
         private Car car;
@@ -323,10 +301,6 @@ public class Journey {
             return this;
         }
 
-        public Builder setTime(Time time) {
-            this.time = time;
-            return this;
-        }
 
         public Builder setPassenger(Passenger passenger) {
             this.passenger = passenger;
@@ -374,8 +348,7 @@ public class Journey {
         }
 
         public Journey build() {
-            return new Journey(startingLocation, destination, date2,
-                     time, passenger, driver, car, duration, rating, state,
+            return new Journey(startingLocation, destination, date2, passenger, driver, car, duration, rating, state,
                     payment, price, notification);
         }
 

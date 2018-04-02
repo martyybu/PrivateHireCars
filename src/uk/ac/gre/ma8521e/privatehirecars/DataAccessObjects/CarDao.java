@@ -9,7 +9,7 @@ import uk.ac.gre.ma8521e.privatehirecars.Journey.Car;
  */
 public interface CarDao {
 
-    public Car getCar(int ID);
+    public Car getCar(String ID);
 
     public void updateCar(Car car);
 
