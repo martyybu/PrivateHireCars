@@ -13,13 +13,15 @@ import java.util.Date;
  */
 public class Card {
 
-     final Integer CARDNO;
-     final Date EXPIRYDATE;
-     final String CARDNAME;
-     final int CVC;
+     public final Integer CARDNO;
+     public final Integer PASSENGERID;
+     public final Date EXPIRYDATE;
+     public final String CARDNAME;
+     public final int CVC;
      
-     public Card(Integer cardno,Date expiryDate,String Cardname,int CVC){
+     public Card(Integer PassengerID,Integer cardno,Date expiryDate,String Cardname,int CVC){
          this.CARDNO=cardno;
+         this.PASSENGERID = PassengerID;
          this.EXPIRYDATE=expiryDate;
          this.CARDNAME=Cardname;
          this.CVC = CVC;

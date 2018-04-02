@@ -12,10 +12,10 @@ public interface PassengerDao {
 
     public List<Passenger> getAllPassengers();
 
-    public Passenger getPassenger(int ID);
+    public Passenger getPassenger(String ID);
 
     public void updatePassenger(Passenger passenger);
 
-    public void deletePassenger(Passenger passenger);
+    public void createPassenger(Passenger passenger);
 
 }

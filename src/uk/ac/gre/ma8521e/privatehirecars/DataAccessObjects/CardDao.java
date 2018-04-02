@@ -5,6 +5,7 @@
  */
 package uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects;
 
+import java.util.List;
 import uk.ac.gre.ma8521e.privatehirecars.Payment.Card;
 
 /**
@@ -13,9 +14,9 @@ import uk.ac.gre.ma8521e.privatehirecars.Payment.Card;
  */
 public interface CardDao {
 
-    public Card[] getAllCards();
+    public List<Card> getAllCards();
 
-    public Card getCard(String ID);
+    public Card getCard(Integer ID);
 
     public void updateCard(Card card);
 

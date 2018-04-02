@@ -4,17 +4,20 @@
  * and open the template in the editor.
  */
 package uk.ac.gre.ma8521e.privatehirecars.GUI.Views;
-
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFormattedTextField;
+import javax.swing.JTextField;
 /**
  *
  * @author micae
  */
-public class SignUp extends javax.swing.JFrame {
+public class SignUpView extends javax.swing.JFrame {
 
     /**
      * Creates new form Login
      */
-    public SignUp() {
+    public SignUpView() {
         initComponents();
     }
 
@@ -31,41 +34,44 @@ public class SignUp extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jTextField2 = new javax.swing.JTextField();
+        firstName = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        phonenumber = new javax.swing.JTextField();
+        btn_signUp = new javax.swing.JButton();
+        birthDate = new javax.swing.JFormattedTextField();
+        jPasswordField1 = new javax.swing.JPasswordField();
+        lastName = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        genderDropDown = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PrivateHire Cars");
         setBackground(new java.awt.Color(51, 153, 255));
-        setMinimumSize(new java.awt.Dimension(1080, 1920));
+        setMaximumSize(new java.awt.Dimension(400, 508));
+        setMinimumSize(new java.awt.Dimension(400, 508));
+        setPreferredSize(new java.awt.Dimension(400, 508));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/application-form.png"))); // NOI18N
+        jLabel1.setMaximumSize(new java.awt.Dimension(135, 140));
+        jLabel1.setMinimumSize(new java.awt.Dimension(135, 140));
+        jLabel1.setPreferredSize(new java.awt.Dimension(135, 140));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 20, 0);
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel4.setText("First Name");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         getContentPane().add(jLabel4, gridBagConstraints);
 
@@ -73,197 +79,207 @@ public class SignUp extends javax.swing.JFrame {
         jLabel5.setText("Last Name");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridy = 9;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         getContentPane().add(jLabel5, gridBagConstraints);
 
-        jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jTextField1.setMinimumSize(new java.awt.Dimension(102, 22));
-        jTextField1.setPreferredSize(new java.awt.Dimension(102, 22));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        firstName.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        firstName.setMaximumSize(new java.awt.Dimension(102, 25));
+        firstName.setMinimumSize(new java.awt.Dimension(102, 25));
+        firstName.setPreferredSize(new java.awt.Dimension(102, 25));
+        firstName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                firstNameActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
-        getContentPane().add(jTextField1, gridBagConstraints);
+        gridBagConstraints.gridy = 8;
+        getContentPane().add(firstName, gridBagConstraints);
 
-        jPasswordField2.setMinimumSize(new java.awt.Dimension(102, 20));
-        jPasswordField2.setPreferredSize(new java.awt.Dimension(102, 20));
-        jPasswordField2.addActionListener(new java.awt.event.ActionListener() {
+        username.setMaximumSize(new java.awt.Dimension(102, 25));
+        username.setMinimumSize(new java.awt.Dimension(102, 25));
+        username.setName(""); // NOI18N
+        username.setPreferredSize(new java.awt.Dimension(102, 25));
+        username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField2ActionPerformed(evt);
+                usernameActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridy = 15;
         gridBagConstraints.insets = new java.awt.Insets(7, 0, 0, 0);
-        getContentPane().add(jPasswordField2, gridBagConstraints);
+        getContentPane().add(username, gridBagConstraints);
 
-        jTextField2.setMaximumSize(new java.awt.Dimension(102, 20));
-        jTextField2.setMinimumSize(new java.awt.Dimension(102, 20));
-        jTextField2.setName(""); // NOI18N
-        jTextField2.setPreferredSize(new java.awt.Dimension(102, 20));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 13;
-        gridBagConstraints.insets = new java.awt.Insets(7, 0, 0, 0);
-        getContentPane().add(jTextField2, gridBagConstraints);
-
-        jLabel2.setText("Email");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 13;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        getContentPane().add(jLabel2, gridBagConstraints);
-
-        jLabel3.setText("Phone Number");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 14;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        getContentPane().add(jLabel3, gridBagConstraints);
-
-        jLabel6.setText("Password");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel2.setText("Username");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 15;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        getContentPane().add(jLabel2, gridBagConstraints);
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel3.setText("Gender");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        getContentPane().add(jLabel3, gridBagConstraints);
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel6.setText("Password");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 17;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         getContentPane().add(jLabel6, gridBagConstraints);
 
-        jLabel7.setText("Credit Card");
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel8.setText("Birth Date");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        getContentPane().add(jLabel8, gridBagConstraints);
+
+        phonenumber.setMaximumSize(new java.awt.Dimension(102, 25));
+        phonenumber.setMinimumSize(new java.awt.Dimension(102, 25));
+        phonenumber.setName(""); // NOI18N
+        phonenumber.setPreferredSize(new java.awt.Dimension(102, 25));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.insets = new java.awt.Insets(7, 0, 0, 0);
+        getContentPane().add(phonenumber, gridBagConstraints);
+
+        btn_signUp.setText("Sign up");
+        btn_signUp.setMaximumSize(new java.awt.Dimension(80, 23));
+        btn_signUp.setMinimumSize(new java.awt.Dimension(80, 23));
+        btn_signUp.setPreferredSize(new java.awt.Dimension(80, 23));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 25;
+        gridBagConstraints.insets = new java.awt.Insets(17, 2, 3, 8);
+        getContentPane().add(btn_signUp, gridBagConstraints);
+
+        birthDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        birthDate.setToolTipText("");
+        birthDate.setMaximumSize(new java.awt.Dimension(102, 25));
+        birthDate.setMinimumSize(new java.awt.Dimension(102, 25));
+        birthDate.setName(""); // NOI18N
+        birthDate.setPreferredSize(new java.awt.Dimension(102, 25));
+        birthDate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                birthDateActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.insets = new java.awt.Insets(7, 0, 0, 0);
+        getContentPane().add(birthDate, gridBagConstraints);
+
+        jPasswordField1.setToolTipText("");
+        jPasswordField1.setMaximumSize(new java.awt.Dimension(102, 25));
+        jPasswordField1.setMinimumSize(new java.awt.Dimension(102, 25));
+        jPasswordField1.setPreferredSize(new java.awt.Dimension(102, 25));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 17;
+        gridBagConstraints.insets = new java.awt.Insets(7, 0, 0, 0);
+        getContentPane().add(jPasswordField1, gridBagConstraints);
+
+        lastName.setMaximumSize(new java.awt.Dimension(102, 25));
+        lastName.setMinimumSize(new java.awt.Dimension(102, 25));
+        lastName.setPreferredSize(new java.awt.Dimension(102, 25));
+        lastName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lastNameActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.insets = new java.awt.Insets(7, 0, 0, 0);
+        getContentPane().add(lastName, gridBagConstraints);
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel7.setText("Phone Number");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 16;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
         getContentPane().add(jLabel7, gridBagConstraints);
 
-        jLabel8.setText("Birth Date");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 17;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        getContentPane().add(jLabel8, gridBagConstraints);
-
-        jTextField3.setMaximumSize(new java.awt.Dimension(102, 20));
-        jTextField3.setMinimumSize(new java.awt.Dimension(102, 20));
-        jTextField3.setName(""); // NOI18N
-        jTextField3.setPreferredSize(new java.awt.Dimension(102, 20));
+        genderDropDown.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Male", "Female" }));
+        genderDropDown.setMaximumSize(new java.awt.Dimension(102, 25));
+        genderDropDown.setMinimumSize(new java.awt.Dimension(102, 25));
+        genderDropDown.setPreferredSize(new java.awt.Dimension(102, 25));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.insets = new java.awt.Insets(7, 0, 0, 0);
-        getContentPane().add(jTextField3, gridBagConstraints);
-
-        jTextField4.setMaximumSize(new java.awt.Dimension(102, 20));
-        jTextField4.setMinimumSize(new java.awt.Dimension(102, 20));
-        jTextField4.setName(""); // NOI18N
-        jTextField4.setPreferredSize(new java.awt.Dimension(102, 20));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 15;
-        gridBagConstraints.insets = new java.awt.Insets(7, 0, 0, 0);
-        getContentPane().add(jTextField4, gridBagConstraints);
-
-        jTextField5.setMaximumSize(new java.awt.Dimension(102, 20));
-        jTextField5.setMinimumSize(new java.awt.Dimension(102, 20));
-        jTextField5.setName(""); // NOI18N
-        jTextField5.setPreferredSize(new java.awt.Dimension(102, 20));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 17;
-        gridBagConstraints.insets = new java.awt.Insets(7, 0, 0, 0);
-        getContentPane().add(jTextField5, gridBagConstraints);
-
-        jTextField6.setMaximumSize(new java.awt.Dimension(102, 20));
-        jTextField6.setMinimumSize(new java.awt.Dimension(102, 20));
-        jTextField6.setName(""); // NOI18N
-        jTextField6.setPreferredSize(new java.awt.Dimension(102, 20));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 16;
-        gridBagConstraints.insets = new java.awt.Insets(7, 0, 0, 0);
-        getContentPane().add(jTextField6, gridBagConstraints);
-
-        jButton2.setText("Sign up");
-        jButton2.setMaximumSize(new java.awt.Dimension(80, 23));
-        jButton2.setMinimumSize(new java.awt.Dimension(80, 23));
-        jButton2.setPreferredSize(new java.awt.Dimension(80, 23));
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 19;
-        gridBagConstraints.insets = new java.awt.Insets(17, 2, 3, 8);
-        getContentPane().add(jButton2, gridBagConstraints);
-
-        jMenu1.setText("File");
-        jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
-        setJMenuBar(jMenuBar1);
+        getContentPane().add(genderDropDown, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void firstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_firstNameActionPerformed
 
-    private void jPasswordField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField2ActionPerformed
+    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField2ActionPerformed
+    }//GEN-LAST:event_usernameActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void lastNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lastNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_lastNameActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SignUp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
+    private void birthDateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_birthDateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_birthDateActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new SignUp().setVisible(true);
-            }
-        });
+
+    public JButton getSignUpButton(){
+        return this.btn_signUp;
     }
-
+    
+    public JTextField getFirstName(){
+        return this.firstName;
+    }
+    
+    public JTextField getLastName(){
+        return this.lastName;
+    }
+    
+    public JTextField getUsername(){
+        return this.username;
+    }
+    
+    public JTextField getPassword(){
+        return this.jPasswordField1;
+    }
+    
+    public JTextField getPhoneNumber(){
+        return this.phonenumber;
+    }
+    
+    public JFormattedTextField getBirthDate(){
+        return birthDate;
+    }
+    
+    public JComboBox getGender(){
+        return this.genderDropDown;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JFormattedTextField birthDate;
+    private javax.swing.JButton btn_signUp;
+    private javax.swing.JTextField firstName;
+    private javax.swing.JComboBox<String> genderDropDown;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -272,15 +288,9 @@ public class SignUp extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JPasswordField jPasswordField2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JTextField lastName;
+    private javax.swing.JTextField phonenumber;
+    private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,18 +5,20 @@
  */
 package uk.ac.gre.ma8521e.privatehirecars.GUI.Controllers;
 
+import java.awt.Dimension;
+import java.awt.Point;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.LoginView;
-import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.SignUp;
+import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.SignUpView;
 import uk.ac.gre.ma8521e.privatehirecars.Login;
 
 /**
  *
  * @author ma8521e
  */
-public class LoginController implements ActionListener {
+public class LoginController {
 
     private LoginView view;
 
@@ -49,14 +51,13 @@ public class LoginController implements ActionListener {
     }
 
     public void signupButtonPressed(ActionEvent evt) {
-        SignUp SignUpView = new SignUp();
+        SignUpView SignUpView = new SignUpView();
         view.dispose();
+        SignUpController sC = new SignUpController();
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        SignUpView.setLocation(new Point((screenSize.width / 2) - SignUpView.getWidth() / 2, (screenSize.height / 2) - SignUpView.getHeight() / 2));
+        sC.addView(SignUpView);
         SignUpView.setVisible(true);
-    }
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
