@@ -7,13 +7,17 @@ package uk.ac.gre.ma8521e.privatehirecars.Journey;
  */
 public class Location {
 
-    final Integer STREET;
-    final String NO;
-    final String FLOOR;
-    final String COUNTRY;
-    final String CITY;
+    public final Integer LOCATIONID;
+    public final String STREET;
+    public final String NO;
+    public final String FLOOR;
+    public final String POSTCODE;
+    public final String COUNTRY;
+    public final String CITY;
 
-    public Location(Integer street1, String no1, String floor1, String city1,String country1) {
+    public Location(Integer location1,String street1, String no1, String floor1,String postcode1, String city1,String country1) {
+        this.LOCATIONID=location1;
+        this.POSTCODE=postcode1;
         this.STREET = street1;
         this.NO = no1;
         this.FLOOR = floor1;

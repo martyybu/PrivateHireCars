@@ -5,10 +5,11 @@
  */
 package uk.ac.gre.ma8521e.privatehirecars.Journey;
 
+
 /**
  *
  * @author micae
  */
-public enum JourneyState {
-    EN_ROUTE,FINISHED,WAITING,CANCELLED,SCHEDULES
+public enum JourneyNotification {
+    EMAIL,TEXT,CALL;
 }

@@ -127,6 +127,57 @@ public class PassengerDaoImpl implements PassengerDao {
         return passenger;
     }
 
+     @Override
+    public Passenger getPassenger(Integer ID) {
+        Passenger passenger = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+            String query = "SELECT * FROM Passenger FULL OUTER JOIN Person ON Passenger.PersonID = Person.PersonID WHERE Passenger.PassengerID = ?";
+            stmt = Database.getInstance().prepareStatement(query);
+            stmt.setInt(1, ID);
+            rs = stmt.executeQuery();
+            while (rs.next()) {
+                Person person = new Person.Builder()
+                        .setFirstName(rs.getString("firstName"))
+                        .setLastName(rs.getString("lastName"))
+                        .setPassword(rs.getString("password"))
+                        .setGender(Utils.fromStringtoBoolean(rs.getString("male")))
+                        .setID(rs.getString("PersonID"))
+                        .setYearOfBirth(rs.getInt("yob"))
+                        .build();
+                passenger = new Passenger.Builder()
+                        .setPerson(person)
+                        .setCard(null)
+                        .setOnJourney(Utils.fromStringtoBoolean(rs.getString("onJourney")))
+                        .setPassenger(rs.getInt("PassengerID"))
+                        .setRating(rs.getInt("rating"))
+                        .build();
+                Card card = new CardDaoImpl().getCard(passenger.getPassengerID());
+                passenger.addCard(card);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (rs != null) {
+                try {
+                    rs.close();
+                } catch (SQLException sqlEx) {
+                }
+                rs = null;
+            }
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException sqlEx) {
+                } // ignore
+                stmt = null;
+            }
+        }
+        return passenger;
+    }
+    
     @Override
     public void updatePassenger(Passenger passenger) {
         PreparedStatement stmt = null;
