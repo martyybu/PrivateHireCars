@@ -2,6 +2,18 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/Journey/Location.java</file>
+            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/GUI/Views/Profile.java</file>
+            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/DataAccessObjects/JourneyDao.java</file>
+            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/Journey/Journey.java</file>
+            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/DaoImplementation/PersonDaoImpl.java</file>
+            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/GUI/Controllers/LoginController.java</file>
+            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/Actors/PersonFactory.java</file>
+            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/PasswordHash.java</file>
+            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/GUI/Views/MainView.java</file>
+            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/GUI/Controllers/SignUpController.java</file>
+            <file>file:/C:/Users/micae/OneDrive/git/PrivateHire-Cars-System/src/uk/ac/gre/ma8521e/privatehirecars/DaoImplementation/PassengerDaoImpl.java</file>
+        </group>
     </open-files>
 </project-private>

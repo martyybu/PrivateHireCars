@@ -30,8 +30,13 @@ public class CreateBooking extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         title_Pane = new javax.swing.JPanel();
         Name = new javax.swing.JLabel();
-        lbl_PhoneNumber = new javax.swing.JLabel();
-        lbl_YOB = new javax.swing.JLabel();
+        Name1 = new javax.swing.JLabel();
+        jSpinner1 = new javax.swing.JSpinner();
+        Name2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         title_Pane.setBackground(new java.awt.Color(110, 89, 222));
 
@@ -39,37 +44,40 @@ public class CreateBooking extends javax.swing.JPanel {
         Name.setForeground(new java.awt.Color(255, 255, 255));
         Name.setText("Create Booking");
 
-        lbl_PhoneNumber.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_PhoneNumber.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_PhoneNumber.setText("Phone Number: 072323 123432");
-
-        lbl_YOB.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_YOB.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_YOB.setText("Year of Birth : 1997");
-
         javax.swing.GroupLayout title_PaneLayout = new javax.swing.GroupLayout(title_Pane);
         title_Pane.setLayout(title_PaneLayout);
         title_PaneLayout.setHorizontalGroup(
             title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(title_PaneLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addGroup(title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_YOB)
-                    .addComponent(lbl_PhoneNumber)
-                    .addComponent(Name))
-                .addContainerGap(659, Short.MAX_VALUE))
+                .addComponent(Name)
+                .addContainerGap(782, Short.MAX_VALUE))
         );
         title_PaneLayout.setVerticalGroup(
             title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(title_PaneLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(Name)
-                .addGap(18, 18, 18)
-                .addComponent(lbl_PhoneNumber)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbl_YOB)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
+
+        Name1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Name1.setForeground(new java.awt.Color(102, 102, 102));
+        Name1.setText("Date");
+
+        jSpinner1.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(1522688659968L), new java.util.Date(), null, java.util.Calendar.DAY_OF_MONTH));
+        jSpinner1.setBorder(null);
+
+        Name2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Name2.setForeground(new java.awt.Color(102, 102, 102));
+        Name2.setText("From");
+
+        jTextPane1.setBorder(null);
+        jTextPane1.setCaretColor(new java.awt.Color(255, 255, 255));
+        jTextPane1.setMaximumSize(new java.awt.Dimension(135, 20));
+        jTextPane1.setMinimumSize(new java.awt.Dimension(135, 20));
+        jTextPane1.setPreferredSize(new java.awt.Dimension(135, 20));
+        jScrollPane1.setViewportView(jTextPane1);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -78,13 +86,34 @@ public class CreateBooking extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(title_Pane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(Name2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(Name1)
+                        .addGap(13, 13, 13)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addComponent(title_Pane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(335, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Name1)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Name2)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -100,7 +129,7 @@ public class CreateBooking extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+            .addGap(0, 551, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -112,9 +141,12 @@ public class CreateBooking extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Name;
+    private javax.swing.JLabel Name1;
+    private javax.swing.JLabel Name2;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel lbl_PhoneNumber;
-    private javax.swing.JLabel lbl_YOB;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JPanel title_Pane;
     // End of variables declaration//GEN-END:variables
 }
