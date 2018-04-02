@@ -9,6 +9,7 @@ import uk.ac.gre.ma8521e.privatehirecars.Database;
 import uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects.PersonDao;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
 import uk.ac.gre.ma8521e.privatehirecars.Utils;
+import java.lang.NullPointerException;
 
 /**
  *
@@ -136,7 +137,7 @@ public class PersonDaoImpl implements PersonDao {
                         .setYearOfBirth(rs.getInt("yob"))
                         .build();
             }
-        } catch (SQLException e) {
+        } catch (SQLException|NullPointerException e) {
             return person;
         } finally {
             if (rs != null) {

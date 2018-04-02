@@ -1,4 +1,4 @@
-package uk.ac.gre.ma8521e.privatehirecars;
+package uk.ac.gre.ma8521e.privatehirecars.GUI.Models;
 
 
 import java.security.NoSuchAlgorithmException;
@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PersonDaoImpl;
+import uk.ac.gre.ma8521e.privatehirecars.PasswordHash;
 
 /**
  *

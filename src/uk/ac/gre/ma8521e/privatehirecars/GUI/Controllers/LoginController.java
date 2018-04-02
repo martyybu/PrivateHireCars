@@ -12,7 +12,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.LoginView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.SignUpView;
-import uk.ac.gre.ma8521e.privatehirecars.Login;
+import uk.ac.gre.ma8521e.privatehirecars.GUI.Models.Login;
 
 /**
  *
@@ -50,6 +50,7 @@ public class LoginController {
 
     }
 
+    
     public void signupButtonPressed(ActionEvent evt) {
         SignUpView SignUpView = new SignUpView();
         view.dispose();

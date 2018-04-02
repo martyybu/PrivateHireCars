@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package uk.ac.gre.ma8521e.privatehirecars.GUI.Controllers;
 
 import java.awt.event.ActionEvent;
@@ -16,6 +11,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Passenger;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
+import uk.ac.gre.ma8521e.privatehirecars.Actors.PersonFactory;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PassengerDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PersonDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.SignUpView;
@@ -63,8 +59,10 @@ public class SignUpController {
                         .setOnJourney(false)
                         .setCard(null)
                         .build();
+                 JOptionPane.showMessageDialog(view,
+                    "Signed up succefully!");
                 new PassengerDaoImpl().createPassenger(passenger);
-            } catch (NoSuchAlgorithmException | InvalidKeySpecException | ParseException ex) {
+            } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
                 Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
             }
 
