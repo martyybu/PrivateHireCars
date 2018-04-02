@@ -2,7 +2,7 @@ package uk.ac.gre.ma8521e.privatehirecars.Journey;
 
 import java.math.BigDecimal;
 import java.sql.Time;
-import java.util.Date;
+import java.sql.Date;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Driver;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Passenger;
 import uk.ac.gre.ma8521e.privatehirecars.Payment.Payment;
@@ -13,20 +13,61 @@ import uk.ac.gre.ma8521e.privatehirecars.Payment.Payment;
  */
 public class Journey {
 
-    private Location startingLocation;
-    private Location destination;
-    private Date date;
+    private String startingLocation;
+    private String destination;
+    private Date date2;
     private Time time;
     private Passenger passenger;
     private Driver driver;
     private Car car;
-    private Time duration;
-    private int rating;
+    private Integer duration;
+    private Integer rating;
     private JourneyState state;
     private Payment payment;
     private BigDecimal price;
+    private JourneyNotification notification;
 
-    public Journey() {
+    public Journey(Journey journey) {
+        this.startingLocation = journey.getStartingLocation();
+        this.destination = journey.getDestination();
+        this.date2 = journey.getDate();
+        this.time = journey.getTime();
+        this.passenger = journey.getPassenger();
+        this.driver = journey.getDriver();
+        this.car = journey.getCar();
+        this.duration = journey.getDuration();
+        this.rating = journey.getRating();
+        this.state = journey.getState();
+        this.payment = journey.getPayment();
+        this.price = journey.getPrice();
+        this.notification = journey.getNotifications();
+    }
+
+    private Journey(String startingLocation, String destination, Date date,
+             Time time, Passenger passenger, Driver driver, Car car, Integer duration,
+            Integer rating, JourneyState state, Payment payment, BigDecimal price, JourneyNotification notification) {
+        this.startingLocation = startingLocation;
+        this.destination = destination;
+        this.date2 = date;
+        this.time = time;
+        this.passenger = passenger;
+        this.driver = driver;
+        this.car = car;
+        this.duration = duration;
+        this.rating = rating;
+        this.state = state;
+        this.payment = payment;
+        this.price = price;
+        this.notification = notification;
+    }
+
+    /**
+     * Returns notification specified by the user
+     *
+     * @return
+     */
+    public JourneyNotification getNotifications() {
+        return notification;
     }
 
     /**
@@ -34,7 +75,7 @@ public class Journey {
      *
      * @return
      */
-    public Location getStartingLocation() {
+    public String getStartingLocation() {
         return this.startingLocation;
     }
 
@@ -43,17 +84,17 @@ public class Journey {
      *
      * @return
      */
-    public Location getDestination() {
+    public String getDestination() {
         return this.destination;
     }
 
     /**
-     * Returns the date of the journey
+     * Returns the date2 of the journey
      *
      * @return
      */
     public Date getDate() {
-        return this.date;
+        return this.date2;
     }
 
     /**
@@ -80,10 +121,10 @@ public class Journey {
      * @return
      */
     public BigDecimal getPrice() {
-        if(this.state!=JourneyState.FINISHED){
+        if (this.state != JourneyState.FINISHED) {
             return null;
-        }else{
-            price =new BigDecimal(duration.getMinutes()).multiply(BigDecimal.valueOf(0.4+4.0));
+        } else {
+            price = new BigDecimal(duration).multiply(BigDecimal.valueOf(0.4 + 4.0));
             return price;
         }
     }
@@ -111,7 +152,7 @@ public class Journey {
      *
      * @return
      */
-    public Time getDuration() {
+    public Integer getDuration() {
         return this.duration;
     }
 
@@ -156,7 +197,7 @@ public class Journey {
      *
      * @param newLocation
      */
-    public void setStartingLocation(Location newLocation) {
+    public void setStartingLocation(String newLocation) {
         this.startingLocation = newLocation;
     }
 
@@ -166,17 +207,17 @@ public class Journey {
      *
      * @param newLocation
      */
-    public void setDestination(Location newLocation) {
+    public void setDestination(String newLocation) {
         this.destination = newLocation;
     }
 
     /**
-     * Set the date of journey
+     * Set the date2 of journey
      *
      * @param newDate
      */
     public void setDate(Date newDate) {
-        this.date = newDate;
+        this.date2 = newDate;
     }
 
     /**
@@ -195,6 +236,15 @@ public class Journey {
      */
     public void addPassenger(Passenger passenger) {
         this.passenger = passenger;
+    }
+
+    /**
+     * Set journeyNotification
+     *
+     * @param jn
+     */
+    public void setJourneyNotification(JourneyNotification jn) {
+        this.notification = jn;
     }
 
     /**
@@ -220,7 +270,7 @@ public class Journey {
      *
      * @param newDuration
      */
-    public void setDuration(Time newDuration) {
+    public void setDuration(Integer newDuration) {
         this.duration = newDuration;
     }
 
@@ -242,4 +292,92 @@ public class Journey {
         this.state = newState;
     }
 
+    public static final class Builder {
+
+        private String startingLocation;
+        private String destination;
+        private Date date2;
+        private Time time;
+        private Passenger passenger;
+        private Driver driver;
+        private Car car;
+        private Integer duration;
+        private Integer rating;
+        private JourneyState state;
+        private Payment payment;
+        private BigDecimal price;
+        private JourneyNotification notification;
+
+        public Builder setTo(String loc) {
+            this.startingLocation = loc;
+            return this;
+        }
+
+        public Builder setFrom(String loc) {
+            this.destination = loc;
+            return this;
+        }
+
+        public Builder setDate(Date date) {
+            this.date2 = date;
+            return this;
+        }
+
+        public Builder setTime(Time time) {
+            this.time = time;
+            return this;
+        }
+
+        public Builder setPassenger(Passenger passenger) {
+            this.passenger = passenger;
+            return this;
+        }
+
+        public Builder setDriver(Driver driver) {
+            this.driver = driver;
+            return this;
+        }
+
+        public Builder setCar(Car car) {
+            this.car = car;
+            return this;
+        }
+
+        public Builder setDuration(Integer duration) {
+            this.duration = duration;
+            return this;
+        }
+
+        public Builder setRating(Integer rating) {
+            this.rating = rating;
+            return this;
+        }
+
+        public Builder setState(JourneyState state) {
+            this.state = state;
+            return this;
+        }
+
+        public Builder setPayment(Payment payment) {
+            this.payment = payment;
+            return this;
+        }
+
+        public Builder setPrice(BigDecimal price) {
+            this.price = price;
+            return this;
+        }
+
+        public Builder setNotification(JourneyNotification jn) {
+            this.notification = jn;
+            return this;
+        }
+
+        public Journey build() {
+            return new Journey(startingLocation, destination, date2,
+                     time, passenger, driver, car, duration, rating, state,
+                    payment, price, notification);
+        }
+
+    }
 }

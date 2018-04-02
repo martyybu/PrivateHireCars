@@ -15,7 +15,7 @@ import uk.ac.gre.ma8521e.privatehirecars.Actors.Passenger;
  */
 public interface DriverDao {
 
-    public Driver[] getAllDrivers();
+    public List<Driver> getAllDrivers();
 
     public Driver getDriver(int ID);
 

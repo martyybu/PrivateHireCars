@@ -8,9 +8,12 @@ package uk.ac.gre.ma8521e.privatehirecars.DaoImplementation;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import uk.ac.gre.ma8521e.privatehirecars.Database;
 import uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects.DriverDao;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Driver;
+import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
+import uk.ac.gre.ma8521e.privatehirecars.Utils;
 
 /**
  *
@@ -18,21 +21,30 @@ import uk.ac.gre.ma8521e.privatehirecars.Actors.Driver;
  */
 public class DriverDaoImpl implements DriverDao {
 
-    Driver[] drivers;
-
+ 
     public DriverDaoImpl() {
-        drivers = getAllDrivers();
     }
 
     @Override
-    public Driver[] getAllDrivers() {
-        Driver[] listChest = null;
+    public List<Driver> getAllDrivers() {
+        List<Driver> listDrivers = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
             String query = "SELECT * FROM Driver";
             stmt = Database.getInstance().prepareStatement(query);
             rs = stmt.executeQuery();
+            while(rs.next())
+            {
+                Driver driver = new Driver.Builder()
+                        .setPerson(new PersonDaoImpl().getPerson(rs.getString("PersonID")))
+                        .setID(rs.getInt("DriverID"))
+                        .setRating(rs.getInt("rating"))
+                        .setonJourney(Utils.fromStringtoBoolean(rs.getString("onJourneys")))
+                        .setCar(new CarDaoImpl().getCar(rs.getInt("Car")))
+                        .build();
+                listDrivers.add(driver);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -51,7 +63,7 @@ public class DriverDaoImpl implements DriverDao {
                 stmt = null;
             }
         }
-        return listChest;
+        return listDrivers;
     }
 
     @Override
@@ -70,11 +82,12 @@ public class DriverDaoImpl implements DriverDao {
                         .setRating(rs.getInt("rating"))
                         .setPerson(new PersonDaoImpl().getPerson(rs.getString("PersonID")))
                         .setCar(new CarDaoImpl().getCar(rs.getInt("DriverID")))
-                        .setonJourney(rs.getBoolean("onJourney")).build();
-                         
-             }
+                        .setonJourney(rs.getBoolean("onJourneys"))
+                        .build();
+
+            }
         } catch (SQLException e) {
-            e.printStackTrace();
+            return null;
         } finally {
             if (rs != null) {
                 try {
@@ -98,7 +111,6 @@ public class DriverDaoImpl implements DriverDao {
     public void updateDriver(Driver driver) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
 
     @Override
     public void deleteDriver(Driver driver) {
