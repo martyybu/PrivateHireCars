@@ -14,7 +14,9 @@ import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
  */
 public interface JourneyDao {
 
-    public List<Journey> getAllJourneys();
+    public Journey[] getAllJourneys();
+
+    public List<Journey> getAllJourneys(int driverID);
 
     public Journey getJourney(int ID);
 
