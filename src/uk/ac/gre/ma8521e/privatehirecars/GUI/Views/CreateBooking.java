@@ -42,16 +42,15 @@ public class CreateBooking extends javax.swing.JPanel {
         Name3 = new javax.swing.JLabel();
         Name2 = new javax.swing.JLabel();
         Name1 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
-        Name2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextPane1 = new javax.swing.JTextPane();
-        Name3 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextPane2 = new javax.swing.JTextPane();
+        date = new javax.swing.JSpinner();
+        checkAvailabilityButton = new javax.swing.JButton();
+        confirmButton = new javax.swing.JButton();
         Name4 = new javax.swing.JLabel();
-        Name5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        finalPrice = new javax.swing.JLabel();
+        Name6 = new javax.swing.JLabel();
+        Driver = new javax.swing.JLabel();
+        Name8 = new javax.swing.JLabel();
+        duration = new javax.swing.JLabel();
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -146,44 +145,34 @@ public class CreateBooking extends javax.swing.JPanel {
             }
         });
 
-        jSpinner1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        jSpinner1.setModel(new javax.swing.SpinnerDateModel(new java.util.Date(1522688659968L), new java.util.Date(), null, java.util.Calendar.DAY_OF_MONTH));
-
-        Name4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name4.setText("Total Price: ");
-
-        jTextPane1.setBorder(null);
-        jTextPane1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        jTextPane1.setMaximumSize(new java.awt.Dimension(135, 20));
-        jTextPane1.setMinimumSize(new java.awt.Dimension(135, 20));
-        jTextPane1.setPreferredSize(new java.awt.Dimension(135, 20));
-        jScrollPane1.setViewportView(jTextPane1);
-
-        Name3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name3.setForeground(new java.awt.Color(102, 102, 102));
-        Name3.setText("To");
-
-        jTextPane2.setBorder(null);
-        jTextPane2.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        jTextPane2.setMaximumSize(new java.awt.Dimension(135, 20));
-        jTextPane2.setMinimumSize(new java.awt.Dimension(135, 20));
-        jTextPane2.setPreferredSize(new java.awt.Dimension(135, 20));
-        jScrollPane2.setViewportView(jTextPane2);
-
-        Name4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name4.setForeground(new java.awt.Color(102, 102, 102));
-        Name4.setText("Total Price: ");
-
-        Name5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name5.setForeground(new java.awt.Color(102, 102, 102));
-        Name5.setText("        ");
-
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        confirmButton.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        confirmButton.setText("Confim booking");
+        confirmButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                confirmButtonActionPerformed(evt);
             }
         });
+
+        Name4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Name4.setText("Total Price: ");
+
+        finalPrice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        finalPrice.setForeground(new java.awt.Color(204, 204, 204));
+        finalPrice.setText("Check availability");
+
+        Name6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Name6.setText("Driver:");
+
+        Driver.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        Driver.setForeground(new java.awt.Color(204, 204, 204));
+        Driver.setText("Check availability");
+
+        Name8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Name8.setText("Duration:");
+
+        duration.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        duration.setForeground(new java.awt.Color(204, 204, 204));
+        duration.setText("Check availability");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -192,32 +181,23 @@ public class CreateBooking extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(title_Pane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Name4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Name5)
-                .addGap(85, 85, 85))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(43, 43, 43)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addComponent(Name3)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                    .addComponent(Name2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(Name1)
-                                    .addGap(13, 13, 13)))
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(checkAvailabilityButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(confirmButton))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Name4)
+                            .addComponent(Name6)
+                            .addComponent(Name8))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(duration)
+                            .addComponent(Driver)
+                            .addComponent(finalPrice))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -227,26 +207,21 @@ public class CreateBooking extends javax.swing.JPanel {
                 .addComponent(title_Pane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Name1)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Name2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Name3)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(39, 39, 39)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Name4)
-                    .addComponent(Name5))
-                .addGap(76, 76, 76))
+                    .addComponent(finalPrice))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Name6)
+                    .addComponent(Driver))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Name8)
+                    .addComponent(duration))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(checkAvailabilityButton)
+                    .addComponent(confirmButton))
+                .addGap(38, 38, 38))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -262,7 +237,7 @@ public class CreateBooking extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 552, Short.MAX_VALUE)
+            .addGap(0, 554, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -271,10 +246,45 @@ public class CreateBooking extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void checkAvailabilityButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkAvailabilityButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_checkAvailabilityButtonActionPerformed
 
+    private void confirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_confirmButtonActionPerformed
+
+    public JLabel getDriverLbl(){
+        return Driver;
+    }
+    
+    public JButton getAvailabilityBtn(){
+        return this.checkAvailabilityButton;
+    }
+    
+    public JButton getConfirmBtn(){
+        return this.confirmButton;
+    }
+    
+    public JSpinner getDate(){
+        return this.date;
+    }
+    
+    public JLabel getDurationLbl(){
+        return this.duration;
+    }
+    
+    public JLabel getFinalPriceLbl(){
+        return this.finalPrice;
+    }
+    
+    public JTextPane getToTxt(){
+        return this.to;
+    }
+    
+    public JTextPane getFromTxt(){
+        return this.from;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Driver;
@@ -283,14 +293,17 @@ public class CreateBooking extends javax.swing.JPanel {
     private javax.swing.JLabel Name2;
     private javax.swing.JLabel Name3;
     private javax.swing.JLabel Name4;
-    private javax.swing.JLabel Name5;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel Name6;
+    private javax.swing.JLabel Name8;
+    private javax.swing.JButton checkAvailabilityButton;
+    private javax.swing.JButton confirmButton;
+    private javax.swing.JSpinner date;
+    private javax.swing.JLabel duration;
+    private javax.swing.JLabel finalPrice;
+    private javax.swing.JTextPane from;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JTextPane jTextPane2;
     private javax.swing.JPanel title_Pane;
     private javax.swing.JTextPane to;
     // End of variables declaration//GEN-END:variables
