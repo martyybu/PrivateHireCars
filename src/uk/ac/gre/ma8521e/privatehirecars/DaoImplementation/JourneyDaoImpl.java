@@ -5,9 +5,12 @@
  */
 package uk.ac.gre.ma8521e.privatehirecars.DaoImplementation;
 
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Passenger;
@@ -17,6 +20,7 @@ import uk.ac.gre.ma8521e.privatehirecars.Database;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.JourneyNotification;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.JourneyState;
+import uk.ac.gre.ma8521e.privatehirecars.Utils;
 
 /**
  *
@@ -70,7 +74,6 @@ public class JourneyDaoImpl implements JourneyDao {
         return listJourneys;
     }
 
-
     @Override
     public Journey getJourney(int ID) {
         Journey journey = null;
@@ -118,7 +121,34 @@ public class JourneyDaoImpl implements JourneyDao {
 
     @Override
     public void insertJourney(Journey journey) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PreparedStatement stmt = null;
+        try {
+
+            String query = "INSERT INTO Journey VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            stmt = Database.getInstance().prepareStatement(query);
+            stmt.setInt(1, journey.getDriver().getDriverID());
+            stmt.setInt(2, journey.getPassenger().getPassengerID());
+            stmt.setString(3, journey.getStartingLocation());
+            stmt.setString(4, journey.getDestination());
+            stmt.setString(5, journey.getCar().VIN);
+            stmt.setInt(6, journey.getPayment().getID());
+            stmt.setTimestamp(7,new Timestamp(journey.getDate().getTime()));
+            stmt.setInt(8, journey.getDuration());
+            stmt.setInt(9, journey.getRating());
+            stmt.setString(10, journey.getState().toString());
+            stmt.setString(11, journey.getNotifications().toString());
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException sqlEx) {
+                } // ignore
+                stmt = null;
+            }
+        }
     }
 
     @Override
