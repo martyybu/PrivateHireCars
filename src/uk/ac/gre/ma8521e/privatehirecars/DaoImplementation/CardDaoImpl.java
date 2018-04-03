@@ -8,6 +8,7 @@ package uk.ac.gre.ma8521e.privatehirecars.DaoImplementation;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import uk.ac.gre.ma8521e.privatehirecars.Payment.Card;
 import uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects.CardDao;
@@ -21,7 +22,7 @@ public class CardDaoImpl implements CardDao{
 
     @Override
     public List<Card> getAllCards() {
-        List<Card> cardList = null;
+        List<Card> cardList = new ArrayList<>();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
