@@ -51,7 +51,7 @@ public class BookingsController {
         } else {
             view.getPriceLbl().setText("£" + journey.getPayment().getAmount());
             view.getDurationLbl().setText(journey.getDuration() + " min");
-            view.getReviewTxt().setText(journey.getReview()+"");
+            view.getReviewTxt().setText(journey.getReview() + "");
             view.getRatingLbl().setSelectedIndex(journey.getRating());
         }
         view.getfromLbl().setText("" + journey.getStartingLocation());
@@ -72,7 +72,7 @@ public class BookingsController {
 
     public void updateJourneys() {
         journeys = new JourneyDaoImpl().getAllJourneys();
-        System.out.println(""+journeys.toString());
+        System.out.println("" + journeys.toString());
     }
 
     public void sendBtn(ActionEvent evt) {
@@ -80,12 +80,13 @@ public class BookingsController {
             JOptionPane.showMessageDialog(view,
                     "Your journey has not occured or has not been terminated, therefore you cannnot review and rate the journey as of yet!");
         } else {
-            journeys.get(counter).setRating(view.getBookingsCombo().getSelectedIndex());
-            journeys.get(counter).addReview(view.getReviewTxt().getText());
-            new JourneyDaoImpl().updateJourney(journeys.get(counter));
+            Journey journey = journeys.get(counter);
+            journey.setRating(view.getBookingsCombo().getSelectedIndex());
+            journey.addReview(view.getReviewTxt().getText());
+            new JourneyDaoImpl().updateJourney(journey);
             updateJourneys();
             JOptionPane.showMessageDialog(view,
-                    "Thank you for th review, It was registered with success!");
+                    "Thank you for the review, It was registered with success!");
         }
     }
 
