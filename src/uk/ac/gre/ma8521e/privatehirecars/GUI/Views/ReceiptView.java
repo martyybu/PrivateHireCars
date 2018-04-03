@@ -55,11 +55,13 @@ public class ReceiptView extends javax.swing.JFrame {
         to1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(417, 356));
+        setMaximumSize(new java.awt.Dimension(417, 450));
         setPreferredSize(new java.awt.Dimension(417, 356));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel2.setMinimumSize(new java.awt.Dimension(430, 450));
+        jPanel2.setPreferredSize(new java.awt.Dimension(430, 450));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -68,7 +70,7 @@ public class ReceiptView extends javax.swing.JFrame {
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel10.setText("www.privatehires.co.uk");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, 140, -1));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 140, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel11.setText("PrivateHire Cars");
@@ -96,7 +98,7 @@ public class ReceiptView extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel5.setText("TOTAL");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, -1, -1));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 180, -1, -1));
 
         duration.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         duration.setText("duration");
@@ -104,7 +106,7 @@ public class ReceiptView extends javax.swing.JFrame {
 
         totalprice.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         totalprice.setText("totalprice");
-        jPanel2.add(totalprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, -1, 20));
+        jPanel2.add(totalprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, -1, 20));
 
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel20.setText("DURATION:");
@@ -128,11 +130,11 @@ public class ReceiptView extends javax.swing.JFrame {
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel23.setText("£ 4");
-        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 200, -1, 20));
+        jPanel2.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 200, -1, 20));
 
         jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel24.setText("£ 0.40 * Duration");
-        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, 20));
+        jPanel2.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 130, 20));
 
         jLabel25.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel25.setText("OUT Total (incl VAT)");
