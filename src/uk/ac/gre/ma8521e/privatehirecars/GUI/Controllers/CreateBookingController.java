@@ -77,7 +77,7 @@ public class CreateBookingController {
     }
 
     public void btnAvailability(ActionEvent evt) {
-        if(journey!=null){
+        if(journey==null){
         //Check if locations are valid
         if (new MapsApiImpl().getLocation(view.getTo().getText()) == null || new MapsApiImpl().getLocation(view.getFrom().getText()) == null) {
             JOptionPane.showMessageDialog(view,
