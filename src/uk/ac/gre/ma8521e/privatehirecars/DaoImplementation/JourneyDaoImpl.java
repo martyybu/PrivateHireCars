@@ -51,6 +51,7 @@ public class JourneyDaoImpl implements JourneyDao {
                         .setState(JourneyState.valueOf(rs.getString("journeyState")))
                         .setNotification(JourneyNotification.valueOf(rs.getString("notification")))
                         .build();
+                journey.addReview(rs.getString("review"));
                 listJourneys.add(journey);
             }
         } catch (SQLException e) {

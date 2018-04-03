@@ -29,12 +29,12 @@ public class BookingsController {
 
     public void addView(BookingView view2) {
         view = view2;
-                loadFields();
-
+        loadFields();
     }
 
     public void loadFields() {
         journeys = new JourneyDaoImpl().getAllJourneys();
+        System.out.println(""+journeys.size());
         Journey journey = journeys.get(counter);
         view.getDateLbl().setText(journey.getDate() + "");
         if (journey.getPayment() != null) {
