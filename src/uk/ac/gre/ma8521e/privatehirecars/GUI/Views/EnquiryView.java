@@ -30,8 +30,6 @@ public class EnquiryView extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         title_Pane = new javax.swing.JPanel();
         Name = new javax.swing.JLabel();
-        lbl_PhoneNumber = new javax.swing.JLabel();
-        lbl_YOB = new javax.swing.JLabel();
 
         title_Pane.setBackground(new java.awt.Color(110, 89, 222));
 
@@ -39,36 +37,21 @@ public class EnquiryView extends javax.swing.JPanel {
         Name.setForeground(new java.awt.Color(255, 255, 255));
         Name.setText("Enquiry");
 
-        lbl_PhoneNumber.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_PhoneNumber.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_PhoneNumber.setText("Phone Number: 072323 123432");
-
-        lbl_YOB.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_YOB.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_YOB.setText("Year of Birth : 1997");
-
         javax.swing.GroupLayout title_PaneLayout = new javax.swing.GroupLayout(title_Pane);
         title_Pane.setLayout(title_PaneLayout);
         title_PaneLayout.setHorizontalGroup(
             title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(title_PaneLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addGroup(title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_YOB)
-                    .addComponent(lbl_PhoneNumber)
-                    .addComponent(Name))
-                .addContainerGap(659, Short.MAX_VALUE))
+                .addComponent(Name)
+                .addContainerGap(848, Short.MAX_VALUE))
         );
         title_PaneLayout.setVerticalGroup(
             title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(title_PaneLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(Name)
-                .addGap(18, 18, 18)
-                .addComponent(lbl_PhoneNumber)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbl_YOB)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -113,8 +96,6 @@ public class EnquiryView extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Name;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel lbl_PhoneNumber;
-    private javax.swing.JLabel lbl_YOB;
     private javax.swing.JPanel title_Pane;
     // End of variables declaration//GEN-END:variables
 }
