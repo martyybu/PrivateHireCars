@@ -133,7 +133,7 @@ public class JourneyDaoImpl implements JourneyDao {
             stmt.setNull(6, java.sql.Types.INTEGER); 
             stmt.setTimestamp(7,new Timestamp(journey.getDate().getTime()));
             stmt.setInt(8, journey.getDuration());
-            stmt.setInt(9, journey.getRating());
+            stmt.setNull(9, java.sql.Types.INTEGER); 
             stmt.setString(10, journey.getState().toString());
             stmt.setString(11, journey.getNotifications().toString());
             stmt.executeUpdate();
