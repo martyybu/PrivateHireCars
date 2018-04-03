@@ -57,6 +57,7 @@ public class CreateBooking extends javax.swing.JPanel {
         setMaximumSize(new java.awt.Dimension(930, 550));
         setMinimumSize(new java.awt.Dimension(930, 550));
         setPreferredSize(new java.awt.Dimension(930, 550));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         title_Pane.setBackground(new java.awt.Color(110, 89, 222));
 
@@ -166,87 +167,42 @@ public class CreateBooking extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        add(title_Pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 75, -1, -1));
+
         checkAvailabilityButton.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         checkAvailabilityButton.setText("Check availability");
+        add(checkAvailabilityButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 500, -1, -1));
 
         confirmButton.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         confirmButton.setText("Confim booking");
+        add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 500, -1, -1));
 
         Name4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name4.setText("Total Price: ");
+        add(Name4, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 260, -1, -1));
 
         finalPrice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         finalPrice.setForeground(new java.awt.Color(51, 51, 51));
         finalPrice.setText("Check availability");
+        add(finalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 260, -1, -1));
 
         Name8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name8.setText("Duration:");
+        add(Name8, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 329, -1, -1));
 
         duration.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         duration.setForeground(new java.awt.Color(51, 51, 51));
         duration.setText("Check availability");
+        add(duration, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 329, -1, -1));
 
         Name9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name9.setText("Driver:");
+        add(Name9, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 397, -1, -1));
 
         driver.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         driver.setForeground(new java.awt.Color(51, 51, 51));
         driver.setText("Check availability");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(title_Pane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(checkAvailabilityButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(confirmButton))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Name9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(driver))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Name8)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(duration))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Name4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(finalPrice)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(title_Pane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Name4)
-                    .addComponent(finalPrice))
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(duration)
-                    .addComponent(Name8))
-                .addGap(43, 43, 43)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Name9)
-                    .addComponent(driver))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(confirmButton)
-                    .addComponent(checkAvailabilityButton))
-                .addGap(25, 25, 25))
-        );
+        add(driver, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 397, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     public JButton getAvailabilityButton() {

@@ -114,12 +114,12 @@ public class CreateBookingController {
                 .setPassenger(passenger)
                 .setNotification(JourneyNotification.valueOf(view.getNotification().getSelectedItem().toString()))
                 .setDate(date)
-                .setDuration(distance * 1)
+                .setDuration(new MapsApiImpl().getDuration(to, from) * 1)
                 .setState(JourneyState.SCHEDULE).build();
         view.getFinalPrice().setText(journey.getPrice() + " ");
-        view.getDuration().setText(journey.getDuration() + "");
-        view.getDriver().setText(journey.getDriver().getFirstName() + "    " + journey.getDriver().getRating() + "*");
-        //Check if user has a card and if so check the balance
+        view.getDuration().setText(journey.getDuration() + ""+" min");
+        view.getDriver().setText(journey.getDriver().getFirstName() +" "+journey.getDriver().getLastName()+ " Rating:   " + journey.getDriver().getRating() + "*");
+         //Check if user has a card and if so check the balance
         //then Create Journey
     }
 
