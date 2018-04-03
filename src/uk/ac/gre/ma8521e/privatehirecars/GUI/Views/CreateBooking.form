@@ -282,9 +282,9 @@
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="3">
-                <StringItem index="0" value="Text"/>
-                <StringItem index="1" value="Call"/>
-                <StringItem index="2" value="Email"/>
+                <StringItem index="0" value="EMAIL"/>
+                <StringItem index="1" value="CALL"/>
+                <StringItem index="2" value="TEXT"/>
               </StringArray>
             </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -343,9 +343,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Check availability"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkAvailabilityButtonActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="confirmButton">
       <Properties>
@@ -354,9 +351,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Confim booking"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="confirmButtonActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="Name4">
       <Properties>

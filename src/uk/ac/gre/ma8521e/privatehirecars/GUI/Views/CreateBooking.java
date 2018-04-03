@@ -94,7 +94,7 @@ public class CreateBooking extends javax.swing.JPanel {
         Name5.setText("Car");
 
         jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Text", "Call", "Email" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EMAIL", "CALL", "TEXT" }));
         jComboBox1.setMaximumSize(new java.awt.Dimension(149, 22));
         jComboBox1.setMinimumSize(new java.awt.Dimension(149, 22));
         jComboBox1.setPreferredSize(new java.awt.Dimension(149, 22));
@@ -168,11 +168,9 @@ public class CreateBooking extends javax.swing.JPanel {
 
         checkAvailabilityButton.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         checkAvailabilityButton.setText("Check availability");
-  
 
         confirmButton.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         confirmButton.setText("Confim booking");
-
 
         Name4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name4.setText("Total Price: ");
