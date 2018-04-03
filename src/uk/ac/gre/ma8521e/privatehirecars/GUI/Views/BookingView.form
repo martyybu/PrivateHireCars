@@ -371,12 +371,13 @@
               <Color blue="0" green="cc" red="ff" type="rgb"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
-                <StringItem index="0" value="*"/>
-                <StringItem index="1" value="**"/>
-                <StringItem index="2" value="***"/>
-                <StringItem index="3" value="****"/>
-                <StringItem index="4" value="*****"/>
+              <StringArray count="6">
+                <StringItem index="0" value="Unknown"/>
+                <StringItem index="1" value="*"/>
+                <StringItem index="2" value="**"/>
+                <StringItem index="3" value="***"/>
+                <StringItem index="4" value="****"/>
+                <StringItem index="5" value="*****"/>
               </StringArray>
             </Property>
           </Properties>
@@ -385,7 +386,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="540" y="250" width="90" height="-1"/>
+              <AbsoluteConstraints x="540" y="250" width="110" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

@@ -176,8 +176,8 @@ public class BookingView extends javax.swing.JPanel {
 
         ratingCombo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         ratingCombo.setForeground(new java.awt.Color(255, 204, 0));
-        ratingCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "**", "***", "****", "*****" }));
-        jPanel2.add(ratingCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 250, 90, -1));
+        ratingCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Unknown", "*", "**", "***", "****", "*****" }));
+        jPanel2.add(ratingCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 250, 110, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
