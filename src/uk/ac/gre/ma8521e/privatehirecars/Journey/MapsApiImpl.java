@@ -25,4 +25,10 @@ public class MapsApiImpl implements MapsApi {
         return randomNumber;
     }
 
+    @Override
+    public int getDuration(Location loc1, Location loc2) {
+        Random random = new Random();
+        int randomNumber = 0 + random.nextInt((60 - 1) + 1);
+        return randomNumber;
+    }
 }

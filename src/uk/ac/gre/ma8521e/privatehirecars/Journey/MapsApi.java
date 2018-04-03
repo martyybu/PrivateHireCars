@@ -10,9 +10,10 @@ package uk.ac.gre.ma8521e.privatehirecars.Journey;
  * @author micae
  */
 public interface MapsApi {
-    
+
     public Location getLocation(String string);
-    
-    public int getDistanceBetweenLocation(Location loc1,Location loc2);
-    
+
+    public int getDistanceBetweenLocation(Location loc1, Location loc2);
+
+    public int getDuration(Location loc1, Location loc2);
 }
