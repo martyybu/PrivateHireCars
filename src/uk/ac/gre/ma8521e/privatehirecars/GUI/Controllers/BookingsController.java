@@ -58,7 +58,7 @@ public class BookingsController {
             view.getRatingLbl().setSelectedIndex(0);
         } else {
             view.getPriceLbl().setText("£" + journey.getPayment().getAmount());
-            view.getDurationLbl().setText(journey.getDuration() + "");
+            view.getDurationLbl().setText(journey.getDuration() + " min");
             view.getReviewTxt().setText(journey.getReview());
             view.getRatingLbl().setSelectedIndex(journey.getRating());
         }
@@ -85,6 +85,8 @@ public class BookingsController {
         } else {
             journeys.get(counter).setRating(view.getBookingsCombo().getSelectedIndex());
             journeys.get(counter).addReview(view.getReviewTxt().getText());
+            JOptionPane.showMessageDialog(view,
+                    "Thank you for th review, It was registered with success!");
         }
     }
 
@@ -93,7 +95,7 @@ public class BookingsController {
             JOptionPane.showMessageDialog(view,
                     "Your journey has not occured or has not been terminated, therefore you cannnot get your receipt!");
         } else {
-           
+            
         }
     }
 
