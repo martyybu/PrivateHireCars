@@ -10,11 +10,13 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.CarDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.JourneyDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.BookingView;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.Car;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
+import uk.ac.gre.ma8521e.privatehirecars.Journey.JourneyState;
 
 /**
  *
@@ -32,33 +34,37 @@ public class BookingsController {
 
     public void addView(BookingView view2) {
         view = view2;
+        setupListeners();
         loadFields();
         loadJourneys();
     }
 
-    public void loadJourneys(){
+    public void loadJourneys() {
         String[] journeysString = new String[journeys.size()];
         for (int i = 0; i < journeys.size(); i++) {
-            journeysString[i] = journeys.get(i).getStartingLocation() +" - " + journeys.get(i).getDestination();
+            journeysString[i] = journeys.get(i).getStartingLocation() + " - " + journeys.get(i).getDestination();
         }
         view.getBookingsCombo().setModel(new DefaultComboBoxModel(journeysString));
     }
-    
+
     public void loadFields() {
         journeys = new JourneyDaoImpl().getAllJourneys();
-        System.out.println(""+journeys.size());
+        System.out.println("" + journeys.size());
         Journey journey = journeys.get(counter);
         view.getDateLbl().setText(journey.getDate() + "");
-        if (journey.getPayment() != null) {
-            view.getPriceLbl().setText("£" + journey.getPayment().getAmount());
-        } else {
+        if (!journey.getState().equals(JourneyState.FINISHED)) {
             view.getPriceLbl().setText("To be determined");
+            view.getDurationLbl().setText("To be determined");
+            view.getRatingLbl().setSelectedIndex(0);
+        } else {
+            view.getPriceLbl().setText("£" + journey.getPayment().getAmount());
+            view.getDurationLbl().setText(journey.getDuration() + "");
+            view.getReviewTxt().setText(journey.getReview());
+            view.getRatingLbl().setSelectedIndex(journey.getRating());
         }
         view.getfromLbl().setText("" + journey.getStartingLocation());
         view.getToLbl().setText("" + journey.getDestination());
         view.getDriverLbl().setText(journey.getDriver().getFirstName() + " " + journey.getDriver().getLastName());
-        view.getDurationLbl().setText(journey.getDuration() + "");
-        view.getReviewTxt().setText(journey.getReview());
     }
 
     public void setupListeners() {
@@ -70,16 +76,25 @@ public class BookingsController {
     public void journeyChanged(ActionEvent evt) {
         counter = view.getBookingsCombo().getSelectedIndex();
         loadFields();
-        System.out.println("left");
-
     }
-    
-    public void sendBtn(ActionEvent evt) {
 
+    public void sendBtn(ActionEvent evt) {
+        if (!journeys.get(counter).getState().equals(JourneyState.FINISHED)) {
+            JOptionPane.showMessageDialog(view,
+                    "Your journey has not occured or has not been terminated, therefore you cannnot review and rate the journey as of yet!");
+        } else {
+            journeys.get(counter).setRating(view.getBookingsCombo().getSelectedIndex());
+            journeys.get(counter).addReview(view.getReviewTxt().getText());
+        }
     }
 
     public void receiptBtn(ActionEvent evt) {
-
+        if (!journeys.get(counter).getState().equals(JourneyState.FINISHED)) {
+            JOptionPane.showMessageDialog(view,
+                    "Your journey has not occured or has not been terminated, therefore you cannnot get your receipt!");
+        } else {
+           
+        }
     }
 
 }

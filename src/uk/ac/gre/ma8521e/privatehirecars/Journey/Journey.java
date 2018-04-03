@@ -273,6 +273,10 @@ public class Journey {
     public void setPayment(Payment newPayment) {
         this.payment = newPayment;
     }
+    
+    public void setRating(int newRating){
+        this.rating=newRating;
+    }
 
     /**
      * Set the journeyState

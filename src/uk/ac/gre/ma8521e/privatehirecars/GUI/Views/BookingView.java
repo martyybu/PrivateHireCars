@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 /**
  *
@@ -43,7 +44,6 @@ public class BookingView extends javax.swing.JPanel {
         Name6 = new javax.swing.JLabel();
         Name3 = new javax.swing.JLabel();
         Name8 = new javax.swing.JLabel();
-        Name2 = new javax.swing.JLabel();
         Name9 = new javax.swing.JLabel();
         reviewText = new javax.swing.JScrollPane();
         textArea = new javax.swing.JTextArea();
@@ -55,6 +55,7 @@ public class BookingView extends javax.swing.JPanel {
         dateLbl = new javax.swing.JLabel();
         durationLbl = new javax.swing.JLabel();
         driverLbl = new javax.swing.JLabel();
+        ratingCombo = new javax.swing.JComboBox<>();
 
         setPreferredSize(new java.awt.Dimension(930, 550));
 
@@ -121,11 +122,6 @@ public class BookingView extends javax.swing.JPanel {
         Name8.setText("Rating:");
         jPanel2.add(Name8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, -1, -1));
 
-        Name2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name2.setForeground(new java.awt.Color(255, 204, 0));
-        Name2.setText("*****");
-        jPanel2.add(Name2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, -1, -1));
-
         Name9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name9.setText("Review:");
         jPanel2.add(Name9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, -1));
@@ -177,6 +173,11 @@ public class BookingView extends javax.swing.JPanel {
         driverLbl.setForeground(new java.awt.Color(51, 51, 51));
         driverLbl.setText("Driver");
         jPanel2.add(driverLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, -1, -1));
+
+        ratingCombo.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        ratingCombo.setForeground(new java.awt.Color(255, 204, 0));
+        ratingCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "*", "**", "***", "****", "*****" }));
+        jPanel2.add(ratingCombo, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 250, 90, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -234,6 +235,10 @@ public class BookingView extends javax.swing.JPanel {
         return this.textArea;
     }
     
+    public JComboBox<String> getRatingLbl(){
+        return this.ratingCombo;
+    }
+    
     public JComboBox<String> getBookingsCombo(){
         return this.Bookings;
     }
@@ -243,7 +248,6 @@ public class BookingView extends javax.swing.JPanel {
     private javax.swing.JLabel Name;
     private javax.swing.JLabel Name1;
     private javax.swing.JLabel Name10;
-    private javax.swing.JLabel Name2;
     private javax.swing.JLabel Name3;
     private javax.swing.JLabel Name5;
     private javax.swing.JLabel Name6;
@@ -257,6 +261,7 @@ public class BookingView extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel priceLbl;
+    private javax.swing.JComboBox<String> ratingCombo;
     private javax.swing.JScrollPane reviewText;
     private javax.swing.JButton send;
     private javax.swing.JTextArea textArea;
