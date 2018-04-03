@@ -17,7 +17,7 @@ import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.Profile;
  */
 public class MainController {
 
-    MainView view;
+    private MainView view;
     public static Person person;
 
     public MainController(Person person) {
@@ -105,6 +105,8 @@ public class MainController {
         resetColor(view.getProfile());
         resetColor(view.getBookings());
         CreateBooking createBooking = new CreateBooking();
+        CreateBookingController controller= new CreateBookingController();
+        controller.addView(createBooking);
         changeLeftPanel(createBooking);
     }
 
