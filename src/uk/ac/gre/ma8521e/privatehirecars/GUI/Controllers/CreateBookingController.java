@@ -7,6 +7,7 @@ package uk.ac.gre.ma8521e.privatehirecars.GUI.Controllers;
 
 import java.awt.event.ActionEvent;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
@@ -62,12 +63,12 @@ public class CreateBookingController {
     }
 
     public void btnConfirm(ActionEvent evt) {
-        if(journey!=null){
+        if (journey != null) {
             view.getAvailabilityButton().doClick();
         }
-        
-        ElectronicPayment payment = new Credit(journey,journey.getPassenger().getCard());
-        if(payment.isThereEnoughFunds()){
+
+        ElectronicPayment payment = new Credit(journey, journey.getPassenger().getCard());
+        if (payment.isThereEnoughFunds()) {
             JOptionPane.showMessageDialog(view,
                     "Your booking was succeful!");
         }
@@ -103,23 +104,33 @@ public class CreateBookingController {
                     "Car selected is not free!");
             return;
         }
-        Date date = (Date)view.getDate().getValue();
-        
+        Date date = (Date) view.getDate().getValue();
+
         Journey journey = new Journey.Builder()
                 .setFrom(fromTemp)
                 .setTo(toTemp)
                 .setCar(new CarDaoImpl().getCar(carString[2]))
-                .setDriver(new CarDaoImpl().getCar(carString[2]).DRIVER)
+                .setDriver(getDriver(new CarDaoImpl().getCar(carString[2])))
                 .setPassenger(passenger)
                 .setNotification(JourneyNotification.valueOf(view.getNotification().getSelectedItem().toString()))
                 .setDate(date)
-                .setDuration(distance*1)
+                .setDuration(distance * 1)
                 .setState(JourneyState.SCHEDULE).build();
-        view.getFinalPrice().setText(journey.getPrice()+" ");
-        view.getDuration().setText(journey.getDuration()+"");
-        view.getDriver().setText(journey.getDriver().getFirstName()+"    "+journey.getRating()+"*");
-    //Check if user has a card and if so check the balance
-                //then Create Journey
+        view.getFinalPrice().setText(journey.getPrice() + " ");
+        view.getDuration().setText(journey.getDuration() + "");
+        view.getDriver().setText(journey.getDriver().getFirstName() + "    " + journey.getRating() + "*");
+        //Check if user has a card and if so check the balance
+        //then Create Journey
+    }
+
+    public Driver getDriver(Car car) {
+        for (Iterator<Driver> it = new DriverDaoImpl().getAllDrivers().iterator(); it.hasNext();) {
+            Driver driver = it.next();
+            if (driver.getCar().VIN.equals(car.VIN)) {
+                return driver;
+            }
+        }
+        return null;
     }
 
     public boolean isCarSelectedFree(String VIN) {
