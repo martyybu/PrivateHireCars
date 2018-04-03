@@ -26,7 +26,7 @@ public class ReceiptController {
     }
     
     public void generateReceipt(){
-        VIEW.getDate().setText(""+JOURNEY.getDate().getTime());
+        VIEW.getDate().setText(""+JOURNEY.getDate());
        VIEW.getFrom().setText(JOURNEY.getStartingLocation());
        VIEW.getTo().setText(JOURNEY.getDestination());
        VIEW.getDuration().setText(JOURNEY.getDuration()+" min");
