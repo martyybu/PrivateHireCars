@@ -26,6 +26,7 @@ public class MainController {
 
     public void addView(MainView view2) {
         view = view2;
+        view2.setTitle("PrivateHire Cars");
         setupListener();
 
     }

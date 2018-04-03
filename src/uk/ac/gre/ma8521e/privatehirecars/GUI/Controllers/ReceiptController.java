@@ -22,6 +22,7 @@ public class ReceiptController {
         this.JOURNEY=journey;
         this.VIEW=receipt;
         generateReceipt();
+        VIEW.setTitle("Receipt");
     }
     
     public void generateReceipt(){

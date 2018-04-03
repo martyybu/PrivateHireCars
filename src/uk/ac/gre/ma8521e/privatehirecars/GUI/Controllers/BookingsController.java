@@ -1,5 +1,8 @@
 package uk.ac.gre.ma8521e.privatehirecars.GUI.Controllers;
 
+import java.awt.Dimension;
+import java.awt.Point;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
@@ -96,7 +99,9 @@ public class BookingsController {
                     "Your journey has not occured or has not been terminated, therefore you cannnot get your receipt!");
         } else {
             ReceiptView receiptView = new ReceiptView();
-            ReceiptController receiptController = new ReceiptController(journeys.get(counter),receiptView);
+            ReceiptController receiptController = new ReceiptController(journeys.get(counter), receiptView);
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            receiptView.setLocation(new Point((screenSize.width / 2) - receiptView.getWidth() / 2, (screenSize.height / 2) - receiptView.getHeight() / 2));
             receiptView.setVisible(true);
         }
     }
