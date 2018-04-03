@@ -6,6 +6,7 @@
 package uk.ac.gre.ma8521e.privatehirecars.GUI.Controllers;
 
 import java.awt.event.ActionEvent;
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
@@ -116,7 +117,8 @@ public class CreateBookingController {
                 .setDate(date)
                 .setDuration(new MapsApiImpl().getDuration(to, from) * 1)
                 .setState(JourneyState.SCHEDULE).build();
-        view.getFinalPrice().setText("£"+journey.getPrice() + " - "+"£"+journey.getPrice()+2);
+        BigDecimal etaPrice = journey.getPrice().add(new BigDecimal(2));
+        view.getFinalPrice().setText("£"+journey.getPrice() + " - "+"£"+etaPrice);
         view.getDuration().setText(journey.getDuration() + ""+" min");
         view.getDriver().setText(journey.getDriver().getFirstName() +" "+journey.getDriver().getLastName()+ " Rating:   " + journey.getDriver().getRating() + "*");
          //Check if user has a card and if so check the balance
