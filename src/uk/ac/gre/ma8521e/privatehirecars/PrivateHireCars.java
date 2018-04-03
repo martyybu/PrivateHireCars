@@ -57,7 +57,6 @@ public class PrivateHireCars {
                 LoginController loginController = new LoginController();
                 loginController.addView(loginView);
                 loginView.setVisible(true);
-                System.out.println(""+new DriverDaoImpl().getAllDrivers());
             }
         });
     }

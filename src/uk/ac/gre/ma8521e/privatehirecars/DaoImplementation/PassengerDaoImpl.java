@@ -46,7 +46,7 @@ public class PassengerDaoImpl implements PassengerDao {
                         .build();
                 Passenger passenger = new Passenger.Builder()
                         .setPerson(person)
-                        .setCard(null)
+                        .setCard(new CardDaoImpl().getCard(rs.getInt("PassengerID")))
                         .setOnJourney(Utils.fromStringtoBoolean(rs.getString("onJourney")))
                         .setPassenger(rs.getInt("PassengerID"))
                         .setRating(rs.getInt("rating"))
@@ -97,7 +97,7 @@ public class PassengerDaoImpl implements PassengerDao {
                         .build();
                 passenger = new Passenger.Builder()
                         .setPerson(person)
-                        .setCard(null)
+                        .setCard(new CardDaoImpl().getCard(rs.getInt("PassengerID")))
                         .setOnJourney(Utils.fromStringtoBoolean(rs.getString("onJourney")))
                         .setPassenger(rs.getInt("PassengerID"))
                         .setRating(rs.getInt("rating"))
@@ -148,7 +148,7 @@ public class PassengerDaoImpl implements PassengerDao {
                         .build();
                 passenger = new Passenger.Builder()
                         .setPerson(person)
-                        .setCard(null)
+                        .setCard(new CardDaoImpl().getCard(rs.getInt("PassengerID")))
                         .setOnJourney(Utils.fromStringtoBoolean(rs.getString("onJourney")))
                         .setPassenger(rs.getInt("PassengerID"))
                         .setRating(rs.getInt("rating"))
