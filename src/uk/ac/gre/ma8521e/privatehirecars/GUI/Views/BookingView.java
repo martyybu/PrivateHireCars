@@ -114,7 +114,6 @@ public class BookingView extends javax.swing.JPanel {
         jPanel2.add(Name6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, -1, -1));
 
         Name3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name3.setForeground(new java.awt.Color(51, 51, 51));
         Name3.setText("Price:");
         jPanel2.add(Name3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, -1, -1));
 
@@ -217,7 +216,7 @@ public class BookingView extends javax.swing.JPanel {
                 .addComponent(jLabel1))
         );
 
-        jPanel2.add(rightBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 350, -1, -1));
+        jPanel2.add(rightBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(855, 350, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
