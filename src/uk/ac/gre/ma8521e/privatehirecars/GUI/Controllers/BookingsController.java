@@ -71,6 +71,7 @@ public class BookingsController {
             counter++;
         }
         loadFields();
+        System.out.println("left");
 
     }
 
@@ -79,7 +80,7 @@ public class BookingsController {
             counter--;
         }
         loadFields();
-
+        System.out.println("right");
     }
 
     public void sendBtn(ActionEvent evt) {
