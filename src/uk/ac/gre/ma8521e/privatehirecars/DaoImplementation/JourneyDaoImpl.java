@@ -154,7 +154,7 @@ public class JourneyDaoImpl implements JourneyDao {
     public void updateJourney(Journey journey) {
         PreparedStatement stmt = null;
         try {
-            String query = "UPDATE Journey DriverID = ? ,PassengerID = ?,startingLocationID = ? ,destinationID = ?,CarID = ? ,PaymentID = ?,date = ?,duration = ?,rating = ?,journeyState = ?,notification = ? WHERE PaymentID = ?";
+            String query = "UPDATE Journey DriverID = ?, PassengerID = ?, startingLocationID = ?, destinationID = ?, CarID = ?, PaymentID = ?, date = ?, duration = ?, rating = ?, journeyState = ?, notification = ? WHERE PaymentID = ?";
             stmt = Database.getInstance().prepareStatement(query);
             stmt.setInt(1, journey.getDriver().getDriverID());
             stmt.setInt(2, journey.getPassenger().getPassengerID());
