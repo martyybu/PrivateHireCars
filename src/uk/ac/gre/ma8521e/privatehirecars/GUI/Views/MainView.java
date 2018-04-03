@@ -48,7 +48,7 @@ public class MainView extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -98,7 +98,7 @@ public class MainView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        sideMenu.add(btn_profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 240, 40));
+        sideMenu.add(btn_profile, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 240, 40));
 
         btn_bookings.setBackground(new java.awt.Color(64, 43, 100));
 
@@ -128,7 +128,7 @@ public class MainView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        sideMenu.add(btn_bookings, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 240, 40));
+        sideMenu.add(btn_bookings, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 240, 40));
 
         btn_createbookings.setBackground(new java.awt.Color(64, 43, 100));
 
@@ -158,7 +158,7 @@ public class MainView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        sideMenu.add(btn_createbookings, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 220, -1, 40));
+        sideMenu.add(btn_createbookings, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, -1, 40));
 
         btn_createEnquiries.setBackground(new java.awt.Color(64, 43, 100));
 
@@ -188,17 +188,15 @@ public class MainView extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        sideMenu.add(btn_createEnquiries, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, -1, 40));
+        sideMenu.add(btn_createEnquiries, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, -1, 40));
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("PrivateHire Cars");
-        sideMenu.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+        sideMenu.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel10.setText("PrivateHire Cars");
-        sideMenu.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, -1, -1));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/taxi_128x.png"))); // NOI18N
+        sideMenu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 140, 140));
 
         bg.add(sideMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 550));
 
@@ -248,8 +246,8 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JPanel btn_createbookings;
     private javax.swing.JPanel btn_profile;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
