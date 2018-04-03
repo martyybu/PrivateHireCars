@@ -164,7 +164,6 @@ public class JourneyDaoImpl implements JourneyDao {
             stmt.setInt(6, journey.getID());
             stmt.setTimestamp(7, new Timestamp(journey.getDate().getTime()));
             stmt.setInt(8, journey.getDuration());
-            System.out.println(""+journey.getRating());
             stmt.setInt(9, journey.getRating());
             stmt.setString(10, journey.getState().toString());
             stmt.setString(11, journey.getNotifications().toString());

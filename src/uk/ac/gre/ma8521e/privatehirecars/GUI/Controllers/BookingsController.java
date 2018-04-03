@@ -6,6 +6,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.JourneyDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.BookingView;
+import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.ReceiptView;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.JourneyState;
 
@@ -72,7 +73,6 @@ public class BookingsController {
 
     public void updateJourneys() {
         journeys = new JourneyDaoImpl().getAllJourneys();
-        System.out.println("" + journeys.toString());
     }
 
     public void sendBtn(ActionEvent evt) {
@@ -95,7 +95,9 @@ public class BookingsController {
             JOptionPane.showMessageDialog(view,
                     "Your journey has not occured or has not been terminated, therefore you cannnot get your receipt!");
         } else {
-
+            ReceiptView receiptView = new ReceiptView();
+            ReceiptController receiptController = new ReceiptController(journeys.get(counter),receiptView);
+            receiptView.setVisible(true);
         }
     }
 

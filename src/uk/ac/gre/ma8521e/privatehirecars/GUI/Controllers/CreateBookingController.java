@@ -69,7 +69,7 @@ public class CreateBookingController {
             view.getAvailabilityButton().doClick();
         }
 
-        ElectronicPayment payment = new Credit(journey, journey.getPassenger().getCard());
+        ElectronicPayment payment = new Credit(journey.getPrice(), journey.getPassenger().getCard());
         if (payment.isThereEnoughFunds()) {
             JOptionPane.showMessageDialog(view,
                     "Your booking was succeful!");

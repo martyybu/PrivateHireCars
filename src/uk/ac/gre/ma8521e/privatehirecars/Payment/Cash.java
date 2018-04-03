@@ -12,8 +12,8 @@ public class Cash extends Payment{
     final BigDecimal cashGiven;
     BigDecimal change;
     
-    public Cash(Journey journey, BigDecimal cashGiven) {
-        super(journey);
+    public Cash(BigDecimal amount, BigDecimal cashGiven) {
+        super(amount);
         this.cashGiven= cashGiven;
     }
     

@@ -1,5 +1,6 @@
 package uk.ac.gre.ma8521e.privatehirecars.Payment;
 
+import java.math.BigDecimal;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
 
 /**
@@ -10,8 +11,8 @@ public class Credit extends Payment implements ElectronicPayment{
     
     Card card;
     
-    public Credit(Journey journey, Card newCard) {
-        super(journey);
+    public Credit(BigDecimal amount, Card newCard) {
+        super(amount);
         this.card=newCard;
     }
     

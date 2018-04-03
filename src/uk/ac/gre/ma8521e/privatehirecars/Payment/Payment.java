@@ -10,15 +10,9 @@ import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
 public class Payment {
     private Integer ID;
     private BigDecimal amount;
-    private Journey journey;
-    
-    public Payment(Journey journey){
-        this.amount = journey.getPrice();
-        this.journey = journey;
-    }
-    
+
     public Payment(BigDecimal amount){
-        this.amount=amount;
+        this.amount = amount;
     }
     
     public Integer getID(){
@@ -33,9 +27,6 @@ public class Payment {
         return this.amount;
     }
     
-    public Journey getJourney(){
-       return this.journey;
-    }
     
     public void setAmount(BigDecimal newAmount){
         this.amount=newAmount;
