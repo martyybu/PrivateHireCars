@@ -296,6 +296,7 @@ public class Journey {
         this.state = newState;
     }
 
+    @Override
     public String toString(){
         return this.review;
     }

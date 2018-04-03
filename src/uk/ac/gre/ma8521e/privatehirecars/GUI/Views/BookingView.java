@@ -235,7 +235,7 @@ public class BookingView extends javax.swing.JPanel {
         return this.textArea;
     }
     
-    public JComboBox<String> getRatingLbl(){
+    public JComboBox<String> getRating(){
         return this.ratingCombo;
     }
     

@@ -46,13 +46,13 @@ public class BookingsController {
         if (!journey.getState().equals(JourneyState.FINISHED)) {
             view.getPriceLbl().setText("To be determined");
             view.getDurationLbl().setText("To be determined");
-            view.getRatingLbl().setSelectedIndex(0);
+            view.getRating().setSelectedIndex(0);
             view.getReviewTxt().setText("");
         } else {
             view.getPriceLbl().setText("£" + journey.getPayment().getAmount());
             view.getDurationLbl().setText(journey.getDuration() + " min");
             view.getReviewTxt().setText(journey.getReview() + "");
-            view.getRatingLbl().setSelectedIndex(journey.getRating());
+            view.getRating().setSelectedIndex(journey.getRating());
         }
         view.getfromLbl().setText("" + journey.getStartingLocation());
         view.getToLbl().setText("" + journey.getDestination());
@@ -81,7 +81,7 @@ public class BookingsController {
                     "Your journey has not occured or has not been terminated, therefore you cannnot review and rate the journey as of yet!");
         } else {
             Journey journey = journeys.get(counter);
-            journey.setRating(view.getBookingsCombo().getSelectedIndex());
+            journey.setRating(view.getRating().getSelectedIndex());
             journey.addReview(view.getReviewTxt().getText());
             new JourneyDaoImpl().updateJourney(journey);
             updateJourneys();
