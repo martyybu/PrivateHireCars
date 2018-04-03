@@ -57,6 +57,8 @@ public class BookingView extends javax.swing.JPanel {
         durationLbl = new javax.swing.JLabel();
         driverLbl = new javax.swing.JLabel();
 
+        setPreferredSize(new java.awt.Dimension(930, 550));
+
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         title_Pane.setBackground(new java.awt.Color(110, 89, 222));
@@ -88,7 +90,7 @@ public class BookingView extends javax.swing.JPanel {
         jPanel2.add(leftButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 40, 30));
 
         rightLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/icons8_Right_Arrow_40px.png"))); // NOI18N
-        jPanel2.add(rightLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 340, 40, 30));
+        jPanel2.add(rightLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 340, 40, 30));
 
         Name7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name7.setText("Date:");
