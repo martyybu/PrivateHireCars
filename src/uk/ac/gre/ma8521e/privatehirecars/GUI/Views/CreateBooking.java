@@ -176,21 +176,21 @@ public class CreateBooking extends javax.swing.JPanel {
         Name4.setText("Total Price: ");
 
         finalPrice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        finalPrice.setForeground(new java.awt.Color(204, 204, 204));
+        finalPrice.setForeground(new java.awt.Color(51, 51, 51));
         finalPrice.setText("Check availability");
 
         Name8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name8.setText("Duration:");
 
         duration.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        duration.setForeground(new java.awt.Color(204, 204, 204));
+        duration.setForeground(new java.awt.Color(51, 51, 51));
         duration.setText("Check availability");
 
         Name9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name9.setText("Driver:");
 
         driver.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        driver.setForeground(new java.awt.Color(204, 204, 204));
+        driver.setForeground(new java.awt.Color(51, 51, 51));
         driver.setText("Check availability");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
