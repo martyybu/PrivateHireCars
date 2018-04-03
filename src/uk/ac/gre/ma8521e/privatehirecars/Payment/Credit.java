@@ -1,7 +1,6 @@
 package uk.ac.gre.ma8521e.privatehirecars.Payment;
 
 import java.math.BigDecimal;
-import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
 
 /**
  *

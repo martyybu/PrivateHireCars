@@ -55,8 +55,8 @@ public class ReceiptView extends javax.swing.JFrame {
         to1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(417, 450));
-        setPreferredSize(new java.awt.Dimension(417, 356));
+        setMaximumSize(new java.awt.Dimension(420, 450));
+        setPreferredSize(new java.awt.Dimension(420, 450));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
