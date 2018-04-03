@@ -29,6 +29,8 @@ public class BookingsController {
 
     public void addView(BookingView view2) {
         view = view2;
+                loadFields();
+
     }
 
     public void loadFields() {
