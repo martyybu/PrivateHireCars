@@ -118,7 +118,7 @@ public class CreateBookingController {
                 .setState(JourneyState.SCHEDULE).build();
         view.getFinalPrice().setText(journey.getPrice() + " ");
         view.getDuration().setText(journey.getDuration() + "");
-        view.getDriver().setText(journey.getDriver().getFirstName() + "    " + journey.getRating() + "*");
+        view.getDriver().setText(journey.getDriver().getFirstName() + "    " + journey.getDriver().getRating() + "*");
         //Check if user has a card and if so check the balance
         //then Create Journey
     }
