@@ -25,10 +25,11 @@ public class ReceiptController {
     }
     
     public void generateReceipt(){
+        VIEW.getDate().setText(""+JOURNEY.getDate());
        VIEW.getFrom().setText(JOURNEY.getStartingLocation());
        VIEW.getTo().setText(JOURNEY.getDestination());
-       VIEW.getDuration().setText(JOURNEY.getDuration()+"");
-       VIEW.getTotal().setText(JOURNEY.getPrice()+"");
+       VIEW.getDuration().setText(JOURNEY.getDuration()+" min");
+       VIEW.getTotal().setText("£"+JOURNEY.getPrice()+"");
     }
     
 }
