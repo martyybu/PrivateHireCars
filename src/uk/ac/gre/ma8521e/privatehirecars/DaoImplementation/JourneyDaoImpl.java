@@ -48,7 +48,6 @@ public class JourneyDaoImpl implements JourneyDao {
                         .build();
                 journey.addID(rs.getInt("JourneyID"));
                 journey.addReview(rs.getString("review"));
-                System.out.println(rs.getString("review"));
                 listJourneys.add(journey);
             }
         } catch (SQLException e) {
@@ -155,7 +154,7 @@ public class JourneyDaoImpl implements JourneyDao {
     public void updateJourney(Journey journey) {
         PreparedStatement stmt = null;
         try {
-            String query = "UPDATE Journey SET DriverID = ?, PassengerID = ?, startingLocationID = ?, destinationID = ?, CarID = ?, PaymentID = ?, date = ?, duration = ?, rating = ?, journeyState = ?, notification = ? WHERE PaymentID = ?";
+            String query = "UPDATE Journey SET DriverID = ?, PassengerID = ?, startingLocationID = ?, destinationID = ?, CarID = ?, PaymentID = ?, date = ?, duration = ?, rating = ?, journeyState = ?, notification = ?, review = ? WHERE PaymentID = ?";
             stmt = Database.getInstance().prepareStatement(query);
             stmt.setInt(1, journey.getDriver().getDriverID());
             stmt.setInt(2, journey.getPassenger().getPassengerID());
@@ -168,7 +167,8 @@ public class JourneyDaoImpl implements JourneyDao {
             stmt.setInt(9, journey.getRating());
             stmt.setString(10, journey.getState().toString());
             stmt.setString(11, journey.getNotifications().toString());
-            stmt.setInt(12, journey.getID());
+            stmt.setString(12, journey.getReview());
+            stmt.setInt(13, journey.getID());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
