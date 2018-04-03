@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Passenger;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
-import uk.ac.gre.ma8521e.privatehirecars.Actors.PersonFactory;
+import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PassengerDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PersonDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.SignUpView;
 import uk.ac.gre.ma8521e.privatehirecars.PasswordHash;
@@ -57,13 +57,13 @@ public class SignUpController {
                         .setPhoneNumber(view.getPhoneNumber().getText())
                         .setYearOfBirth(new SimpleDateFormat("dd-MM-yyyy").parse(view.getBirthDate().getText()).getYear())
                         .build();
-                new PersonDaoImpl().createPerson(newPerson);
                 Passenger passenger = new Passenger.Builder()
                         .setPerson(newPerson)
                         .setRating(5)
                         .setOnJourney(false)
                         .setCard(null)
                         .build();
+                new PassengerDaoImpl().createPassenger(passenger);
             } catch (NoSuchAlgorithmException | InvalidKeySpecException | ParseException ex) {
                 Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -72,7 +72,7 @@ public class SignUpController {
     }
 
     public Boolean getGender() {
-        return view.getGender().getSelectedIndex() == 1;
+        return view.getGender().getSelectedIndex() == 0;
     }
 
     public void validateLoginInformation() {
