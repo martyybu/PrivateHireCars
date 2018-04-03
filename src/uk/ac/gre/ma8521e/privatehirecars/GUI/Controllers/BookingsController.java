@@ -48,7 +48,7 @@ public class BookingsController {
     }
 
     public void loadFields() {
-        journeys = new JourneyDaoImpl().getAllJourneys();
+        updateJourneys();
         System.out.println("" + journeys.size());
         Journey journey = journeys.get(counter);
         view.getDateLbl().setText(journey.getDate() + "");
@@ -79,6 +79,10 @@ public class BookingsController {
         loadFields();
     }
 
+    public void updateJourneys() {
+        journeys = new JourneyDaoImpl().getAllJourneys();
+    }
+
     public void sendBtn(ActionEvent evt) {
         if (!journeys.get(counter).getState().equals(JourneyState.FINISHED)) {
             JOptionPane.showMessageDialog(view,
@@ -87,6 +91,7 @@ public class BookingsController {
             journeys.get(counter).setRating(view.getBookingsCombo().getSelectedIndex());
             journeys.get(counter).addReview(view.getReviewTxt().getText());
             new JourneyDaoImpl().updateJourney(journeys.get(counter));
+            updateJourneys();
             JOptionPane.showMessageDialog(view,
                     "Thank you for th review, It was registered with success!");
         }
