@@ -12,6 +12,7 @@ import uk.ac.gre.ma8521e.privatehirecars.Payment.Payment;
  */
 public class Journey {
 
+    private int ID;
     private String startingLocation;
     private String destination;
     private Date date2;
@@ -66,6 +67,14 @@ public class Journey {
         return notification;
     }
 
+    public int getID(){
+        return this.ID;
+    }
+    
+    
+    public void addID(int newInt){
+        this.ID = newInt;
+    }
     /**#
      * Returns the customer review
      * 

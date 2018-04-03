@@ -20,5 +20,5 @@ public interface JourneyDao {
 
     public void createJourney(Journey journey);
 
-    public void deleteJourney(Journey journey);
+    public void updateJourney(Journey journey);
 }
