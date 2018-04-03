@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package uk.ac.gre.ma8521e.privatehirecars.DaoImplementation;
 
 import java.sql.PreparedStatement;
@@ -12,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 import uk.ac.gre.ma8521e.privatehirecars.Database;
 import uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects.PersonDao;
-import uk.ac.gre.ma8521e.privatehirecars.Actors.Passenger;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
 import uk.ac.gre.ma8521e.privatehirecars.Utils;
 
@@ -98,14 +92,15 @@ public class PersonDaoImpl implements PersonDao {
     public void createPerson(Person person) {
         PreparedStatement stmt = null;
         try {
-            String query = "INSERT INTO Person (?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO Person VALUES (?, ?, ?, ?, ?, ?, ?)";
             stmt = Database.getInstance().prepareStatement(query);
-            stmt.setString(1, person.getPassword());
-            stmt.setString(2, person.getFirstName());
-            stmt.setString(3, person.getLastName());
-            stmt.setInt(4, person.getYearOfBirthday());
-            stmt.setString(5, Utils.frommBooleanToString(person.getGender()));
-            stmt.setString(6, person.getPhoneNumber());
+            stmt.setString(1, person.getID());
+            stmt.setString(2, person.getPassword());
+            stmt.setString(3, person.getFirstName());
+            stmt.setString(4, person.getLastName());
+            stmt.setInt(5, person.getYearOfBirthday());
+            stmt.setString(6, Utils.frommBooleanToString(person.getGender()));
+            stmt.setString(7, person.getPhoneNumber());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

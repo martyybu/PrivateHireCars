@@ -157,7 +157,7 @@ public class PassengerDaoImpl implements PassengerDao {
         PreparedStatement stmt = null;
         try {
             new PersonDaoImpl().createPerson(passenger);
-            String query = "INSERT INTO Passenger (?, ?, ?, ?)";
+            String query = "INSERT INTO Passenger VALUES (?, ?, ?, ?)";
             stmt = Database.getInstance().prepareStatement(query);
             stmt.setString(1, passenger.getID());
             stmt.setString(2, Utils.frommBooleanToString(passenger.isOnJourney()));

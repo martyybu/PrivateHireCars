@@ -46,7 +46,7 @@ public class SignUpController {
     public void signUpButton(ActionEvent evt) {
         validateLoginInformation();
         if (errorMessage == null) {
-            Person newPerson = (Person) PersonFactory.createAccount("Passenger");
+            Person newPerson;
             try {
                 newPerson = new Person.Builder()
                         .setFirstName(view.getFirstName().getText())
@@ -55,7 +55,7 @@ public class SignUpController {
                         .setID(view.getUsername().getText())
                         .setPassword(PasswordHash.createHash(view.getPassword().getText()))
                         .setPhoneNumber(view.getPhoneNumber().getText())
-                        .setYearOfBirth(new Date(view.getBirthDate().getText()).getYear())
+                        .setYearOfBirth(new SimpleDateFormat("dd-MM-yyyy").parse(view.getBirthDate().getText()).getYear())
                         .build();
                 new PersonDaoImpl().createPerson(newPerson);
                 Passenger passenger = new Passenger.Builder()
@@ -64,7 +64,7 @@ public class SignUpController {
                         .setOnJourney(false)
                         .setCard(null)
                         .build();
-            } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
+            } catch (NoSuchAlgorithmException | InvalidKeySpecException | ParseException ex) {
                 Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
             }
 
@@ -95,7 +95,7 @@ public class SignUpController {
             return;
         }
         if (!isDateValid()) {
-            errorMessage = "The date needs to be in the following format dd/MM/yyyy";
+            errorMessage = "The date needs to be in the following format dd-MM-yyyy";
             JOptionPane.showMessageDialog(view,
                     errorMessage);
             return;

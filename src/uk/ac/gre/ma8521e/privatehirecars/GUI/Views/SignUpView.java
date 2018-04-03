@@ -164,7 +164,7 @@ public class SignUpView extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(17, 2, 3, 8);
         getContentPane().add(btn_signUp, gridBagConstraints);
 
-        birthDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        birthDate.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd-MM-yyyy"))));
         birthDate.setToolTipText("");
         birthDate.setMaximumSize(new java.awt.Dimension(102, 25));
         birthDate.setMinimumSize(new java.awt.Dimension(102, 25));
