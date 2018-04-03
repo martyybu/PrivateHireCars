@@ -130,7 +130,7 @@ public class JourneyDaoImpl implements JourneyDao {
             stmt.setString(3, journey.getStartingLocation());
             stmt.setString(4, journey.getDestination());
             stmt.setString(5, journey.getCar().VIN);
-            stmt.setInt(6, journey.getPayment().getID());
+            stmt.setNull(6, journey.getPayment().getID()); 
             stmt.setTimestamp(7,new Timestamp(journey.getDate().getTime()));
             stmt.setInt(8, journey.getDuration());
             stmt.setInt(9, journey.getRating());
