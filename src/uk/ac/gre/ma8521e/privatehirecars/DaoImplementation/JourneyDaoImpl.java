@@ -34,7 +34,7 @@ public class JourneyDaoImpl implements JourneyDao {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            String query = "SELECT * FROM Passenger INNER JOIN Person ON Passenger.PassengerID = Person.PersonID";
+            String query = "SELECT * FROM Journey";
             stmt = Database.getInstance().prepareStatement(query);
             rs = stmt.executeQuery();
             while (rs.next()) {
@@ -81,8 +81,9 @@ public class JourneyDaoImpl implements JourneyDao {
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            String query = "SELECT * FROM Passenger INNER JOIN Person ON Passenger.PassengerID = Person.PersonID";
+            String query = "SELECT * FROM Journey WHERE JourneyID= ?";
             stmt = Database.getInstance().prepareStatement(query);
+            stmt.setInt(1, ID);
             rs = stmt.executeQuery();
             while (rs.next()) {
                 journey = new Journey.Builder()
@@ -98,6 +99,7 @@ public class JourneyDaoImpl implements JourneyDao {
                         .setState(JourneyState.valueOf(rs.getString("journeyState")))
                         .setNotification(JourneyNotification.valueOf(rs.getString("notification")))
                         .build();
+                journey.addReview(rs.getString("review"));
             }
         } catch (SQLException e) {
             return journey;
@@ -131,10 +133,10 @@ public class JourneyDaoImpl implements JourneyDao {
             stmt.setString(3, journey.getStartingLocation());
             stmt.setString(4, journey.getDestination());
             stmt.setString(5, journey.getCar().VIN);
-            stmt.setNull(6, java.sql.Types.INTEGER); 
-            stmt.setTimestamp(7,new Timestamp(journey.getDate().getTime()));
+            stmt.setNull(6, java.sql.Types.INTEGER);
+            stmt.setTimestamp(7, new Timestamp(journey.getDate().getTime()));
             stmt.setInt(8, journey.getDuration());
-            stmt.setNull(9, java.sql.Types.INTEGER); 
+            stmt.setNull(9, java.sql.Types.INTEGER);
             stmt.setString(10, journey.getState().toString());
             stmt.setString(11, journey.getNotifications().toString());
             stmt.executeUpdate();
