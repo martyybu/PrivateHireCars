@@ -27,4 +27,8 @@ public class Card {
          this.CVC = CVC;
      }
 
+     @Override
+      public String toString(){
+          return "CARDNO "+this.CARDNO+", "+this.PASSENGERID+", "+this.CARDNAME;
+      }
 }
