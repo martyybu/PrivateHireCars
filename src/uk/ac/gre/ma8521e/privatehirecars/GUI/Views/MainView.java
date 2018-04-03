@@ -52,6 +52,8 @@ public class MainView extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1210, 550));
+        setPreferredSize(new java.awt.Dimension(1210, 550));
         setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -64,6 +66,7 @@ public class MainView extends javax.swing.JFrame {
 
         sideMenu.setBackground(new java.awt.Color(54, 33, 89));
         sideMenu.setAutoscrolls(true);
+        sideMenu.setRequestFocusEnabled(false);
         sideMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_profile.setBackground(new java.awt.Color(85, 65, 118));
