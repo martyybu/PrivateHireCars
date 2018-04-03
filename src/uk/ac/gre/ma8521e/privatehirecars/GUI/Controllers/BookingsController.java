@@ -51,7 +51,7 @@ public class BookingsController {
         } else {
             view.getPriceLbl().setText("£" + journey.getPayment().getAmount());
             view.getDurationLbl().setText(journey.getDuration() + " min");
-            view.getReviewTxt().setText(journey.getReview());
+            view.getReviewTxt().setText(journey.getReview()+"");
             view.getRatingLbl().setSelectedIndex(journey.getRating());
         }
         view.getfromLbl().setText("" + journey.getStartingLocation());
