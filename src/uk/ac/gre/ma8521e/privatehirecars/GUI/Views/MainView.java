@@ -52,8 +52,8 @@ public class MainView extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1226, 550));
-        setPreferredSize(new java.awt.Dimension(1210, 550));
+        setMinimumSize(new java.awt.Dimension(1155, 575));
+        setPreferredSize(new java.awt.Dimension(1155, 575));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
