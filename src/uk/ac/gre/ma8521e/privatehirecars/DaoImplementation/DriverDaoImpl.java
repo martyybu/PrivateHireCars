@@ -8,6 +8,7 @@ package uk.ac.gre.ma8521e.privatehirecars.DaoImplementation;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import uk.ac.gre.ma8521e.privatehirecars.Database;
 import uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects.DriverDao;
@@ -26,7 +27,7 @@ public class DriverDaoImpl implements DriverDao {
 
     @Override
     public List<Driver> getAllDrivers() {
-        List<Driver> listDrivers = null;
+        List<Driver> listDrivers = new ArrayList<>();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {

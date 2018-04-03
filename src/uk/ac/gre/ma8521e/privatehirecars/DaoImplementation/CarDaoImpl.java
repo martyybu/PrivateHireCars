@@ -8,6 +8,7 @@ package uk.ac.gre.ma8521e.privatehirecars.DaoImplementation;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.Car;
 import uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects.CarDao;
@@ -55,7 +56,7 @@ public class CarDaoImpl implements CarDao {
     }
 
     public List<Car> getAllCars() {
-        List<Car> car = null;
+        List<Car> car = new ArrayList<>();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
