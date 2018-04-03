@@ -120,10 +120,9 @@ public class JourneyDaoImpl implements JourneyDao {
     }
 
     @Override
-    public void insertJourney(Journey journey) {
+    public void createJourney(Journey journey) {
         PreparedStatement stmt = null;
         try {
-
             String query = "INSERT INTO Journey VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             stmt = Database.getInstance().prepareStatement(query);
             stmt.setInt(1, journey.getDriver().getDriverID());

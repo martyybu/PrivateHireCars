@@ -74,7 +74,7 @@ public class CreateBookingController {
             JOptionPane.showMessageDialog(view,
                     "Your booking was succeful!");
         }
-        new JourneyDaoImpl().insertJourney(journey);
+        new JourneyDaoImpl().createJourney(journey);
     }
 
     public void btnAvailability(ActionEvent evt) {
