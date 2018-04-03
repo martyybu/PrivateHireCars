@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
+import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.DriverDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PersonDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Controllers.LoginController;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.LoginView;
@@ -56,6 +57,7 @@ public class PrivateHireCars {
                 LoginController loginController = new LoginController();
                 loginController.addView(loginView);
                 loginView.setVisible(true);
+                System.out.println(""+new DriverDaoImpl().getAllDrivers());
             }
         });
     }

@@ -31,7 +31,7 @@ public class CarDaoImpl implements CarDao {
             stmt.setString(1, String.valueOf(ID));
             rs = stmt.executeQuery();
             while (rs.next()) {
-                Car car1 = new Car(rs.getString("VIN"), rs.getInt("plateNo"), rs.getInt("seats"), rs.getString("brand"), new DriverDaoImpl().getDriver(rs.getInt("DriverID")),rs.getString("model"));
+                Car car1 = new Car(rs.getString("VIN"), rs.getString("plateNo"), rs.getInt("seats"), rs.getString("brand"), new DriverDaoImpl().getDriver(rs.getInt("DriverID")),rs.getString("model"));
                 car.add(car1);
             }
         } catch (SQLException e) {
@@ -64,7 +64,7 @@ public class CarDaoImpl implements CarDao {
             stmt = Database.getInstance().prepareStatement(query);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                Car car1 = new Car(rs.getString("VIN"), rs.getInt("plateNo"), rs.getInt("seats"), rs.getString("brand"), new DriverDaoImpl().getDriver(rs.getInt("DriverID")),rs.getString("model"));
+                Car car1 = new Car(rs.getString("VIN"), rs.getString("plateNo"), rs.getInt("seats"), rs.getString("brand"), new DriverDaoImpl().getDriver(rs.getInt("DriverID")),rs.getString("model"));
                 car.add(car1);
             }
         } catch (SQLException e) {
@@ -99,7 +99,7 @@ public class CarDaoImpl implements CarDao {
             stmt.setString(1, String.valueOf(ID));
             rs = stmt.executeQuery();
             while (rs.next()) {
-                car = new Car(rs.getString("VIN"), rs.getInt("plateNo"), rs.getInt("seats"), rs.getString("brand"), new DriverDaoImpl().getDriver(rs.getInt("DriverID")),rs.getString("model"));
+                car = new Car(rs.getString("VIN"), rs.getString("plateNo"), rs.getInt("seats"), rs.getString("brand"), new DriverDaoImpl().getDriver(rs.getInt("DriverID")),rs.getString("model"));
             }
         } catch (SQLException e) {
             return null;

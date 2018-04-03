@@ -10,12 +10,12 @@ public class Car {
 
     public final String VIN;
     public final int SEATS;
-    public final int PLATENO;
+    public final String PLATENO;
     public final String BRAND;
     public final String MODEL;
     public final Driver DRIVER;
 
-    public Car(String VIN1, int PLATENO, int noSeats1, String brand1, Driver driver1,String Model1) {
+    public Car(String VIN1, String PLATENO, int noSeats1, String brand1, Driver driver1,String Model1) {
         this.VIN = VIN1;
         MODEL = Model1;
         this.PLATENO = PLATENO;
