@@ -296,6 +296,10 @@ public class Journey {
         this.state = newState;
     }
 
+    public String toString(){
+        return this.review;
+    }
+    
     public static final class Builder {
 
         private String startingLocation;

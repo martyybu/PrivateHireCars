@@ -1,20 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package uk.ac.gre.ma8521e.privatehirecars.GUI.Controllers;
 
 import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
-import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.CarDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.JourneyDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.BookingView;
-import uk.ac.gre.ma8521e.privatehirecars.Journey.Car;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.JourneyState;
 
@@ -81,6 +72,7 @@ public class BookingsController {
 
     public void updateJourneys() {
         journeys = new JourneyDaoImpl().getAllJourneys();
+        System.out.println(""+journeys.toString());
     }
 
     public void sendBtn(ActionEvent evt) {

@@ -48,6 +48,7 @@ public class JourneyDaoImpl implements JourneyDao {
                         .build();
                 journey.addID(rs.getInt("JourneyID"));
                 journey.addReview(rs.getString("review"));
+                System.out.println(rs.getString("review"));
                 listJourneys.add(journey);
             }
         } catch (SQLException e) {
