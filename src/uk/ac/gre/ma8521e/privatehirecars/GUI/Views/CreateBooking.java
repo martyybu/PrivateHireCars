@@ -167,7 +167,7 @@ public class CreateBooking extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(title_Pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 75, -1, -1));
+        add(title_Pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, -1, -1));
 
         checkAvailabilityButton.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         checkAvailabilityButton.setText("Check availability");
