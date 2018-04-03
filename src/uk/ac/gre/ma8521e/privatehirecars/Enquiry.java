@@ -32,5 +32,6 @@ public class Enquiry {
     public String getAnswer(){return this.answer;}
     public String getEnquiry(){return this.enquiry;}
     public void changeEnquiry(String enquiry){this.enquiry=enquiry;}
-    public void answer(String answer){this.answer=answer;
+    public void answer(String answer){this.answer=answer;}
+    
 }

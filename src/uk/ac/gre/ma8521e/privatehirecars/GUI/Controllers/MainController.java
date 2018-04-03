@@ -28,7 +28,6 @@ public class MainController {
         view = view2;
         view2.setTitle("PrivateHire Cars");
         setupListener();
-        this.clickedProfile(new MouseEvent());
 
     }
 

@@ -39,4 +39,12 @@ public class EnquiryController {
 
     void changeListOfTrips(ActionEvent evt) {
     }
+    
+    void loadTrips(){
+        
+    }
+    
+    void loadEnquiries(){
+        
+    }
 }
