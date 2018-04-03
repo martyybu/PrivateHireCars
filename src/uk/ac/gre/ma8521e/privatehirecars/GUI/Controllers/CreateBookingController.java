@@ -98,7 +98,7 @@ public class CreateBookingController {
         }
         Passenger passenger = (Passenger) MainController.person;
         String[] carString = view.getCarsDrop().getSelectedItem().toString().split("-");
-        if (!isCarSelectedFree(carString[1])) {
+        if (!isCarSelectedFree(carString[2])) {
             JOptionPane.showMessageDialog(view,
                     "Car selected is not free!");
             return;
@@ -108,8 +108,8 @@ public class CreateBookingController {
         Journey journey = new Journey.Builder()
                 .setFrom(fromTemp)
                 .setTo(toTemp)
-                .setCar(new CarDaoImpl().getCar(carString[1]))
-                .setDriver(new CarDaoImpl().getCar(carString[1]).DRIVER)
+                .setCar(new CarDaoImpl().getCar(carString[2]))
+                .setDriver(new CarDaoImpl().getCar(carString[2]).DRIVER)
                 .setPassenger(passenger)
                 .setNotification(JourneyNotification.valueOf(view.getNotification().getSelectedItem().toString()))
                 .setDate(date)
