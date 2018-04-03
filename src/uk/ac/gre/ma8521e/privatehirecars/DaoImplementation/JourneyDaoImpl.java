@@ -123,7 +123,7 @@ public class JourneyDaoImpl implements JourneyDao {
     public void createJourney(Journey journey) {
         PreparedStatement stmt = null;
         try {
-            String query = "INSERT INTO Journey (DriverID,PassengerID,startingLocationID,destinationID,CarID,PaymentID,date,duration,rating,journeyState,notification) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO Journey (DriverID,PassengerID,startingLocationID,destinationID,CarID,PaymentID,date,duration,rating,journeyState,notification) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             stmt = Database.getInstance().prepareStatement(query);
             stmt.setInt(1, journey.getDriver().getDriverID());
             stmt.setInt(2, journey.getPassenger().getPassengerID());
