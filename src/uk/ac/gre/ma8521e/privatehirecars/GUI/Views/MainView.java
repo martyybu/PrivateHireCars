@@ -5,18 +5,22 @@
  */
 package uk.ac.gre.ma8521e.privatehirecars.GUI.Views;
 
+import javax.swing.JPanel;
+
 /**
  *
- * @author micae
+ * @author ma8521e
  */
-public class MainView extends javax.swing.JPanel {
+public class MainView extends javax.swing.JFrame {
 
     /**
-     * Creates new form Booking
+     * Creates new form MainView1
      */
     public MainView() {
         initComponents();
     }
+
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,6 +31,7 @@ public class MainView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         bg = new javax.swing.JPanel();
         sideMenu = new javax.swing.JPanel();
         btn_profile = new javax.swing.JPanel();
@@ -44,24 +49,19 @@ public class MainView extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        title_Pane = new javax.swing.JPanel();
-        Name = new javax.swing.JLabel();
-        lbl_PhoneNumber = new javax.swing.JLabel();
-        lbl_YOB = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         bg.setBackground(new java.awt.Color(255, 255, 255));
-        bg.setAlignmentX(0.0F);
-        bg.setAlignmentY(0.0F);
         bg.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
         bg.setMaximumSize(new java.awt.Dimension(1283, 550));
         bg.setMinimumSize(new java.awt.Dimension(1283, 550));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         sideMenu.setBackground(new java.awt.Color(54, 33, 89));
-        sideMenu.setAlignmentX(0.0F);
-        sideMenu.setAlignmentY(0.0F);
         sideMenu.setAutoscrolls(true);
         sideMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -197,77 +197,65 @@ public class MainView extends javax.swing.JPanel {
 
         bg.add(sideMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 550));
 
-        title_Pane.setBackground(new java.awt.Color(110, 89, 222));
-
-        Name.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name.setForeground(new java.awt.Color(255, 255, 255));
-        Name.setText("Micael Jose Ribeiro Araujo");
-
-        lbl_PhoneNumber.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_PhoneNumber.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_PhoneNumber.setText("Phone Number: 072323 123432");
-
-        lbl_YOB.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_YOB.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_YOB.setText("Year of Birth : 1997");
-
-        javax.swing.GroupLayout title_PaneLayout = new javax.swing.GroupLayout(title_Pane);
-        title_Pane.setLayout(title_PaneLayout);
-        title_PaneLayout.setHorizontalGroup(
-            title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(title_PaneLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_YOB)
-                    .addComponent(lbl_PhoneNumber)
-                    .addComponent(Name))
-                .addContainerGap(659, Short.MAX_VALUE))
-        );
-        title_PaneLayout.setVerticalGroup(
-            title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(title_PaneLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(Name)
-                .addGap(18, 18, 18)
-                .addComponent(lbl_PhoneNumber)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbl_YOB)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(title_Pane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addComponent(title_Pane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(335, Short.MAX_VALUE))
-        );
-
+        jPanel2.setLayout(new java.awt.CardLayout());
         bg.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 930, 550));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 1170, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, 1170, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 1170, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(bg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 550, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
+
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public JPanel getBookings() {
+        return btn_bookings;
+    }
+
+    public JPanel getCreateEnquiries() {
+        return this.btn_createEnquiries;
+    }
+
+    public JPanel getCreateBookings() {
+        return this.btn_createbookings;
+    }
+
+    public JPanel getProfile() {
+        return this.btn_profile;
+    }
+
+    public JPanel getLeftPanel() {
+        return this.jPanel2;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Name;
     private javax.swing.JPanel bg;
     private javax.swing.JPanel btn_bookings;
     private javax.swing.JPanel btn_createEnquiries;
@@ -283,10 +271,8 @@ public class MainView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel lbl_PhoneNumber;
-    private javax.swing.JLabel lbl_YOB;
     private javax.swing.JPanel sideMenu;
-    private javax.swing.JPanel title_Pane;
     // End of variables declaration//GEN-END:variables
 }

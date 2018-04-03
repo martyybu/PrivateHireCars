@@ -7,14 +7,14 @@ package uk.ac.gre.ma8521e.privatehirecars.GUI.Views;
 
 /**
  *
- * @author micae
+ * @author ma8521e
  */
-public class Profile extends javax.swing.JPanel {
+public class CreateEnquiry extends javax.swing.JPanel {
 
     /**
-     * Creates new form Profile
+     * Creates new form CreateEnquiry
      */
-    public Profile() {
+    public CreateEnquiry() {
         initComponents();
     }
 
@@ -33,16 +33,11 @@ public class Profile extends javax.swing.JPanel {
         lbl_PhoneNumber = new javax.swing.JLabel();
         lbl_YOB = new javax.swing.JLabel();
 
-        setMaximumSize(new java.awt.Dimension(960, 550));
-        setMinimumSize(new java.awt.Dimension(960, 550));
-        setPreferredSize(new java.awt.Dimension(960, 550));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
         title_Pane.setBackground(new java.awt.Color(110, 89, 222));
 
         Name.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name.setForeground(new java.awt.Color(255, 255, 255));
-        Name.setText("Micael Jose Ribeiro Araujo");
+        Name.setText("Create Enquiry");
 
         lbl_PhoneNumber.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         lbl_PhoneNumber.setForeground(new java.awt.Color(255, 255, 255));
@@ -92,7 +87,26 @@ public class Profile extends javax.swing.JPanel {
                 .addContainerGap(335, Short.MAX_VALUE))
         );
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 550));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 930, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 930, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 550, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
 

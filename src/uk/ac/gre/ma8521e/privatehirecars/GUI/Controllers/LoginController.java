@@ -9,7 +9,6 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.LoginView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.SignUpView;
@@ -43,9 +42,13 @@ public class LoginController {
         String password = view.getPasswordTxt().getText().trim();
         Login login = new Login(username, password);
         if (login.validateLogin()) {
-            JFrame frame = new JFrame();
-            frame.add(new MainView());
-            frame.setVisible(true);
+            view.dispose();
+            MainView mainView = new MainView();
+            mainView.setVisible(true);
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            mainView.setLocation(new Point((screenSize.width / 2) - mainView.getWidth() / 2, (screenSize.height / 2) - mainView.getHeight() / 2));
+            MainController mC =new MainController();
+            mC.addView(mainView);
         } else {
             JOptionPane.showMessageDialog(view,
                     login.getMessage().get(0));
@@ -53,7 +56,6 @@ public class LoginController {
 
     }
 
-    
     public void signupButtonPressed(ActionEvent evt) {
         SignUpView SignUpView = new SignUpView();
         view.dispose();

@@ -7,14 +7,14 @@ package uk.ac.gre.ma8521e.privatehirecars.GUI.Views;
 
 /**
  *
- * @author micae
+ * @author ma8521e
  */
-public class Profile extends javax.swing.JPanel {
+public class BookingView extends javax.swing.JPanel {
 
     /**
-     * Creates new form Profile
+     * Creates new form BookingView
      */
-    public Profile() {
+    public BookingView() {
         initComponents();
     }
 
@@ -30,27 +30,12 @@ public class Profile extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         title_Pane = new javax.swing.JPanel();
         Name = new javax.swing.JLabel();
-        lbl_PhoneNumber = new javax.swing.JLabel();
-        lbl_YOB = new javax.swing.JLabel();
-
-        setMaximumSize(new java.awt.Dimension(960, 550));
-        setMinimumSize(new java.awt.Dimension(960, 550));
-        setPreferredSize(new java.awt.Dimension(960, 550));
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         title_Pane.setBackground(new java.awt.Color(110, 89, 222));
 
         Name.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name.setForeground(new java.awt.Color(255, 255, 255));
-        Name.setText("Micael Jose Ribeiro Araujo");
-
-        lbl_PhoneNumber.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_PhoneNumber.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_PhoneNumber.setText("Phone Number: 072323 123432");
-
-        lbl_YOB.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lbl_YOB.setForeground(new java.awt.Color(255, 255, 255));
-        lbl_YOB.setText("Year of Birth : 1997");
+        Name.setText("Your bookings");
 
         javax.swing.GroupLayout title_PaneLayout = new javax.swing.GroupLayout(title_Pane);
         title_Pane.setLayout(title_PaneLayout);
@@ -58,22 +43,15 @@ public class Profile extends javax.swing.JPanel {
             title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(title_PaneLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addGroup(title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_YOB)
-                    .addComponent(lbl_PhoneNumber)
-                    .addComponent(Name))
-                .addContainerGap(659, Short.MAX_VALUE))
+                .addComponent(Name)
+                .addContainerGap(790, Short.MAX_VALUE))
         );
         title_PaneLayout.setVerticalGroup(
             title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(title_PaneLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(Name)
-                .addGap(18, 18, 18)
-                .addComponent(lbl_PhoneNumber)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(lbl_YOB)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -92,15 +70,32 @@ public class Profile extends javax.swing.JPanel {
                 .addContainerGap(335, Short.MAX_VALUE))
         );
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 930, 550));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 930, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 930, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 550, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Name;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel lbl_PhoneNumber;
-    private javax.swing.JLabel lbl_YOB;
     private javax.swing.JPanel title_Pane;
     // End of variables declaration//GEN-END:variables
 }
