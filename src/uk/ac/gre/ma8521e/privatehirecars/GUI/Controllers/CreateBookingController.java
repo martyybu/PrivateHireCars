@@ -37,8 +37,8 @@ import uk.ac.gre.ma8521e.privatehirecars.Utils;
  */
 public class CreateBookingController {
 
-    CreateBooking view;
-    Journey journey;
+    private CreateBooking view;
+    private Journey journey;
 
     public CreateBookingController() {
 

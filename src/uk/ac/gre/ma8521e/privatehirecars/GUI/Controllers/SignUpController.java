@@ -23,8 +23,8 @@ import uk.ac.gre.ma8521e.privatehirecars.PasswordHash;
  */
 public class SignUpController {
 
-    SignUpView view;
-    String errorMessage;
+    private SignUpView view;
+    private String errorMessage;
 
     public SignUpController() {
 

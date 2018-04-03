@@ -5,6 +5,11 @@
  */
 package uk.ac.gre.ma8521e.privatehirecars.GUI.Views;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
 /**
  *
  * @author ma8521e
@@ -30,21 +35,27 @@ public class BookingView extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         title_Pane = new javax.swing.JPanel();
         Name = new javax.swing.JLabel();
+        leftButton = new javax.swing.JLabel();
+        rightLbl = new javax.swing.JLabel();
+        Name7 = new javax.swing.JLabel();
+        priceLbl = new javax.swing.JLabel();
         Name1 = new javax.swing.JLabel();
-        Name2 = new javax.swing.JLabel();
-        Name3 = new javax.swing.JLabel();
-        Name4 = new javax.swing.JLabel();
         Name5 = new javax.swing.JLabel();
         Name6 = new javax.swing.JLabel();
-        Name7 = new javax.swing.JLabel();
+        Name3 = new javax.swing.JLabel();
         Name8 = new javax.swing.JLabel();
+        Name2 = new javax.swing.JLabel();
         Name9 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        reviewText = new javax.swing.JScrollPane();
+        textArea = new javax.swing.JTextArea();
         send = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        Name10 = new javax.swing.JLabel();
+        fromLbl = new javax.swing.JLabel();
+        toLbl = new javax.swing.JLabel();
+        dateLbl = new javax.swing.JLabel();
+        durationLbl = new javax.swing.JLabel();
+        driverLbl = new javax.swing.JLabel();
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -73,63 +84,59 @@ public class BookingView extends javax.swing.JPanel {
 
         jPanel2.add(title_Pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, 990, -1));
 
+        leftButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/icons8_Long_Arrow_Left_40px.png"))); // NOI18N
+        jPanel2.add(leftButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 40, 30));
+
+        rightLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/icons8_Right_Arrow_40px.png"))); // NOI18N
+        jPanel2.add(rightLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 340, 40, 30));
+
+        Name7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Name7.setText("Date:");
+        jPanel2.add(Name7, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, -1, -1));
+
+        priceLbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        priceLbl.setForeground(new java.awt.Color(51, 51, 51));
+        priceLbl.setText("Price");
+        jPanel2.add(priceLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, -1, -1));
+
         Name1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name1.setForeground(new java.awt.Color(51, 51, 51));
         Name1.setText("To:");
-        jPanel2.add(Name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, -1, -1));
-
-        Name2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name2.setForeground(new java.awt.Color(255, 204, 0));
-        Name2.setText("*****");
-        jPanel2.add(Name2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 270, -1, -1));
-
-        Name3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name3.setForeground(new java.awt.Color(51, 51, 51));
-        Name3.setText("Price:");
-        jPanel2.add(Name3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 440, -1, -1));
-
-        Name4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name4.setForeground(new java.awt.Color(51, 51, 51));
-        Name4.setText("From:");
-        jPanel2.add(Name4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, -1, -1));
+        jPanel2.add(Name1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 320, -1, -1));
 
         Name5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name5.setForeground(new java.awt.Color(51, 51, 51));
         Name5.setText("Duration:");
-        jPanel2.add(Name5, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, -1, -1));
+        jPanel2.add(Name5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 350, -1, -1));
 
         Name6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name6.setForeground(new java.awt.Color(51, 51, 51));
         Name6.setText("Driver:");
-        jPanel2.add(Name6, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, -1, -1));
+        jPanel2.add(Name6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 380, -1, -1));
 
-        Name7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name7.setText("Date:");
-        jPanel2.add(Name7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, -1, -1));
+        Name3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Name3.setForeground(new java.awt.Color(51, 51, 51));
+        Name3.setText("Price:");
+        jPanel2.add(Name3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, -1, -1));
 
         Name8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name8.setText("Rating:");
-        jPanel2.add(Name8, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 270, -1, -1));
+        jPanel2.add(Name8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 250, -1, -1));
+
+        Name2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Name2.setForeground(new java.awt.Color(255, 204, 0));
+        Name2.setText("*****");
+        jPanel2.add(Name2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, -1, -1));
 
         Name9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name9.setText("Review:");
-        jPanel2.add(Name9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, -1, -1));
+        jPanel2.add(Name9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 280, -1, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        textArea.setColumns(20);
+        textArea.setRows(5);
+        reviewText.setViewportView(textArea);
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 330, 340, 120));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/icons8_Long_Arrow_Left_40px.png"))); // NOI18N
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 40, 30));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/icons8_Right_Arrow_40px.png"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 340, 40, 30));
-
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        jButton1.setText("Receipt");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 480, -1, -1));
+        jPanel2.add(reviewText, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 340, 120));
 
         send.setText("Send Review");
         send.addActionListener(new java.awt.event.ActionListener() {
@@ -137,17 +144,53 @@ public class BookingView extends javax.swing.JPanel {
                 sendActionPerformed(evt);
             }
         });
-        jPanel2.add(send, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, -1, -1));
+        jPanel2.add(send, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 500, -1, -1));
+
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jButton1.setText("Receipt");
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 500, -1, -1));
+
+        Name10.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Name10.setForeground(new java.awt.Color(51, 51, 51));
+        Name10.setText("From:");
+        jPanel2.add(Name10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, -1, -1));
+
+        fromLbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        fromLbl.setForeground(new java.awt.Color(51, 51, 51));
+        fromLbl.setText("Street");
+        jPanel2.add(fromLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, -1, -1));
+
+        toLbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        toLbl.setForeground(new java.awt.Color(51, 51, 51));
+        toLbl.setText("Street");
+        jPanel2.add(toLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, -1, -1));
+
+        dateLbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        dateLbl.setForeground(new java.awt.Color(51, 51, 51));
+        dateLbl.setText("Date");
+        jPanel2.add(dateLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, -1));
+
+        durationLbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        durationLbl.setForeground(new java.awt.Color(51, 51, 51));
+        durationLbl.setText("Duration");
+        jPanel2.add(durationLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, -1, -1));
+
+        driverLbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        driverLbl.setForeground(new java.awt.Color(51, 51, 51));
+        driverLbl.setText("Driver");
+        jPanel2.add(driverLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 970, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -155,25 +198,74 @@ public class BookingView extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_sendActionPerformed
 
+    public JLabel getDateLbl() {
+        return this.dateLbl;
+    }
 
+    public JLabel getDriverLbl() {
+        return this.driverLbl;
+    }
+
+    public JLabel getDurationLbl() {
+        return this.durationLbl;
+    }
+    
+    public JLabel getfromLbl(){
+        return this.fromLbl;
+    }
+    
+    public JLabel getToLbl(){
+        return this.toLbl;
+    }
+    
+    public JLabel getPriceLbl(){
+        return this.priceLbl;
+    }
+    
+    public JButton getSendButton(){
+        return this.send;
+    }
+    
+    public JButton getReceiptButton(){
+        return this.jButton1;
+    }
+    
+    public JTextArea getReviewTxt(){
+        return this.textArea;
+    }
+    
+    public JLabel getLeftBtn(){
+        return this.leftButton;
+    }
+    
+    public JLabel getRightBtn(){
+        return this.rightLbl;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Name;
     private javax.swing.JLabel Name1;
+    private javax.swing.JLabel Name10;
     private javax.swing.JLabel Name2;
     private javax.swing.JLabel Name3;
-    private javax.swing.JLabel Name4;
     private javax.swing.JLabel Name5;
     private javax.swing.JLabel Name6;
     private javax.swing.JLabel Name7;
     private javax.swing.JLabel Name8;
     private javax.swing.JLabel Name9;
+    private javax.swing.JLabel dateLbl;
+    private javax.swing.JLabel driverLbl;
+    private javax.swing.JLabel durationLbl;
+    private javax.swing.JLabel fromLbl;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JLabel leftButton;
+    private javax.swing.JLabel priceLbl;
+    private javax.swing.JScrollPane reviewText;
+    private javax.swing.JLabel rightLbl;
     private javax.swing.JButton send;
+    private javax.swing.JTextArea textArea;
     private javax.swing.JPanel title_Pane;
+    private javax.swing.JLabel toLbl;
     // End of variables declaration//GEN-END:variables
 }

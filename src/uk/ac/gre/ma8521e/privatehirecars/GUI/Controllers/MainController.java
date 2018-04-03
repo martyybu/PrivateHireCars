@@ -78,6 +78,8 @@ public class MainController {
         resetColor(view.getProfile());
         setColor(view.getBookings());
         BookingView bookingView = new BookingView();
+        BookingsController bookingsController = new BookingsController();
+        bookingsController.addView(bookingView);
         changeLeftPanel(bookingView);
     }
 

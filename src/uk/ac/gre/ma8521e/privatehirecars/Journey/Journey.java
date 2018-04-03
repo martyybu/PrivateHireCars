@@ -24,6 +24,7 @@ public class Journey {
     private Payment payment;
     private BigDecimal price;
     private JourneyNotification notification;
+    private String review;
 
     public Journey(Journey journey) {
         this.startingLocation = journey.getStartingLocation();
@@ -65,6 +66,15 @@ public class Journey {
         return notification;
     }
 
+    /**#
+     * Returns the customer review
+     * 
+     * @return 
+     */
+    public String getReview(){
+        return this.review;
+    }
+    
     /**
      * Returns the starting Location
      *
@@ -74,6 +84,8 @@ public class Journey {
         return this.startingLocation;
     }
 
+    
+    
     /**
      * Returns the destination location
      *
@@ -213,6 +225,10 @@ public class Journey {
         this.passenger = passenger;
     }
 
+    public void addReview(String review){
+        this.review=review;
+    }
+    
     /**
      * Set journeyNotification
      *
