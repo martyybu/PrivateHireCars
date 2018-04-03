@@ -76,7 +76,7 @@ public class CreateBookingController {
     }
 
     public void btnAvailability(ActionEvent evt) {
-
+        if(journey!=null){
         //Check if locations are valid
         if (new MapsApiImpl().getLocation(view.getTo().getText()) == null || new MapsApiImpl().getLocation(view.getFrom().getText()) == null) {
             JOptionPane.showMessageDialog(view,
@@ -106,7 +106,7 @@ public class CreateBookingController {
         }
         Date date = (Date) view.getDate().getValue();
 
-        Journey journey = new Journey.Builder()
+        journey = new Journey.Builder()
                 .setFrom(fromTemp)
                 .setTo(toTemp)
                 .setCar(new CarDaoImpl().getCar(carString[2]))
@@ -116,11 +116,12 @@ public class CreateBookingController {
                 .setDate(date)
                 .setDuration(new MapsApiImpl().getDuration(to, from) * 1)
                 .setState(JourneyState.SCHEDULE).build();
-        view.getFinalPrice().setText(journey.getPrice() + " ");
+        view.getFinalPrice().setText("£"+journey.getPrice() + " - "+"£"+journey.getPrice()+2);
         view.getDuration().setText(journey.getDuration() + ""+" min");
-        view.getDriver().setText(journey.getDriver().getFirstName() +" "+journey.getDriver().getLastName()+ "   " + journey.getDriver().getRating() + "*");
+        view.getDriver().setText(journey.getDriver().getFirstName() +" "+journey.getDriver().getLastName()+ " Rating:   " + journey.getDriver().getRating() + "*");
          //Check if user has a card and if so check the balance
         //then Create Journey
+        }
     }
 
     public Driver getDriver(Car car) {

@@ -108,12 +108,8 @@ public class Journey {
      * @return
      */
     public BigDecimal getPrice() {
-        if (this.state != JourneyState.FINISHED) {
-            return null;
-        } else {
-            price = new BigDecimal(duration).multiply(BigDecimal.valueOf(0.4 + 4.0));
+            price = new BigDecimal(duration).multiply(BigDecimal.valueOf(0.4)).add(BigDecimal.valueOf(4));
             return price;
-        }
     }
 
     /**

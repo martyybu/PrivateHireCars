@@ -178,22 +178,22 @@ public class CreateBooking extends javax.swing.JPanel {
         add(confirmButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 500, -1, -1));
 
         Name4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name4.setText("Total Price: ");
+        Name4.setText("Estimated Price: ");
         add(Name4, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 260, -1, -1));
 
         finalPrice.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         finalPrice.setForeground(new java.awt.Color(51, 51, 51));
         finalPrice.setText("Check availability");
-        add(finalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 260, -1, -1));
+        add(finalPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 260, -1, -1));
 
         Name8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name8.setText("Duration:");
+        Name8.setText("Estimated Duration:");
         add(Name8, new org.netbeans.lib.awtextra.AbsoluteConstraints(49, 329, -1, -1));
 
         duration.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         duration.setForeground(new java.awt.Color(51, 51, 51));
         duration.setText("Check availability");
-        add(duration, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 329, -1, -1));
+        add(duration, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, -1, -1));
 
         Name9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name9.setText("Driver:");
@@ -202,7 +202,7 @@ public class CreateBooking extends javax.swing.JPanel {
         driver.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         driver.setForeground(new java.awt.Color(51, 51, 51));
         driver.setText("Check availability");
-        add(driver, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 397, -1, -1));
+        add(driver, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 400, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
     public JButton getAvailabilityButton() {
