@@ -137,7 +137,7 @@ public class CreateBookingController {
         List<Driver> drivers = new DriverDaoImpl().getAllDrivers();
         for (Driver driver : drivers) {
             if (driver.getCar().VIN.equals(VIN)) {
-                if (driver.isOnaJourney() != false) {
+                if (driver.isOnaJourney() == false) {
                     return true;
                 }
             }
