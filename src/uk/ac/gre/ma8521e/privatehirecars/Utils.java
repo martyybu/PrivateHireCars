@@ -11,15 +11,23 @@ package uk.ac.gre.ma8521e.privatehirecars;
  */
 public class Utils {
 
-    public static boolean fromStringtoBoolean(String b)  {
+    public static boolean fromStringtoBoolean(String b) {
         return b.equals("Y");
     }
-    
-    public static String frommBooleanToString(Boolean b){
-        if(b==true){
+
+    public static String frommBooleanToString(Boolean b) {
+        if (b == true) {
             return "Y";
-        }else{
+        } else {
             return "N";
+        }
+    }
+
+    public static boolean isFieldEmpty(String text) {
+        if (text == null || text.isEmpty()) {
+            return true;
+        } else {
+            return false;
         }
     }
 }
