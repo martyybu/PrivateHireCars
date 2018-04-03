@@ -5,6 +5,10 @@
  */
 package uk.ac.gre.ma8521e.privatehirecars.GUI.Views;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JEditorPane;
+
 /**
  *
  * @author ma8521e
@@ -29,13 +33,24 @@ public class EnquiryView extends javax.swing.JPanel {
 
         jPanel2 = new javax.swing.JPanel();
         title_Pane = new javax.swing.JPanel();
-        Name = new javax.swing.JLabel();
+        listOfEnquiries = new javax.swing.JComboBox<>();
+        Name1 = new javax.swing.JLabel();
+        Name3 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        textBox = new javax.swing.JEditorPane();
+        Name2 = new javax.swing.JLabel();
+        listofTrips = new javax.swing.JComboBox<>();
+        sendBtn = new javax.swing.JButton();
 
         title_Pane.setBackground(new java.awt.Color(110, 89, 222));
 
-        Name.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name.setForeground(new java.awt.Color(255, 255, 255));
-        Name.setText("Enquiry");
+        Name1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Name1.setForeground(new java.awt.Color(255, 255, 255));
+        Name1.setText("Enquiry");
+
+        Name3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        Name3.setForeground(new java.awt.Color(255, 255, 255));
+        Name3.setText("List of enquiries");
 
         javax.swing.GroupLayout title_PaneLayout = new javax.swing.GroupLayout(title_Pane);
         title_Pane.setLayout(title_PaneLayout);
@@ -43,16 +58,36 @@ public class EnquiryView extends javax.swing.JPanel {
             title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(title_PaneLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addComponent(Name)
-                .addContainerGap(848, Short.MAX_VALUE))
+                .addGroup(title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Name1)
+                    .addComponent(Name3)
+                    .addComponent(listOfEnquiries, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(737, Short.MAX_VALUE))
         );
         title_PaneLayout.setVerticalGroup(
             title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(title_PaneLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(Name)
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addGap(13, 13, 13)
+                .addComponent(Name1)
+                .addGap(18, 18, 18)
+                .addComponent(Name3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(listOfEnquiries, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
         );
+
+        jScrollPane1.setViewportView(textBox);
+
+        Name2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Name2.setForeground(new java.awt.Color(51, 51, 51));
+        Name2.setText("Is this regarding one of your early trips?");
+
+        sendBtn.setText("Send");
+        sendBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sendBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -61,13 +96,29 @@ public class EnquiryView extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(title_Pane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(listofTrips, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Name2)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sendBtn, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addComponent(title_Pane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(335, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Name2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(listofTrips, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(sendBtn)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -83,7 +134,7 @@ public class EnquiryView extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+            .addGap(0, 553, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -92,10 +143,38 @@ public class EnquiryView extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void sendBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sendBtnActionPerformed
 
+    public JComboBox getlistOfEnquiries(){
+        return this.listOfEnquiries;
+    }
+    
+    public JComboBox getlistofTrips(){
+        return this.listofTrips;
+    }
+    
+    
+    public JButton getsendBtn(){
+       return this.sendBtn; 
+    }
+    
+    public JEditorPane getTextBox(){
+        return this.textBox;
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Name;
+    private javax.swing.JLabel Name1;
+    private javax.swing.JLabel Name2;
+    private javax.swing.JLabel Name3;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> listOfEnquiries;
+    private javax.swing.JComboBox<String> listofTrips;
+    private javax.swing.JButton sendBtn;
+    private javax.swing.JEditorPane textBox;
     private javax.swing.JPanel title_Pane;
     // End of variables declaration//GEN-END:variables
 }

@@ -196,7 +196,7 @@ public class MainView extends javax.swing.JFrame {
         sideMenu.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/taxi_128x.png"))); // NOI18N
-        sideMenu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 140, 140));
+        sideMenu.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 140, 140));
 
         bg.add(sideMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 550));
 
