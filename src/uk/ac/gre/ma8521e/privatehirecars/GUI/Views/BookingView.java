@@ -6,9 +6,8 @@
 package uk.ac.gre.ma8521e.privatehirecars.GUI.Views;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 /**
@@ -36,6 +35,7 @@ public class BookingView extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         title_Pane = new javax.swing.JPanel();
         Name = new javax.swing.JLabel();
+        Bookings = new javax.swing.JComboBox<>();
         Name7 = new javax.swing.JLabel();
         priceLbl = new javax.swing.JLabel();
         Name1 = new javax.swing.JLabel();
@@ -55,10 +55,6 @@ public class BookingView extends javax.swing.JPanel {
         dateLbl = new javax.swing.JLabel();
         durationLbl = new javax.swing.JLabel();
         driverLbl = new javax.swing.JLabel();
-        leftBtn = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        rightBtn = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(930, 550));
 
@@ -76,7 +72,9 @@ public class BookingView extends javax.swing.JPanel {
             title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(title_PaneLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
-                .addComponent(Name)
+                .addGroup(title_PaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Bookings, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(820, Short.MAX_VALUE))
         );
         title_PaneLayout.setVerticalGroup(
@@ -84,7 +82,9 @@ public class BookingView extends javax.swing.JPanel {
             .addGroup(title_PaneLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(Name)
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(Bookings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         jPanel2.add(title_Pane, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 65, 990, -1));
@@ -178,46 +178,6 @@ public class BookingView extends javax.swing.JPanel {
         driverLbl.setText("Driver");
         jPanel2.add(driverLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 380, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/icons8_Long_Arrow_Left_40px.png"))); // NOI18N
-        jLabel2.setToolTipText("");
-
-        javax.swing.GroupLayout leftBtnLayout = new javax.swing.GroupLayout(leftBtn);
-        leftBtn.setLayout(leftBtnLayout);
-        leftBtnLayout.setHorizontalGroup(
-            leftBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(leftBtnLayout.createSequentialGroup()
-                .addComponent(jLabel2)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        leftBtnLayout.setVerticalGroup(
-            leftBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, leftBtnLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel2))
-        );
-
-        jPanel2.add(leftBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 40, 40));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/icons8_Right_Arrow_40px.png"))); // NOI18N
-        jLabel1.setToolTipText("");
-
-        javax.swing.GroupLayout rightBtnLayout = new javax.swing.GroupLayout(rightBtn);
-        rightBtn.setLayout(rightBtnLayout);
-        rightBtnLayout.setHorizontalGroup(
-            rightBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightBtnLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1))
-        );
-        rightBtnLayout.setVerticalGroup(
-            rightBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightBtnLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel1))
-        );
-
-        jPanel2.add(rightBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(855, 350, -1, -1));
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -274,15 +234,12 @@ public class BookingView extends javax.swing.JPanel {
         return this.textArea;
     }
     
-    public JPanel getLeftBtn(){
-        return this.leftBtn;
-    }
-    
-    public JPanel getRightBtn(){
-        return this.rightBtn;
+    public JComboBox<String> getBookingsCombo(){
+        return this.Bookings;
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> Bookings;
     private javax.swing.JLabel Name;
     private javax.swing.JLabel Name1;
     private javax.swing.JLabel Name10;
@@ -298,13 +255,9 @@ public class BookingView extends javax.swing.JPanel {
     private javax.swing.JLabel durationLbl;
     private javax.swing.JLabel fromLbl;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel leftBtn;
     private javax.swing.JLabel priceLbl;
     private javax.swing.JScrollPane reviewText;
-    private javax.swing.JPanel rightBtn;
     private javax.swing.JButton send;
     private javax.swing.JTextArea textArea;
     private javax.swing.JPanel title_Pane;
