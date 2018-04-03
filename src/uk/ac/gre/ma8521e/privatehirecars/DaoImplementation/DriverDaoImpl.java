@@ -82,7 +82,7 @@ public class DriverDaoImpl implements DriverDao {
                         .setRating(rs.getInt("rating"))
                         .setPerson(new PersonDaoImpl().getPerson(rs.getString("PersonID")))
                         .setCar(new CarDaoImpl().getCar(rs.getString("Car")))
-                        .setonJourney(rs.getBoolean("onJourneys"))
+                        .setonJourney(Utils.fromStringtoBoolean(rs.getString("onJourneys")))
                         .build();
 
             }
