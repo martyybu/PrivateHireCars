@@ -33,5 +33,7 @@ public class Enquiry {
     public String getEnquiry(){return this.enquiry;}
     public void changeEnquiry(String enquiry){this.enquiry=enquiry;}
     public void answer(String answer){this.answer=answer;}
+    @Override
+    public String toString(){return this.enquiry+ " | "+this.ID;}
     
 }

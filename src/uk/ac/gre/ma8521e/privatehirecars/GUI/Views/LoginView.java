@@ -34,7 +34,6 @@ public class LoginView extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        keepmeLoggedinCheckbox = new javax.swing.JCheckBox();
         iconLabel = new javax.swing.JLabel();
         usernameLabel = new javax.swing.JLabel();
         passwordLabel = new javax.swing.JLabel();
@@ -42,23 +41,12 @@ public class LoginView extends javax.swing.JFrame {
         passwordTxt = new javax.swing.JPasswordField();
         loginButton = new javax.swing.JButton();
         signupButton = new javax.swing.JButton();
-        menuBar = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(400, 508));
         setMinimumSize(new java.awt.Dimension(400, 508));
         setPreferredSize(new java.awt.Dimension(400, 508));
         getContentPane().setLayout(new java.awt.GridBagLayout());
-
-        keepmeLoggedinCheckbox.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        keepmeLoggedinCheckbox.setText("Keep me logged in");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        getContentPane().add(keepmeLoggedinCheckbox, gridBagConstraints);
 
         iconLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/taxi_128x.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -82,15 +70,15 @@ public class LoginView extends javax.swing.JFrame {
         getContentPane().add(passwordLabel, gridBagConstraints);
 
         usernameTxt.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
-        usernameTxt.setMinimumSize(new java.awt.Dimension(102, 22));
-        usernameTxt.setPreferredSize(new java.awt.Dimension(102, 22));
+        usernameTxt.setMinimumSize(new java.awt.Dimension(102, 27));
+        usernameTxt.setPreferredSize(new java.awt.Dimension(102, 27));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 6;
         getContentPane().add(usernameTxt, gridBagConstraints);
 
-        passwordTxt.setMinimumSize(new java.awt.Dimension(102, 20));
-        passwordTxt.setPreferredSize(new java.awt.Dimension(102, 20));
+        passwordTxt.setMinimumSize(new java.awt.Dimension(102, 27));
+        passwordTxt.setPreferredSize(new java.awt.Dimension(102, 27));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 7;
@@ -117,15 +105,6 @@ public class LoginView extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(17, 2, 3, 8);
         getContentPane().add(signupButton, gridBagConstraints);
 
-        jMenu1.setText("File");
-        menuBar.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        menuBar.add(jMenu2);
-
-        setJMenuBar(menuBar);
-        menuBar.getAccessibleContext().setAccessibleName("menuBar");
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -135,9 +114,6 @@ public class LoginView extends javax.swing.JFrame {
         return this.iconLabel;
     }
 
-    public JCheckBox getKeepmeLogged() {
-        return this.keepmeLoggedinCheckbox;
-    }
 
     public JButton getLoginButton() {
         return this.loginButton;
@@ -165,11 +141,7 @@ public class LoginView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel iconLabel;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JCheckBox keepmeLoggedinCheckbox;
     private javax.swing.JButton loginButton;
-    private javax.swing.JMenuBar menuBar;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JPasswordField passwordTxt;
     private javax.swing.JButton signupButton;

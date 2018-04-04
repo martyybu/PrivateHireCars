@@ -8,6 +8,7 @@ import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.BookingView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.CreateBooking;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.CreateEnquiry;
+import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.EnquiryView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.MainView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.Profile;
 
@@ -89,7 +90,7 @@ public class MainController {
         setColor(view.getCreateEnquiries());
         resetColor(view.getProfile());
         resetColor(view.getBookings());
-        CreateEnquiry createEnquiryView = new CreateEnquiry();
+        EnquiryView createEnquiryView = new EnquiryView();
         changeLeftPanel(createEnquiryView);
     }
 

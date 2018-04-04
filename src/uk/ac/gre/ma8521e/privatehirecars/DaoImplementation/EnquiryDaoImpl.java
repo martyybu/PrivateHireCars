@@ -9,11 +9,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
 import uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects.EnquiryDao;
 import uk.ac.gre.ma8521e.privatehirecars.Database;
 import uk.ac.gre.ma8521e.privatehirecars.Enquiry;
-import uk.ac.gre.ma8521e.privatehirecars.Utils;
 
 /**
  *
@@ -56,14 +54,14 @@ public class EnquiryDaoImpl implements EnquiryDao {
     }
 
     @Override
-    public List<Enquiry> getPersonEnquiries(int personID) {
+    public List<Enquiry> getPersonEnquiries(String personID) {
         List<Enquiry> enquiry = null;
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
             String query = "SELECT * FROM Enquiry WHERE PersonID= ?";
             stmt = Database.getInstance().prepareStatement(query);
-            stmt.setInt(1,personID);
+            stmt.setString(1,personID);
             rs = stmt.executeQuery();
             while (rs.next()) {
                 Enquiry enquiryobj= new Enquiry(rs.getInt(1),rs.getString(2),rs.getString(3),new PersonDaoImpl().getPerson(rs.getString(4)),new PersonDaoImpl().getPerson(rs.getString(5)));

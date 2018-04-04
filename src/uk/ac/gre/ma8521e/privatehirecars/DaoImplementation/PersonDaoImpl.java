@@ -135,6 +135,7 @@ public class PersonDaoImpl implements PersonDao {
                         .setID(rs.getString("PersonID"))
                         .setPhoneNumber(rs.getString("phoneNumber"))
                         .setYearOfBirth(rs.getInt("yob"))
+                        
                         .build();
             }
         } catch (SQLException|NullPointerException e) {

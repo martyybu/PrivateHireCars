@@ -108,6 +108,11 @@ public class Passenger extends Person implements PersonI{
         return super.getID();
     }
 
+    @Override
+    public String toString() {
+        return "ID: " + super.getID() + " , FirstName: " + getFirstName() + " , LastName: " + getLastName() + " ,Year of Birth:" + this.getYearOfBirthday() + " ,Gender:" + getGender()+""+getCard();
+    }
+
     public static final class Builder {
 
         private int PASSENGER_ID;

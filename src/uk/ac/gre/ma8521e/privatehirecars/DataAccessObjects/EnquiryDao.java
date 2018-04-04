@@ -15,7 +15,7 @@ import uk.ac.gre.ma8521e.privatehirecars.Enquiry;
 public interface EnquiryDao {
     
     public Enquiry getEnquiry(int ID);
-    public List<Enquiry> getPersonEnquiries(int personID);
+    public List<Enquiry> getPersonEnquiries(String personID);
     public void updateEnquiry(Enquiry enquiry);
     public void insertEnquiry(Enquiry enquiry);
 }

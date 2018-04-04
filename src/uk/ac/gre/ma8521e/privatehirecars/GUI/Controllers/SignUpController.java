@@ -14,6 +14,7 @@ import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.PersonFactory;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PassengerDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PersonDaoImpl;
+import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.LoginView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.SignUpView;
 import uk.ac.gre.ma8521e.privatehirecars.PasswordHash;
 
@@ -61,6 +62,10 @@ public class SignUpController {
                         .build();
                  JOptionPane.showMessageDialog(view,
                     "Signed up succefully!");
+                 view.dispose();;
+                 LoginView loginView= new LoginView();
+                 new LoginController().addView(loginView);
+                 loginView.setVisible(true);
                 new PassengerDaoImpl().createPassenger(passenger);
             } catch (NoSuchAlgorithmException | InvalidKeySpecException | ParseException ex) {
                 Logger.getLogger(SignUpController.class.getName()).log(Level.SEVERE, null, ex);
