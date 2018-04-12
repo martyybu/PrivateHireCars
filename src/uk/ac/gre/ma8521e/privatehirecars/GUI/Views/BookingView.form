@@ -199,11 +199,11 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Rate Car:"/>
+            <Property name="text" type="java.lang.String" value="Rate Journey:"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="680" y="250" width="-1" height="-1"/>
+              <AbsoluteConstraints x="650" y="250" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -389,7 +389,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="770" y="250" width="110" height="-1"/>
+              <AbsoluteConstraints x="780" y="250" width="110" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -430,7 +430,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="550" y="290" width="110" height="-1"/>
+              <AbsoluteConstraints x="530" y="290" width="110" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -439,7 +439,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="18" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Rate Journey:"/>
+            <Property name="text" type="java.lang.String" value="Rate Car:"/>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -471,7 +471,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="550" y="250" width="110" height="-1"/>
+              <AbsoluteConstraints x="530" y="250" width="110" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

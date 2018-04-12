@@ -123,8 +123,8 @@ public class BookingView extends javax.swing.JPanel {
         jPanel2.add(Name3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, -1, -1));
 
         Name8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name8.setText("Rate Car:");
-        jPanel2.add(Name8, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 250, -1, -1));
+        Name8.setText("Rate Journey:");
+        jPanel2.add(Name8, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 250, -1, -1));
 
         Name9.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name9.setText("Review:");
@@ -186,7 +186,7 @@ public class BookingView extends javax.swing.JPanel {
         carRating.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         carRating.setForeground(new java.awt.Color(255, 204, 0));
         carRating.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Unknown", "*", "**", "***", "****", "*****" }));
-        jPanel2.add(carRating, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 250, 110, -1));
+        jPanel2.add(carRating, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 250, 110, -1));
 
         Name11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name11.setText("Rate Driver:");
@@ -195,16 +195,16 @@ public class BookingView extends javax.swing.JPanel {
         driverRating.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         driverRating.setForeground(new java.awt.Color(255, 204, 0));
         driverRating.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Unknown", "*", "**", "***", "****", "*****" }));
-        jPanel2.add(driverRating, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, 110, -1));
+        jPanel2.add(driverRating, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 290, 110, -1));
 
         Name12.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name12.setText("Rate Journey:");
+        Name12.setText("Rate Car:");
         jPanel2.add(Name12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, -1, -1));
 
         ratingCombo2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         ratingCombo2.setForeground(new java.awt.Color(255, 204, 0));
         ratingCombo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Unknown", "*", "**", "***", "****", "*****" }));
-        jPanel2.add(ratingCombo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 250, 110, -1));
+        jPanel2.add(ratingCombo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 110, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
