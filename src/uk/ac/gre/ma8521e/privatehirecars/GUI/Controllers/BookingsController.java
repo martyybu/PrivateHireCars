@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
@@ -12,6 +13,7 @@ import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.BookingView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.ReceiptView;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.JourneyState;
+import uk.ac.gre.ma8521e.privatehirecars.PrivateHireCars;
 
 /**
  *
@@ -76,6 +78,11 @@ public class BookingsController {
 
     public void updateJourneys() {
         journeys = new JourneyDaoImpl().getAllJourneys();
+        //looping through the journeys to get the ones that belong to the user
+        List<Journey> relevantJourneys = new ArrayList<>();
+        journeys.stream().filter((journey) -> (journey.getPassenger().getID() == null ? PrivateHireCars.getPerson().getID() == null : journey.getPassenger().getID().equals(PrivateHireCars.getPerson().getID()))).forEachOrdered((journey) -> {
+            relevantJourneys.add(journey);
+        });
     }
 
     public void sendBtn(ActionEvent evt) {

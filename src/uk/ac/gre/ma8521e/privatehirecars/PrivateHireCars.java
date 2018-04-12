@@ -9,12 +9,6 @@ import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
-import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.CarDaoImpl;
-import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.CardDaoImpl;
-import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.DriverDaoImpl;
-import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.JourneyDaoImpl;
-import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PassengerDaoImpl;
-import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PersonDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Controllers.LoginController;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.LoginView;
 
@@ -23,13 +17,15 @@ import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.LoginView;
  * @author micae
  */
 public class PrivateHireCars {
-   
-    
+
+    //Current session
+    private static Person person;
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
- /* Set the Nimbus look and feel */
+        /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -57,12 +53,18 @@ public class PrivateHireCars {
             public void run() {
                 Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
                 LoginView loginView = new LoginView();
-                loginView.setLocation(new Point((screenSize.width/2)-loginView.getWidth()/2,(screenSize.height/2)-loginView.getHeight()/2));
+                loginView.setLocation(new Point((screenSize.width / 2) - loginView.getWidth() / 2, (screenSize.height / 2) - loginView.getHeight() / 2));
                 LoginController loginController = new LoginController();
                 loginController.addView(loginView);
                 loginView.setVisible(true);
             }
         });
     }
-    
+
+    public static Person getPerson() {
+        return person;
+    }
+    public static void setPerson(Person p) {
+         person=p;
+    }
 }

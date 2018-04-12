@@ -8,14 +8,12 @@ package uk.ac.gre.ma8521e.privatehirecars.GUI.Controllers;
 import java.awt.event.ActionEvent;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
-import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.CarDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.EnquiryDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.JourneyDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.Enquiry;
-import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.CreateEnquiry;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.EnquiryView;
-import uk.ac.gre.ma8521e.privatehirecars.Journey.Car;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
+import uk.ac.gre.ma8521e.privatehirecars.PrivateHireCars;
 
 /**
  *
@@ -86,7 +84,7 @@ public class EnquiryController {
     }
 
     void loadEnquiries() {
-        List<Enquiry> enquiries = new EnquiryDaoImpl().getPersonEnquiries(MainController.person.getID());
+        List<Enquiry> enquiries = new EnquiryDaoImpl().getPersonEnquiries(PrivateHireCars.getPerson().getID());
         String[] carsString = new String[enquiries.size()];
         for (int i = 0; i < enquiries.size(); i++) {
             carsString[i] = enquiries.get(i).toString();

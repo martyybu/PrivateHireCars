@@ -29,6 +29,7 @@ import uk.ac.gre.ma8521e.privatehirecars.Journey.MapsApiImpl;
 import uk.ac.gre.ma8521e.privatehirecars.Payment.Credit;
 import uk.ac.gre.ma8521e.privatehirecars.Payment.ElectronicPayment;
 import uk.ac.gre.ma8521e.privatehirecars.Payment.Payment;
+import uk.ac.gre.ma8521e.privatehirecars.PrivateHireCars;
 import uk.ac.gre.ma8521e.privatehirecars.Utils;
 
 /**
@@ -97,14 +98,14 @@ public class CreateBookingController {
             int distance = new MapsApiImpl().getDistanceBetweenLocation(from, to);
 
             //check if passenger has a card
-            if (doesPersonHaveCard(MainController.person)) {
-                Passenger passenger = (Passenger) MainController.person;
+            if (doesPersonHaveCard(PrivateHireCars.getPerson())) {
+                Passenger passenger = (Passenger) PrivateHireCars.getPerson();
             } else {
                 JOptionPane.showMessageDialog(view,
                         "You havent added a card to your account. You can do it in Profile!");
                 return;
             }
-            Passenger passenger = (Passenger) MainController.person;
+            Passenger passenger = (Passenger) PrivateHireCars.getPerson();
             String[] carString = view.getCarsDrop().getSelectedItem().toString().split("-");
             if (!isCarSelectedFree(carString[2])) {
                 JOptionPane.showMessageDialog(view,

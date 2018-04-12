@@ -19,10 +19,8 @@ import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.Profile;
 public class MainController {
 
     private MainView view;
-    public static Person person;
 
-    public MainController(Person person) {
-        this.person = person;
+    public MainController() {
     }
 
     public void addView(MainView view2) {
@@ -32,9 +30,6 @@ public class MainController {
 
     }
 
-    public Person getPerson() {
-        return person;
-    }
 
     public void setupListener() {
         view.getBookings().addMouseListener(new MouseAdapter() {

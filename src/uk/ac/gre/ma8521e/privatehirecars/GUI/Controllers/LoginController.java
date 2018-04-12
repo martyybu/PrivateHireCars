@@ -51,9 +51,9 @@ public class LoginController {
             mainView.setVisible(true);
             Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
             mainView.setLocation(new Point((screenSize.width / 2) - mainView.getWidth() / 2, (screenSize.height / 2) - mainView.getHeight() / 2));
-            MainController mC =new MainController(new PersonDaoImpl().getPerson(username));
-            MainController.person=new PassengerDaoImpl().getPassenger(username);
-            System.out.println(""+(Passenger)MainController.person);
+            MainController mC =new MainController();
+            PrivateHireCars.setPerson(new PassengerDaoImpl().getPassenger(username));
+            System.out.println(""+(Passenger)PrivateHireCars.getPerson());
             mC.addView(mainView);
         } else {
             JOptionPane.showMessageDialog(view,
