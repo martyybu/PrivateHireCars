@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
-import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Driver;
@@ -28,7 +27,6 @@ import uk.ac.gre.ma8521e.privatehirecars.Journey.Location;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.MapsApiImpl;
 import uk.ac.gre.ma8521e.privatehirecars.Payment.Credit;
 import uk.ac.gre.ma8521e.privatehirecars.Payment.ElectronicPayment;
-import uk.ac.gre.ma8521e.privatehirecars.Payment.Payment;
 import uk.ac.gre.ma8521e.privatehirecars.PrivateHireCars;
 import uk.ac.gre.ma8521e.privatehirecars.Utils;
 
@@ -121,7 +119,7 @@ public class CreateBookingController {
                     .setFrom(fromTemp)
                     .setTo(toTemp)
                     .setCar(new CarDaoImpl().getCar(carString[2]))
-                    .setDriver()
+                    .setDriver(getDriver())
                     .setPassenger(passenger)
                     .setNotification(JourneyNotification.valueOf(view.getNotification().getSelectedItem().toString()))
                     .setDate(date)
