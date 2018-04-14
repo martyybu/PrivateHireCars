@@ -21,7 +21,6 @@ import uk.ac.gre.ma8521e.privatehirecars.Utils;
  */
 public class DriverDaoImpl implements DriverDao {
 
- 
     public DriverDaoImpl() {
     }
 
@@ -34,8 +33,7 @@ public class DriverDaoImpl implements DriverDao {
             String query = "SELECT * FROM Driver";
             stmt = Database.getInstance().prepareStatement(query);
             rs = stmt.executeQuery();
-            while(rs.next())
-            {
+            while (rs.next()) {
                 Driver driver = new Driver.Builder()
                         .setPerson(new PersonDaoImpl().getPerson(rs.getString("PersonID")))
                         .setID(rs.getInt("DriverID"))
@@ -109,7 +107,26 @@ public class DriverDaoImpl implements DriverDao {
 
     @Override
     public void updateDriver(Driver driver) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        PreparedStatement stmt = null;
+        try {
+            String query = "UPDATE Driver SET PersonID = ?, onJourneys = ?, rating = ?, Car = ? WHERE DriverID = ?;";
+            stmt = Database.getInstance().prepareStatement(query);
+            stmt.setString(1, driver.getID());
+            stmt.setString(2, Utils.frommBooleanToString(driver.isOnaJourney()));
+            stmt.setInt(3, driver.getRating());
+            stmt.setString(4, driver.getCar().VIN);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            if (stmt != null) {
+                try {
+                    stmt.close();
+                } catch (SQLException sqlEx) {
+                } // ignore
+                stmt = null;
+            }
+        }
     }
 
     @Override

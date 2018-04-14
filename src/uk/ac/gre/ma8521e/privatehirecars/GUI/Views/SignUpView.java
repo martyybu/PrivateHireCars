@@ -4,10 +4,12 @@
  * and open the template in the editor.
  */
 package uk.ac.gre.ma8521e.privatehirecars.GUI.Views;
+
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JTextField;
+
 /**
  *
  * @author micae
@@ -19,6 +21,8 @@ public class SignUpView extends javax.swing.JFrame {
      */
     public SignUpView() {
         initComponents();
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/taxi_128x.png")).getImage());
+
     }
 
     /**
@@ -49,7 +53,7 @@ public class SignUpView extends javax.swing.JFrame {
         genderDropDown = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("PrivateHire Cars");
+        setTitle("Home Page");
         setBackground(new java.awt.Color(51, 153, 255));
         setMaximumSize(new java.awt.Dimension(400, 508));
         setMinimumSize(new java.awt.Dimension(400, 508));
@@ -242,39 +246,38 @@ public class SignUpView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_birthDateActionPerformed
 
-
-    public JButton getSignUpButton(){
+    public JButton getSignUpButton() {
         return this.btn_signUp;
     }
-    
-    public JTextField getFirstName(){
+
+    public JTextField getFirstName() {
         return this.firstName;
     }
-    
-    public JTextField getLastName(){
+
+    public JTextField getLastName() {
         return this.lastName;
     }
-    
-    public JTextField getUsername(){
+
+    public JTextField getUsername() {
         return this.username;
     }
-    
-    public JTextField getPassword(){
+
+    public JTextField getPassword() {
         return this.jPasswordField1;
     }
-    
-    public JTextField getPhoneNumber(){
+
+    public JTextField getPhoneNumber() {
         return this.phonenumber;
     }
-    
-    public JFormattedTextField getBirthDate(){
+
+    public JFormattedTextField getBirthDate() {
         return birthDate;
     }
-    
-    public JComboBox getGender(){
+
+    public JComboBox getGender() {
         return this.genderDropDown;
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField birthDate;
     private javax.swing.JButton btn_signUp;

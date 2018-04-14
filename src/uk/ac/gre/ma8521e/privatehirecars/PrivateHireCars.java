@@ -8,6 +8,8 @@ package uk.ac.gre.ma8521e.privatehirecars;
 import java.awt.Dimension;
 import java.awt.Point;
 import java.awt.Toolkit;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Controllers.LoginController;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.LoginView;
@@ -24,7 +26,7 @@ public class PrivateHireCars {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchAlgorithmException, InvalidKeySpecException {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -59,6 +61,8 @@ public class PrivateHireCars {
                 loginView.setVisible(true);
             }
         });
+        
+        System.out.println(PasswordHash.createHash("test"));
     }
 
     public static Person getPerson() {

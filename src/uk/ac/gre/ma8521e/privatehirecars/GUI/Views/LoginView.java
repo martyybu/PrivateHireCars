@@ -6,7 +6,6 @@
 package uk.ac.gre.ma8521e.privatehirecars.GUI.Views;
 
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -22,6 +21,7 @@ public class LoginView extends javax.swing.JFrame {
      */
     public LoginView() {
         initComponents();
+        this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/taxi_128x.png")).getImage());
     }
 
     /**
@@ -41,8 +41,11 @@ public class LoginView extends javax.swing.JFrame {
         passwordTxt = new javax.swing.JPasswordField();
         loginButton = new javax.swing.JButton();
         signupButton = new javax.swing.JButton();
+        loginDebug = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Home Page");
+        setIconImages(null);
         setMaximumSize(new java.awt.Dimension(400, 508));
         setMinimumSize(new java.awt.Dimension(400, 508));
         setPreferredSize(new java.awt.Dimension(400, 508));
@@ -105,15 +108,22 @@ public class LoginView extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(17, 2, 3, 8);
         getContentPane().add(signupButton, gridBagConstraints);
 
+        loginDebug.setText("Login into debug account");
+        loginDebug.setMaximumSize(new java.awt.Dimension(180, 23));
+        loginDebug.setMinimumSize(new java.awt.Dimension(180, 23));
+        loginDebug.setPreferredSize(new java.awt.Dimension(180, 23));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 15;
+        gridBagConstraints.insets = new java.awt.Insets(17, 2, 3, 8);
+        getContentPane().add(loginDebug, gridBagConstraints);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-
 
     public JLabel getIcon() {
         return this.iconLabel;
     }
-
 
     public JButton getLoginButton() {
         return this.loginButton;
@@ -139,9 +149,14 @@ public class LoginView extends javax.swing.JFrame {
         return this.usernameTxt;
     }
 
+    public JButton getLoginDebugBtn(){
+        return this.loginDebug;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel iconLabel;
     private javax.swing.JButton loginButton;
+    private javax.swing.JButton loginDebug;
     private javax.swing.JLabel passwordLabel;
     private javax.swing.JPasswordField passwordTxt;
     private javax.swing.JButton signupButton;

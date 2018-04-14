@@ -7,10 +7,7 @@ package uk.ac.gre.ma8521e.privatehirecars;
 
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
 
-/**
- *
- * @author micae
- */
+
 public class Enquiry {
     private int ID;
     private String enquiry;

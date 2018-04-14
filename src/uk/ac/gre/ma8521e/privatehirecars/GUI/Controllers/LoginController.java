@@ -39,8 +39,29 @@ public class LoginController {
     public void setupListeners() {
         view.getLoginButton().addActionListener(evt -> loginButtonPressed(evt));
         view.getSignupButton().addActionListener(evt -> signupButtonPressed(evt));
+        view.getLoginDebugBtn().addActionListener(evt -> loginDebugPressed(evt));
     }
 
+    public void loginDebugPressed(ActionEvent evt){
+        String username = "mjra007";
+        String password = "test";
+        Login login = new Login(username, password);
+        if (login.validateLogin()) {
+            view.dispose();
+            MainView mainView = new MainView();
+            mainView.setVisible(true);
+            Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+            mainView.setLocation(new Point((screenSize.width / 2) - mainView.getWidth() / 2, (screenSize.height / 2) - mainView.getHeight() / 2));
+            MainController mC =new MainController();
+            PrivateHireCars.setPerson(new PassengerDaoImpl().getPassenger(username));
+            System.out.println(""+(Passenger)PrivateHireCars.getPerson());
+            mC.addView(mainView);
+        } else {
+            JOptionPane.showMessageDialog(view,
+                    login.getMessage().get(0));
+        }
+    }
+    
     public void loginButtonPressed(ActionEvent evt) {
         String username = view.getUsernameTxt().getText().trim();
         String password = view.getPasswordTxt().getText().trim();

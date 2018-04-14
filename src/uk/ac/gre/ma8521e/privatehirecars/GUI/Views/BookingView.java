@@ -55,11 +55,11 @@ public class BookingView extends javax.swing.JPanel {
         dateLbl = new javax.swing.JLabel();
         durationLbl = new javax.swing.JLabel();
         driverLbl = new javax.swing.JLabel();
-        carRating = new javax.swing.JComboBox<>();
+        journeyRating = new javax.swing.JComboBox<>();
         Name11 = new javax.swing.JLabel();
         driverRating = new javax.swing.JComboBox<>();
         Name12 = new javax.swing.JLabel();
-        ratingCombo2 = new javax.swing.JComboBox<>();
+        carRating = new javax.swing.JComboBox<>();
 
         setPreferredSize(new java.awt.Dimension(930, 550));
 
@@ -183,10 +183,10 @@ public class BookingView extends javax.swing.JPanel {
         driverLbl.setText("Driver");
         jPanel2.add(driverLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 380, -1, -1));
 
-        carRating.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        carRating.setForeground(new java.awt.Color(255, 204, 0));
-        carRating.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Unknown", "*", "**", "***", "****", "*****" }));
-        jPanel2.add(carRating, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 250, 110, -1));
+        journeyRating.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        journeyRating.setForeground(new java.awt.Color(255, 204, 0));
+        journeyRating.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Unknown", "*", "**", "***", "****", "*****" }));
+        jPanel2.add(journeyRating, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 250, 110, -1));
 
         Name11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         Name11.setText("Rate Driver:");
@@ -201,10 +201,10 @@ public class BookingView extends javax.swing.JPanel {
         Name12.setText("Rate Car:");
         jPanel2.add(Name12, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 250, -1, -1));
 
-        ratingCombo2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        ratingCombo2.setForeground(new java.awt.Color(255, 204, 0));
-        ratingCombo2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Unknown", "*", "**", "***", "****", "*****" }));
-        jPanel2.add(ratingCombo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 110, -1));
+        carRating.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        carRating.setForeground(new java.awt.Color(255, 204, 0));
+        carRating.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Unknown", "*", "**", "***", "****", "*****" }));
+        jPanel2.add(carRating, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 250, 110, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -241,39 +241,47 @@ public class BookingView extends javax.swing.JPanel {
     public JLabel getDurationLbl() {
         return this.durationLbl;
     }
-    
-    public JLabel getfromLbl(){
+
+    public JLabel getfromLbl() {
         return this.fromLbl;
     }
-    
-    public JLabel getToLbl(){
+
+    public JLabel getToLbl() {
         return this.toLbl;
     }
-    
-    public JLabel getPriceLbl(){
+
+    public JLabel getPriceLbl() {
         return this.priceLbl;
     }
-    
-    public JButton getSendButton(){
+
+    public JButton getSendButton() {
         return this.send;
     }
-    
-    public JButton getReceiptButton(){
+
+    public JButton getReceiptButton() {
         return this.jButton1;
     }
-    
-    public JTextArea getReviewTxt(){
+
+    public JTextArea getReviewTxt() {
         return this.textArea;
     }
-    
-    public JComboBox<String> getRating(){
+
+    public JComboBox<String> getJourneyRating() {
+        return this.journeyRating;
+    }
+
+    public JComboBox<String> getDriverRating() {
+        return this.driverRating;
+    }
+
+    public JComboBox<String> getCarRating() {
         return this.carRating;
     }
-    
-    public JComboBox<String> getBookingsCombo(){
+
+    public JComboBox<String> getBookingsCombo() {
         return this.Bookings;
     }
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> Bookings;
     private javax.swing.JLabel Name;
@@ -295,8 +303,8 @@ public class BookingView extends javax.swing.JPanel {
     private javax.swing.JLabel fromLbl;
     private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JComboBox<String> journeyRating;
     private javax.swing.JLabel priceLbl;
-    private javax.swing.JComboBox<String> ratingCombo2;
     private javax.swing.JScrollPane reviewText;
     private javax.swing.JButton send;
     private javax.swing.JTextArea textArea;

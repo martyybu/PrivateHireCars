@@ -18,6 +18,8 @@ public class MainView extends javax.swing.JFrame {
      */
     public MainView() {
         initComponents();
+                this.setIconImage(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/taxi_128x.png")).getImage());
+
     }
     
 

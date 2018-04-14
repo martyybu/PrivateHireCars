@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.CarDaoImpl;
+import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.DriverDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.JourneyDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.BookingView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.ReceiptView;
@@ -52,13 +54,13 @@ public class BookingsController {
         if (!journey.getState().equals(JourneyState.FINISHED)) {
             view.getPriceLbl().setText("To be determined");
             view.getDurationLbl().setText("To be determined");
-            view.getRating().setSelectedIndex(0);
+            view.getJourneyRating().setSelectedIndex(0);
             view.getReviewTxt().setText("");
         } else {
             view.getPriceLbl().setText("£" + journey.getPayment().getAmount());
             view.getDurationLbl().setText(journey.getDuration() + " min");
             view.getReviewTxt().setText(journey.getReview() + "");
-            view.getRating().setSelectedIndex(journey.getRating());
+            view.getJourneyRating().setSelectedIndex(journey.getRating());
         }
         view.getfromLbl().setText("" + journey.getStartingLocation());
         view.getToLbl().setText("" + journey.getDestination());
@@ -91,8 +93,12 @@ public class BookingsController {
                     "Your journey has not occured or has not been terminated, therefore you cannnot review and rate the journey as of yet!");
         } else {
             Journey journey = journeys.get(counter);
-            journey.setRating(view.getRating().getSelectedIndex());
+            journey.setRating(view.getJourneyRating().getSelectedIndex());
             journey.addReview(view.getReviewTxt().getText());
+            journey.getCar().rate(view.getCarRating().getSelectedIndex());
+            journey.getDriver().rate(view.getDriverRating().getSelectedIndex());
+            new DriverDaoImpl().updateDriver(journey.getDriver());
+            new CarDaoImpl().updateCar(journey.getCar());
             new JourneyDaoImpl().updateJourney(journey);
             updateJourneys();
             JOptionPane.showMessageDialog(view,

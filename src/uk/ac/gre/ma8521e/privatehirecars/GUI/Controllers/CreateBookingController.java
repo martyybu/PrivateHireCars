@@ -52,7 +52,7 @@ public class CreateBookingController {
     }
 
     public void loadDropDownCars() {
-        List<Car> cars = new CarDaoImpl().getAllCars();
+        List<Car> cars = new CarDaoImpl().getAvailableCars();
         String[] carsString = new String[cars.size()];
         for (int i = 0; i < cars.size(); i++) {
             carsString[i] = cars.get(i).toString();
@@ -106,19 +106,22 @@ public class CreateBookingController {
                 return;
             }
             Passenger passenger = (Passenger) PrivateHireCars.getPerson();
+            //find out the car VIN
             String[] carString = view.getCarsDrop().getSelectedItem().toString().split("-");
-            if (!isCarSelectedFree(carString[2])) {
-                JOptionPane.showMessageDialog(view,
-                        "Car selected is not free!");
-                return;
-            }
+
             Date date = (Date) view.getDate().getValue();
 
+            if(getDriver()==null){
+                JOptionPane.showMessageDialog(view,
+                        "There are no drivers available!");
+                return;
+            }
+            
             journey = new Journey.Builder()
                     .setFrom(fromTemp)
                     .setTo(toTemp)
                     .setCar(new CarDaoImpl().getCar(carString[2]))
-                    .setDriver(getDriver(new CarDaoImpl().getCar(carString[2])))
+                    .setDriver()
                     .setPassenger(passenger)
                     .setNotification(JourneyNotification.valueOf(view.getNotification().getSelectedItem().toString()))
                     .setDate(date)
@@ -133,27 +136,16 @@ public class CreateBookingController {
         }
     }
 
-    public Driver getDriver(Car car) {
+    public Driver getDriver() {
         for (Iterator<Driver> it = new DriverDaoImpl().getAllDrivers().iterator(); it.hasNext();) {
             Driver driver = it.next();
-            if (driver.getCar().VIN.equals(car.VIN)) {
+            if (driver.getCar()==null) {
                 return driver;
             }
         }
         return null;
     }
 
-    public boolean isCarSelectedFree(String VIN) {
-        List<Driver> drivers = new DriverDaoImpl().getAllDrivers();
-        for (Driver driver : drivers) {
-            if (driver.getCar().VIN.equals(VIN)) {
-                if (driver.isOnaJourney() == false) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
 
     public boolean doesPersonHaveCard(Person person) {
         if (person instanceof Passenger) {
