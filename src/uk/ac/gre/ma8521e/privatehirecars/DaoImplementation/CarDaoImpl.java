@@ -31,7 +31,7 @@ public class CarDaoImpl implements CarDao {
             stmt.setString(1, String.valueOf(ID));
             rs = stmt.executeQuery();
             while (rs.next()) {
-                Car car1 = new Car(rs.getString("VIN"), rs.getString("plateNo"), rs.getInt("seats"), rs.getString("brand"), rs.getString("model"),rs.getInt("rating"));
+                Car car1 = new Car(rs.getString("VIN"), rs.getString("plateNo"), rs.getInt("seats"), rs.getString("brand"), rs.getString("model"), rs.getInt("rating"));
                 car.add(car1);
             }
         } catch (SQLException e) {
@@ -55,6 +55,16 @@ public class CarDaoImpl implements CarDao {
         return car;
     }
 
+    public List<Car> getAvailableCars() {
+        List<Car> availableCars = new ArrayList<>();
+        for (int i = 0; i < getAllCars().size(); i++) {
+            if (new DriverDaoImpl().getAllDrivers().get(i).getCar().VIN.equals(getAllCars().get(i).VIN)) {
+                availableCars.add(getAllCars().get(i));
+            }
+        }
+        return availableCars;
+    }
+
     public List<Car> getAllCars() {
         List<Car> car = new ArrayList<>();
         PreparedStatement stmt = null;
@@ -64,7 +74,7 @@ public class CarDaoImpl implements CarDao {
             stmt = Database.getInstance().prepareStatement(query);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                Car car1 = new Car(rs.getString("VIN"), rs.getString("plateNo"), rs.getInt("seats"), rs.getString("brand"),rs.getString("model"),rs.getInt("rating"));
+                Car car1 = new Car(rs.getString("VIN"), rs.getString("plateNo"), rs.getInt("seats"), rs.getString("brand"), rs.getString("model"), rs.getInt("rating"));
                 car.add(car1);
             }
         } catch (SQLException e) {
@@ -99,7 +109,7 @@ public class CarDaoImpl implements CarDao {
             stmt.setString(1, String.valueOf(ID));
             rs = stmt.executeQuery();
             while (rs.next()) {
-                car = new Car(rs.getString("VIN"), rs.getString("plateNo"), rs.getInt("seats"), rs.getString("brand"),rs.getString("model"),rs.getInt("rating"));
+                car = new Car(rs.getString("VIN"), rs.getString("plateNo"), rs.getInt("seats"), rs.getString("brand"), rs.getString("model"), rs.getInt("rating"));
             }
         } catch (SQLException e) {
             return null;
@@ -124,7 +134,7 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public void updateCar(Car car) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
