@@ -11,7 +11,7 @@ import uk.ac.gre.ma8521e.privatehirecars.Payment.Card;
  *
  * @author micae
  */
-public class Passenger extends Person implements PersonI{
+public class Passenger extends Person{
 
     private final int PASSENGER_ID;
     private Boolean onJourney;

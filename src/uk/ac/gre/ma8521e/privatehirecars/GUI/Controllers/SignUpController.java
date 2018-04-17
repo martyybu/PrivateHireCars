@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Passenger;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
-import uk.ac.gre.ma8521e.privatehirecars.Actors.PersonFactory;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PassengerDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PersonDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.LoginView;

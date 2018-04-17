@@ -11,7 +11,7 @@ import uk.ac.gre.ma8521e.privatehirecars.Journey.Car;
  *
  * @author micae
  */
-public class Driver extends Person implements PersonI {
+public class Driver extends Person {
 
     private final int DRIVER_ID;
     private Car car;
