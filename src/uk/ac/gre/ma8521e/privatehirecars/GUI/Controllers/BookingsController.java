@@ -53,11 +53,15 @@ public class BookingsController {
             view.getPriceLbl().setText("To be determined");
             view.getDurationLbl().setText("To be determined");
             view.getJourneyRating().setSelectedIndex(0);
+            view.getCarRating().setSelectedIndex(0);
+            view.getDriverRating().setSelectedIndex(0);
             view.getReviewTxt().setText("");
         } else {
             view.getPriceLbl().setText("£" + journey.getPrice());
             view.getDurationLbl().setText(journey.getDuration() + " min");
             view.getReviewTxt().setText(journey.getReview() + "");
+            view.getCarRating().setSelectedIndex(journey.getCarRating());
+            view.getDriverRating().setSelectedIndex(journey.getDriverRating());
             view.getJourneyRating().setSelectedIndex(journey.getRating());
         }
         view.getfromLbl().setText("" + journey.getStartingLocation());
@@ -92,10 +96,10 @@ public class BookingsController {
                     "Your journey has not occured or has not been terminated, therefore you cannnot review and rate the journey as of yet!");
         } else {
             Journey journey = new JourneyDaoImpl().getJourney(selectedID);
-            journey.setRating(view.getJourneyRating().getSelectedIndex());
+            journey.setJourneyRating(view.getJourneyRating().getSelectedIndex());
             journey.addReview(view.getReviewTxt().getText());
-            journey.getCar().rate(view.getCarRating().getSelectedIndex());
-            journey.getDriver().rate(view.getDriverRating().getSelectedIndex());
+            journey.setCarRating(view.getCarRating().getSelectedIndex());
+            journey.setDriverRating(view.getDriverRating().getSelectedIndex());
             new DriverDaoImpl().updateDriver(journey.getDriver());
             new CarDaoImpl().updateCar(journey.getCar());
             new JourneyDaoImpl().updateJourney(journey);
@@ -119,5 +123,4 @@ public class BookingsController {
         }
     }
 
-    
 }

@@ -22,7 +22,7 @@ import uk.ac.gre.ma8521e.privatehirecars.Journey.JourneyState;
  * @author micae
  */
 public class JourneyDaoImpl implements JourneyDao {
-    
+
     @Override
     public List<Journey> getAllJourneys() {
         List<Journey> listJourneys = new ArrayList<>();
@@ -46,6 +46,8 @@ public class JourneyDaoImpl implements JourneyDao {
                         .setState(JourneyState.valueOf(rs.getString("journeyState")))
                         .setNotification(JourneyNotification.valueOf(rs.getString("notification")))
                         .build();
+                journey.setCarRating(rs.getInt("carRating"));
+                journey.setDriverRating(rs.getInt("driverRating"));
                 journey.addID(rs.getInt("JourneyID"));
                 journey.addReview(rs.getString("review"));
                 listJourneys.add(journey);
@@ -70,7 +72,7 @@ public class JourneyDaoImpl implements JourneyDao {
         }
         return listJourneys;
     }
-    
+
     @Override
     public Journey getJourney(int ID) {
         Journey journey = null;
@@ -95,6 +97,8 @@ public class JourneyDaoImpl implements JourneyDao {
                         .setState(JourneyState.valueOf(rs.getString("journeyState")))
                         .setNotification(JourneyNotification.valueOf(rs.getString("notification")))
                         .build();
+                journey.setCarRating(rs.getInt("carRating"));
+                journey.setDriverRating(rs.getInt("driverRating"));
                 journey.addID(ID);
                 journey.addReview(rs.getString("review"));
             }
@@ -118,12 +122,12 @@ public class JourneyDaoImpl implements JourneyDao {
         }
         return journey;
     }
-    
+
     @Override
     public void createJourney(Journey journey) {
         PreparedStatement stmt = null;
         try {
-            String query = "INSERT INTO Journey (DriverID,PassengerID,startingLocationID,destinationID,CarID,PaymentID,date,duration,rating,journeyState,notification) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO Journey (DriverID,PassengerID,startingLocationID,destinationID,CarID,PaymentID,date,duration,rating,journeyState,notification,carRating,driverRating) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ?)";
             stmt = Database.getInstance().prepareStatement(query);
             stmt.setInt(1, journey.getDriver().getDriverID());
             stmt.setInt(2, journey.getPassenger().getPassengerID());
@@ -136,6 +140,8 @@ public class JourneyDaoImpl implements JourneyDao {
             stmt.setNull(9, java.sql.Types.INTEGER);
             stmt.setString(10, journey.getState().toString());
             stmt.setString(11, journey.getNotifications().toString());
+            stmt.setInt(12, journey.getCarRating());
+            stmt.setInt(13, journey.getDriverRating());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -149,12 +155,12 @@ public class JourneyDaoImpl implements JourneyDao {
             }
         }
     }
-    
+
     @Override
     public void updateJourney(Journey journey) {
         PreparedStatement stmt = null;
         try {
-            String query = "UPDATE Journey SET DriverID = ?, PassengerID = ?, startingLocationID = ?, destinationID = ?, CarID = ?, PaymentID = ?, date = ?, duration = ?, rating = ?, journeyState = ?, notification = ?, review = ? WHERE JourneyID = ?";
+            String query = "UPDATE Journey SET DriverID = ?, PassengerID = ?, startingLocationID = ?, destinationID = ?, CarID = ?, PaymentID = ?, date = ?, duration = ?, rating = ?, journeyState = ?, notification = ?, review = ?, carRating = ?, driverRating= ? WHERE JourneyID = ?";
             stmt = Database.getInstance().prepareStatement(query);
             stmt.setInt(1, journey.getDriver().getDriverID());
             stmt.setInt(2, journey.getPassenger().getPassengerID());
@@ -168,7 +174,9 @@ public class JourneyDaoImpl implements JourneyDao {
             stmt.setString(10, journey.getState().toString());
             stmt.setString(11, journey.getNotifications().toString());
             stmt.setString(12, journey.getReview());
-            stmt.setInt(13, journey.getID());
+            stmt.setInt(13, journey.getCarRating());
+            stmt.setInt(14, journey.getDriverRating());
+            stmt.setInt(15, journey.getID());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -181,7 +189,7 @@ public class JourneyDaoImpl implements JourneyDao {
                 stmt = null;
             }
         }
-        
+
     }
-    
+
 }

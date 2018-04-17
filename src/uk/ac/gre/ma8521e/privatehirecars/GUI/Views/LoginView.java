@@ -42,6 +42,7 @@ public class LoginView extends javax.swing.JFrame {
         loginButton = new javax.swing.JButton();
         signupButton = new javax.swing.JButton();
         loginDebug = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Home Page");
@@ -118,6 +119,13 @@ public class LoginView extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(17, 2, 3, 8);
         getContentPane().add(loginDebug, gridBagConstraints);
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel1.setText("Application only works within the UniGre network");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 16;
+        getContentPane().add(jLabel1, gridBagConstraints);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -155,6 +163,7 @@ public class LoginView extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel iconLabel;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JButton loginButton;
     private javax.swing.JButton loginDebug;
     private javax.swing.JLabel passwordLabel;

@@ -20,7 +20,9 @@ public class Journey {
     private Driver driver;
     private Car car;
     private Integer duration;
-    private Integer rating;
+    private Integer journeyRating;
+    private Integer carRating;
+    private Integer driverRating;
     private JourneyState state;
     private Payment payment;
     private BigDecimal price;
@@ -35,7 +37,7 @@ public class Journey {
         this.driver = journey.getDriver();
         this.car = journey.getCar();
         this.duration = journey.getDuration();
-        this.rating = journey.getRating();
+        this.journeyRating = journey.getRating();
         this.state = journey.getState();
         this.payment = journey.getPayment();
         this.price = journey.getPrice();
@@ -51,7 +53,7 @@ public class Journey {
         this.driver = driver;
         this.car = car;
         this.duration = duration;
-        this.rating = rating;
+        this.journeyRating = rating;
         this.state = state;
         this.payment = payment;
         this.price = price;
@@ -67,23 +69,24 @@ public class Journey {
         return notification;
     }
 
-    public int getID(){
+    public int getID() {
         return this.ID;
     }
-    
-    
-    public void addID(int newInt){
+
+    public void addID(int newInt) {
         this.ID = newInt;
     }
-    /**#
+
+    /**
+     * #
      * Returns the customer review
-     * 
-     * @return 
+     *
+     * @return
      */
-    public String getReview(){
+    public String getReview() {
         return this.review;
     }
-    
+
     /**
      * Returns the starting Location
      *
@@ -93,8 +96,6 @@ public class Journey {
         return this.startingLocation;
     }
 
-    
-    
     /**
      * Returns the destination location
      *
@@ -113,7 +114,6 @@ public class Journey {
         return this.date2;
     }
 
-
     /**
      * Returns teh passenger for this journey
      *
@@ -129,8 +129,8 @@ public class Journey {
      * @return
      */
     public BigDecimal getPrice() {
-            price = (new BigDecimal(duration).multiply(BigDecimal.valueOf(0.4))).add(BigDecimal.valueOf(4));
-            return price;
+        price = (new BigDecimal(duration).multiply(BigDecimal.valueOf(0.4))).add(BigDecimal.valueOf(4));
+        return price;
     }
 
     /**
@@ -166,7 +166,25 @@ public class Journey {
      * @return
      */
     public int getRating() {
-        return this.rating;
+        return this.journeyRating;
+    }
+
+    /**
+     * Returns the rating of this car set by the passenger;
+     *
+     * @return
+     */
+    public int getCarRating() {
+        return this.carRating;
+    }
+
+    /**
+     * Returns the rating set by the passenger of this driver;
+     *
+     * @return
+     */
+    public int getDriverRating() {
+        return this.driverRating;
     }
 
     /**
@@ -224,7 +242,6 @@ public class Journey {
         this.date2 = newDate;
     }
 
-
     /**
      * Add a passenger toi the Journey
      *
@@ -234,10 +251,10 @@ public class Journey {
         this.passenger = passenger;
     }
 
-    public void addReview(String review){
-        this.review=review;
+    public void addReview(String review) {
+        this.review = review;
     }
-    
+
     /**
      * Set journeyNotification
      *
@@ -282,9 +299,19 @@ public class Journey {
     public void setPayment(Payment newPayment) {
         this.payment = newPayment;
     }
-    
-    public void setRating(int newRating){
-        this.rating=newRating;
+
+    public void setJourneyRating(int newRating) {
+        this.journeyRating = newRating;
+    }
+
+    public void setCarRating(int newRating) {
+        this.carRating = newRating;
+        this.car.rate(newRating);
+    }
+
+    public void setDriverRating(int newRating) {
+        this.driverRating = newRating;
+        this.driver.rate(newRating);
     }
 
     /**
@@ -297,10 +324,10 @@ public class Journey {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return this.getStartingLocation() + " - " + this.getDestination();
     }
-    
+
     public static final class Builder {
 
         private String startingLocation;
@@ -330,7 +357,6 @@ public class Journey {
             this.date2 = date;
             return this;
         }
-
 
         public Builder setPassenger(Passenger passenger) {
             this.passenger = passenger;

@@ -170,4 +170,7 @@ public class CreateBookingController {
         return false;
     }
 
+    void clearFields(){
+        
+    }
 }

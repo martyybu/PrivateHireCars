@@ -7,12 +7,14 @@ package uk.ac.gre.ma8521e.privatehirecars.GUI.Controllers;
 
 import java.awt.event.ActionEvent;
 import java.util.List;
+import javax.swing.JOptionPane;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.EnquiryDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.JourneyDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.Enquiry;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.CreateEnquiryView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.EnquiryView;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
+import uk.ac.gre.ma8521e.privatehirecars.Journey.JourneyState;
 import uk.ac.gre.ma8521e.privatehirecars.PrivateHireCars;
 
 /**
@@ -38,8 +40,13 @@ public class CreateEnquiryController {
     }
 
     void sendBtn(ActionEvent evt) {
-        Enquiry enquiry = new Enquiry(view.getTextbox().getText(),null,null,PrivateHireCars.getPerson(),(Journey)view.getlistofTrips().getSelectedItem());
-        new EnquiryDaoImpl().insertEnquiry(enquiry);
+        if (view.getTextbox().getText().isEmpty()) {
+            JOptionPane.showMessageDialog(view,
+                    "You can't leave the enquiry box empty");
+        } else {
+            Enquiry enquiry = new Enquiry(view.getTextbox().getText(), null, null, PrivateHireCars.getPerson(), (Journey) view.getlistofTrips().getSelectedItem());
+            new EnquiryDaoImpl().insertEnquiry(enquiry);
+        }
     }
 
     public void loadTrips() {
@@ -51,7 +58,6 @@ public class CreateEnquiryController {
                 -> {
             view.getlistofTrips().addItem(journey);
         });
-    
-        
+
     }
-}    
+}

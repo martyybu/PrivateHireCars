@@ -115,7 +115,11 @@ public class DriverDaoImpl implements DriverDao {
             stmt.setString(1, driver.getID());
             stmt.setString(2, Utils.frommBooleanToString(driver.isOnaJourney()));
             stmt.setInt(3, driver.getRating());
-            stmt.setString(4, driver.getCar().VIN);
+            if (driver.getCar() == null) {
+                stmt.setString(4, null);
+            } else {
+                stmt.setString(4, driver.getCar().VIN);
+            }
             stmt.setInt(5, driver.getDriverID());
             stmt.executeUpdate();
         } catch (SQLException e) {
