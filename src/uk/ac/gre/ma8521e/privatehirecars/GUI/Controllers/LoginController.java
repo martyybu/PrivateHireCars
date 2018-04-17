@@ -15,7 +15,7 @@ import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PassengerDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.PersonDaoImpl;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.LoginView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.SignUpView;
-import uk.ac.gre.ma8521e.privatehirecars.GUI.Models.Login;
+import uk.ac.gre.ma8521e.privatehirecars.Login;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.MainView;
 import uk.ac.gre.ma8521e.privatehirecars.PrivateHireCars;
 

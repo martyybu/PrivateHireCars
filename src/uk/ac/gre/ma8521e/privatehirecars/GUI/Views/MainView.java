@@ -77,7 +77,7 @@ public class MainView extends javax.swing.JFrame {
 
         btn_enquiries.setBackground(new java.awt.Color(64, 43, 100));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/icons8_User_Account_15px.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/uk/ac/gre/ma8521e/privatehirecars/GUI/Images/icons8_Speech_Bubble_15px_1.png"))); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 204));

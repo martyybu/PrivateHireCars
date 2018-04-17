@@ -1,4 +1,4 @@
-package uk.ac.gre.ma8521e.privatehirecars.GUI.Models;
+package uk.ac.gre.ma8521e.privatehirecars;
 
 
 import java.security.NoSuchAlgorithmException;
