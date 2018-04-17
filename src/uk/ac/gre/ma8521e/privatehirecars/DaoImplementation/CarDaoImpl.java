@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import uk.ac.gre.ma8521e.privatehirecars.Actors.Driver;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.Car;
 import uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects.CarDao;
 import uk.ac.gre.ma8521e.privatehirecars.Database;
@@ -56,10 +57,11 @@ public class CarDaoImpl implements CarDao {
     }
 
     public List<Car> getAvailableCars() {
-        List<Car> availableCars = new ArrayList<>();
-        for (int i = 0; i < getAllCars().size(); i++) {
-            if (new DriverDaoImpl().getAllDrivers().get(i).getCar().VIN.equals(getAllCars().get(i).VIN)) {
-                availableCars.add(getAllCars().get(i));
+        List<Car> availableCars = getAllCars();
+        List<Driver> drivers = new DriverDaoImpl().getAllDrivers();
+        for (int i = 0; i < drivers.size(); i++) {
+            if (drivers.get(i).getCar()!= null) {
+                availableCars.remove(drivers.get(i).getCar());
             }
         }
         return availableCars;

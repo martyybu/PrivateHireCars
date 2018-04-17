@@ -25,7 +25,7 @@ public class BookingsController {
 
     private BookingView view;
     private List<Journey> journeys;
-    private int counter = 0;
+    private int selectedID = 0;
 
     public BookingsController() {
 
@@ -34,22 +34,20 @@ public class BookingsController {
     public void addView(BookingView view2) {
         view = view2;
         setupListeners();
+        updateJourneys();
+        selectedID = journeys.get(1).getID();
         loadFields();
         loadJourneys();
     }
 
     public void loadJourneys() {
-        String[] journeysString = new String[journeys.size()];
         for (int i = 0; i < journeys.size(); i++) {
-            journeysString[i] = journeys.get(i).getStartingLocation() + " - " + journeys.get(i).getDestination();
+            view.getBookingsCombo().addItem(journeys.get(i));
         }
-        view.getBookingsCombo().setModel(new DefaultComboBoxModel(journeysString));
     }
 
     public void loadFields() {
-        updateJourneys();
-        System.out.println("" + journeys.size());
-        Journey journey = journeys.get(counter);
+        Journey journey = new JourneyDaoImpl().getJourney(selectedID);
         view.getDateLbl().setText(journey.getDate() + "");
         if (!journey.getState().equals(JourneyState.FINISHED)) {
             view.getPriceLbl().setText("To be determined");
@@ -57,7 +55,7 @@ public class BookingsController {
             view.getJourneyRating().setSelectedIndex(0);
             view.getReviewTxt().setText("");
         } else {
-            view.getPriceLbl().setText("£" + journey.getPayment().getAmount());
+            view.getPriceLbl().setText("£" + journey.getPrice());
             view.getDurationLbl().setText(journey.getDuration() + " min");
             view.getReviewTxt().setText(journey.getReview() + "");
             view.getJourneyRating().setSelectedIndex(journey.getRating());
@@ -74,7 +72,8 @@ public class BookingsController {
     }
 
     public void journeyChanged(ActionEvent evt) {
-        counter = view.getBookingsCombo().getSelectedIndex();
+        Journey journey = (Journey) view.getBookingsCombo().getSelectedItem();
+        selectedID = journey.getID();
         loadFields();
     }
 
@@ -88,11 +87,11 @@ public class BookingsController {
     }
 
     public void sendBtn(ActionEvent evt) {
-        if (!journeys.get(counter).getState().equals(JourneyState.FINISHED)) {
+        if (!new JourneyDaoImpl().getJourney(selectedID).getState().equals(JourneyState.FINISHED)) {
             JOptionPane.showMessageDialog(view,
                     "Your journey has not occured or has not been terminated, therefore you cannnot review and rate the journey as of yet!");
         } else {
-            Journey journey = journeys.get(counter);
+            Journey journey = new JourneyDaoImpl().getJourney(selectedID);
             journey.setRating(view.getJourneyRating().getSelectedIndex());
             journey.addReview(view.getReviewTxt().getText());
             journey.getCar().rate(view.getCarRating().getSelectedIndex());
@@ -107,16 +106,18 @@ public class BookingsController {
     }
 
     public void receiptBtn(ActionEvent evt) {
-        if (!journeys.get(counter).getState().equals(JourneyState.FINISHED)) {
+        Journey journey = new JourneyDaoImpl().getJourney(selectedID);
+        if (!journey.getState().equals(JourneyState.FINISHED)) {
             JOptionPane.showMessageDialog(view,
                     "Your journey has not occured or has not been terminated, therefore you cannnot get your receipt!");
         } else {
             ReceiptView receiptView = new ReceiptView();
-            ReceiptController receiptController = new ReceiptController(journeys.get(counter), receiptView);
+            ReceiptController receiptController = new ReceiptController(new JourneyDaoImpl().getJourney(selectedID), receiptView);
             Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
             receiptView.setLocation(new Point((screenSize.width / 2) - receiptView.getWidth() / 2, (screenSize.height / 2) - receiptView.getHeight() / 2));
             receiptView.setVisible(true);
         }
     }
 
+    
 }

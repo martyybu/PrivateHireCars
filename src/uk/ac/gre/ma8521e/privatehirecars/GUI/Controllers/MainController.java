@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Person;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.BookingView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.CreateBooking;
-import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.CreateEnquiry;
+import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.CreateEnquiryView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.EnquiryView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.MainView;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.Profile;
@@ -27,9 +27,9 @@ public class MainController {
         view = view2;
         view2.setTitle("PrivateHire Cars");
         setupListener();
-
+        Profile profileView = new Profile();
+        changeLeftPanel(profileView);
     }
-
 
     public void setupListener() {
         view.getBookings().addMouseListener(new MouseAdapter() {
@@ -56,6 +56,24 @@ public class MainController {
                 clickedProfile(evt);
             }
         });
+        view.getEnquiries().addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent evt) {
+                clickedEnquiries(evt);
+            }
+        });
+    }
+
+    void clickedEnquiries(MouseEvent evt) {
+        resetColor(view.getCreateBookings());
+        resetColor(view.getCreateEnquiries());
+        resetColor(view.getProfile());
+        resetColor(view.getBookings());
+        setColor(view.getEnquiries());
+        EnquiryView view = new EnquiryView();
+        EnquiryController eC=new EnquiryController();
+        eC.addView(view);
+        this.changeLeftPanel(view);
     }
 
     public void changeLeftPanel(JPanel jpanel) {
@@ -73,6 +91,7 @@ public class MainController {
         resetColor(view.getCreateBookings());
         resetColor(view.getCreateEnquiries());
         resetColor(view.getProfile());
+        resetColor(view.getEnquiries());
         setColor(view.getBookings());
         BookingView bookingView = new BookingView();
         BookingsController bookingsController = new BookingsController();
@@ -84,13 +103,18 @@ public class MainController {
         resetColor(view.getCreateBookings());
         setColor(view.getCreateEnquiries());
         resetColor(view.getProfile());
+        resetColor(view.getEnquiries());
         resetColor(view.getBookings());
-        EnquiryView createEnquiryView = new EnquiryView();
-        changeLeftPanel(createEnquiryView);
+        CreateEnquiryView enquiryView = new CreateEnquiryView();
+        CreateEnquiryController ec = new CreateEnquiryController();
+        ec.addView(enquiryView);
+        changeLeftPanel(enquiryView);
     }
 
     public void clickedProfile(MouseEvent event) {
         resetColor(view.getCreateBookings());
+        resetColor(view.getEnquiries());
+
         resetColor(view.getCreateEnquiries());
         setColor(view.getProfile());
         resetColor(view.getBookings());
@@ -102,9 +126,10 @@ public class MainController {
         setColor(view.getCreateBookings());
         resetColor(view.getCreateEnquiries());
         resetColor(view.getProfile());
+        resetColor(view.getEnquiries());
         resetColor(view.getBookings());
         CreateBooking createBooking = new CreateBooking();
-        CreateBookingController controller= new CreateBookingController();
+        CreateBookingController controller = new CreateBookingController();
         controller.addView(createBooking);
         changeLeftPanel(createBooking);
     }

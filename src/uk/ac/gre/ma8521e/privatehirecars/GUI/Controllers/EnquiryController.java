@@ -6,6 +6,7 @@
 package uk.ac.gre.ma8521e.privatehirecars.GUI.Controllers;
 
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import uk.ac.gre.ma8521e.privatehirecars.DaoImplementation.EnquiryDaoImpl;
@@ -22,8 +23,6 @@ import uk.ac.gre.ma8521e.privatehirecars.PrivateHireCars;
 public class EnquiryController {
 
     private EnquiryView view;
-    private Integer journeyIDselected = null;
-    private Integer enquiryIDselected = null;
 
     public EnquiryController() {
 
@@ -31,64 +30,45 @@ public class EnquiryController {
 
     void addView(EnquiryView v2) {
         view = v2;
+        setupListeners();
+        view.getAnswerTexBox().setFocusable(false);
+        view.getTextBox().setFocusable(false);
+        loadEnquiries();
     }
 
     void setupListeners() {
-        view.getlistofTrips().addActionListener(evt -> changeListOfTrips(evt));
         view.getlistOfEnquiries().addActionListener(evt -> changeListOfEnquiries(evt));
-        view.getsendBtn().addActionListener(evt -> sendBtn(evt));
     }
 
-    void sendBtn(ActionEvent evt) {
-        Enquiry enquiry = new EnquiryDaoImpl().getEnquiry(enquiryIDselected);
-        if(enquiry!=null){
-            if(enquiry.getEnquiry()!=null);
-        }
-    }
-
+    /**
+     * void sendBtn(ActionEvent evt) { Enquiry enquiry = new
+     * EnquiryDaoImpl().getEnquiry(((Enquiry)
+     * view.getlistOfEnquiries().getSelectedItem()).getID()); if (enquiry !=
+     * null) { if (enquiry.getEnquiry() != null); } }*
+     */
     void changeListOfEnquiries(ActionEvent evt) {
-        getIDofEnquirySelected();
-    }
-
-    void loadFields() {
-        if (this.enquiryIDselected != null) {
-            Enquiry enquiry = new EnquiryDaoImpl().getEnquiry(this.enquiryIDselected);
-            String answer = enquiry.getAnswer();
-            String question = enquiry.getEnquiry();
-            view.getTextBox().setText(enquiry.getPerson().getFirstName() + " " + enquiry.getPerson().getLastName()
-                    + " /n " + question);
-            if (answer != null) {
-                view.getTextBox().setText(view.getTextBox().getText() + " /n /n /n " + enquiry.getStaff().getFirstName() + " " + enquiry.getStaff().getLastName() + " \n " + enquiry.getAnswer());
-            }
+        view.getTextBox().setText(((Enquiry) view.getlistOfEnquiries().getSelectedItem()).getEnquiry());
+        view.getAnswerTexBox().setText(((Enquiry) view.getlistOfEnquiries().getSelectedItem()).getAnswer());
+        if (((Enquiry) view.getlistOfEnquiries().getSelectedItem()).getJourney() != null) {
+            view.getLblTrip().setText(((Enquiry) view.getlistOfEnquiries().getSelectedItem()).getJourney().toString());
         }
     }
 
-    public Integer getIDofEnquirySelected() {
-        String[] splittedText = view.getlistOfEnquiries().getSelectedItem().toString().split(" | ");
-        Integer ID = Integer.valueOf(splittedText[1]);
-        return ID;
-    }
-
-    void changeListOfTrips(ActionEvent evt) {
-        this.journeyIDselected = view.getlistofTrips().getSelectedIndex();
-
-    }
-
-    void loadTrips() {
-        List<Journey> journeys = new JourneyDaoImpl().getAllJourneys();
-        String[] journeysString = new String[journeys.size()];
-        for (int i = 0; i < journeys.size(); i++) {
-            journeysString[i] = journeys.get(i).getStartingLocation() + " - " + journeys.get(i).getDestination();
-        }
-        view.getlistofTrips().setModel(new DefaultComboBoxModel(journeysString));
-    }
-
+    /**
+     * *
+     * public void loadTrips() { List<Journey> journeys = new
+     * JourneyDaoImpl().getAllJourneys(); //looping through the journeys to get
+     * the ones that belong to the user journeys.stream().filter((journey) ->
+     * (journey.getPassenger().getID() == null ?
+     * PrivateHireCars.getPerson().getID() == null :
+     * journey.getPassenger().getID().equals(PrivateHireCars.getPerson().getID()))).forEachOrdered((journey)
+     * -> { view.getlistofTrips().addItem(journey); }); }*
+     */
     void loadEnquiries() {
         List<Enquiry> enquiries = new EnquiryDaoImpl().getPersonEnquiries(PrivateHireCars.getPerson().getID());
-        String[] carsString = new String[enquiries.size()];
+        System.out.println("e" + enquiries);
         for (int i = 0; i < enquiries.size(); i++) {
-            carsString[i] = enquiries.get(i).toString();
+            view.getlistOfEnquiries().addItem(enquiries.get(i));
         }
-        view.getlistOfEnquiries().setModel(new DefaultComboBoxModel(carsString));
     }
 }

@@ -278,12 +278,12 @@ public class BookingView extends javax.swing.JPanel {
         return this.carRating;
     }
 
-    public JComboBox<String> getBookingsCombo() {
+    public JComboBox<Object> getBookingsCombo() {
         return this.Bookings;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> Bookings;
+    private javax.swing.JComboBox<Object> Bookings;
     private javax.swing.JLabel Name;
     private javax.swing.JLabel Name1;
     private javax.swing.JLabel Name10;

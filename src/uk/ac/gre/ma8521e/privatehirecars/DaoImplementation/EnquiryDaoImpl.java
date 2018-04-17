@@ -8,10 +8,12 @@ package uk.ac.gre.ma8521e.privatehirecars.DaoImplementation;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects.EnquiryDao;
 import uk.ac.gre.ma8521e.privatehirecars.Database;
 import uk.ac.gre.ma8521e.privatehirecars.Enquiry;
+import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
 
 /**
  *
@@ -27,10 +29,10 @@ public class EnquiryDaoImpl implements EnquiryDao {
         try {
             String query = "SELECT * FROM Enquiry WHERE EnquiryID= ?";
             stmt = Database.getInstance().prepareStatement(query);
-            stmt.setInt(1,ID);
+            stmt.setInt(1, ID);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                enquiry = new Enquiry(rs.getInt(1),rs.getString(2),rs.getString(3),new PersonDaoImpl().getPerson(rs.getString(4)),new PersonDaoImpl().getPerson(rs.getString(5)));
+                enquiry = new Enquiry(rs.getInt(1), rs.getString(2), rs.getString(3), new PersonDaoImpl().getPerson(rs.getString(4)), new PersonDaoImpl().getPerson(rs.getString(5)), new JourneyDaoImpl().getJourney(rs.getInt(6)));
             }
         } catch (SQLException | NullPointerException e) {
             return enquiry;
@@ -55,16 +57,16 @@ public class EnquiryDaoImpl implements EnquiryDao {
 
     @Override
     public List<Enquiry> getPersonEnquiries(String personID) {
-        List<Enquiry> enquiry = null;
+        List<Enquiry> enquiry = new ArrayList<>();
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
             String query = "SELECT * FROM Enquiry WHERE PersonID= ?";
             stmt = Database.getInstance().prepareStatement(query);
-            stmt.setString(1,personID);
+            stmt.setString(1, personID);
             rs = stmt.executeQuery();
             while (rs.next()) {
-                Enquiry enquiryobj= new Enquiry(rs.getInt(1),rs.getString(2),rs.getString(3),new PersonDaoImpl().getPerson(rs.getString(4)),new PersonDaoImpl().getPerson(rs.getString(5)));
+                Enquiry enquiryobj = new Enquiry(rs.getInt(1), rs.getString(2), rs.getString(3), new PersonDaoImpl().getPerson(rs.getString(4)), new PersonDaoImpl().getPerson(rs.getString(5)), new JourneyDaoImpl().getJourney(rs.getInt(6)));
                 enquiry.add(enquiryobj);
             }
         } catch (SQLException | NullPointerException e) {
@@ -92,13 +94,13 @@ public class EnquiryDaoImpl implements EnquiryDao {
     public void updateEnquiry(Enquiry enquiry) {
         PreparedStatement stmt = null;
         try {
-            String query = "UPDATE Enquiry SET EnquiryID = ?, enquiry = ?, answer = ?, PersonID = ?, Staff = ? WHERE EnquiryID = ?;";
+            String query = "UPDATE Enquiry SET EnquiryID = ?, enquiry = ?, answer = ?, PersonID = ?, Staff = ?, JourneyID= ? WHERE EnquiryID = ?;";
             stmt = Database.getInstance().prepareStatement(query);
-            stmt.setInt(1, enquiry.getID());
             stmt.setString(2, enquiry.getEnquiry());
             stmt.setString(3, enquiry.getAnswer());
             stmt.setString(4, enquiry.getPerson().getID());
             stmt.setString(6, enquiry.getStaff().getID());
+            stmt.setInt(7, enquiry.getJourney().getID());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -115,15 +117,19 @@ public class EnquiryDaoImpl implements EnquiryDao {
 
     @Override
     public void insertEnquiry(Enquiry enquiry) {
-    PreparedStatement stmt = null;
+        PreparedStatement stmt = null;
         try {
             String query = "INSERT INTO Enquiry VALUES (?, ?, ?, ?, ?)";
             stmt = Database.getInstance().prepareStatement(query);
-            stmt.setInt(1, enquiry.getID());
-            stmt.setString(2, enquiry.getEnquiry());
-            stmt.setString(3, enquiry.getAnswer());
+            stmt.setString(1, enquiry.getEnquiry());
+            stmt.setString(2, enquiry.getAnswer());
+            stmt.setString(3, enquiry.getPerson().getID());
+            if (enquiry.getStaff() == null) {
+                stmt.setString(4, null);
+            }else{
             stmt.setString(4, enquiry.getPerson().getID());
-            stmt.setString(6, enquiry.getStaff().getID());
+            }
+            stmt.setInt(5, enquiry.getJourney().getID());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

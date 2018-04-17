@@ -5,6 +5,7 @@
  */
 package uk.ac.gre.ma8521e.privatehirecars.GUI.Controllers;
 
+import javax.swing.JFrame;
 import uk.ac.gre.ma8521e.privatehirecars.GUI.Views.ReceiptView;
 import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
 
@@ -23,6 +24,8 @@ public class ReceiptController {
         this.VIEW=receipt;
         generateReceipt();
         VIEW.setTitle("Receipt");
+        VIEW.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+
     }
     
     public void generateReceipt(){
@@ -30,7 +33,7 @@ public class ReceiptController {
        VIEW.getFrom().setText(JOURNEY.getStartingLocation());
        VIEW.getTo().setText(JOURNEY.getDestination());
        VIEW.getDuration().setText(JOURNEY.getDuration()+" min");
-       VIEW.getTotal().setText("£"+JOURNEY.getPrice()+"");
+       VIEW.getTotal().setText("£"+JOURNEY.getPayment().getAmount()+"");
     }
     
 }

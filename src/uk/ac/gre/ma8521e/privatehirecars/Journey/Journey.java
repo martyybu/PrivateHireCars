@@ -129,7 +129,7 @@ public class Journey {
      * @return
      */
     public BigDecimal getPrice() {
-            price = new BigDecimal(duration).multiply(BigDecimal.valueOf(0.4)).add(BigDecimal.valueOf(4));
+            price = (new BigDecimal(duration).multiply(BigDecimal.valueOf(0.4))).add(BigDecimal.valueOf(4));
             return price;
     }
 
@@ -298,7 +298,7 @@ public class Journey {
 
     @Override
     public String toString(){
-        return this.review;
+        return this.getStartingLocation() + " - " + this.getDestination();
     }
     
     public static final class Builder {

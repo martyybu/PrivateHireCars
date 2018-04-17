@@ -10,6 +10,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JSpinner;
 import javax.swing.JTextField;
+import uk.ac.gre.ma8521e.privatehirecars.Journey.Car;
 
 /**
  *
@@ -238,7 +239,7 @@ public class CreateBooking extends javax.swing.JPanel {
         return this.from;
     }
 
-    public JComboBox<String> getCarsDrop() {
+    public JComboBox<Car> getCarsDrop() {
         return this.Cars;
     }
 
@@ -247,7 +248,7 @@ public class CreateBooking extends javax.swing.JPanel {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> Cars;
+    private javax.swing.JComboBox<Car> Cars;
     private javax.swing.JLabel Name;
     private javax.swing.JLabel Name1;
     private javax.swing.JLabel Name2;

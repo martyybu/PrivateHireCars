@@ -62,7 +62,6 @@ public class PrivateHireCars {
             }
         });
         
-        System.out.println(PasswordHash.createHash("test"));
     }
 
     public static Person getPerson() {

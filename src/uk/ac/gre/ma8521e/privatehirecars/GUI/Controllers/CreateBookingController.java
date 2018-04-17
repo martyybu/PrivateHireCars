@@ -50,12 +50,16 @@ public class CreateBookingController {
     }
 
     public void loadDropDownCars() {
-        List<Car> cars = new CarDaoImpl().getAvailableCars();
-        String[] carsString = new String[cars.size()];
-        for (int i = 0; i < cars.size(); i++) {
-            carsString[i] = cars.get(i).toString();
+        if (new CarDaoImpl().getAvailableCars() == null || new CarDaoImpl().getAvailableCars().isEmpty()) {
+            String[] message = new String[1];
+            message[0] = "No cars Available";
+            view.getCarsDrop().setModel(new DefaultComboBoxModel(message));
+        } else {
+            List<Car> cars = new CarDaoImpl().getAvailableCars();
+            for (int i = 0; i < cars.size(); i++) {
+                view.getCarsDrop().addItem(cars.get(i));
+            }
         }
-        view.getCarsDrop().setModel(new DefaultComboBoxModel(carsString));
     }
 
     public void setupListeners() {
@@ -73,6 +77,9 @@ public class CreateBookingController {
             JOptionPane.showMessageDialog(view,
                     "Your booking was succeful!");
         }
+        journey.getDriver().setCar(journey.getCar());
+        journey.getDriver().onJourney(true);
+        new DriverDaoImpl().updateDriver(journey.getDriver());
         new JourneyDaoImpl().createJourney(journey);
     }
 
@@ -105,20 +112,27 @@ public class CreateBookingController {
             }
             Passenger passenger = (Passenger) PrivateHireCars.getPerson();
             //find out the car VIN
-            String[] carString = view.getCarsDrop().getSelectedItem().toString().split("-");
+
+            Object car = view.getCarsDrop().getSelectedItem();
+
+            if (!(car instanceof Car)) {
+                JOptionPane.showMessageDialog(view,
+                        "There are no cars available at the moment! Try later!");
+                return;
+            }
 
             Date date = (Date) view.getDate().getValue();
 
-            if(getDriver()==null){
+            if (getDriver() == null) {
                 JOptionPane.showMessageDialog(view,
                         "There are no drivers available!");
                 return;
             }
-            
+
             journey = new Journey.Builder()
                     .setFrom(fromTemp)
                     .setTo(toTemp)
-                    .setCar(new CarDaoImpl().getCar(carString[2]))
+                    .setCar(new CarDaoImpl().getCar(((Car)car).VIN))
                     .setDriver(getDriver())
                     .setPassenger(passenger)
                     .setNotification(JourneyNotification.valueOf(view.getNotification().getSelectedItem().toString()))
@@ -137,13 +151,12 @@ public class CreateBookingController {
     public Driver getDriver() {
         for (Iterator<Driver> it = new DriverDaoImpl().getAllDrivers().iterator(); it.hasNext();) {
             Driver driver = it.next();
-            if (driver.getCar()==null) {
+            if (driver.getCar() == null) {
                 return driver;
             }
         }
         return null;
     }
-
 
     public boolean doesPersonHaveCard(Person person) {
         if (person instanceof Passenger) {

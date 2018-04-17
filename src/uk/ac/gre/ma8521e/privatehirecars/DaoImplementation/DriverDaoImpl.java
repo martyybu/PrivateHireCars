@@ -13,6 +13,7 @@ import java.util.List;
 import uk.ac.gre.ma8521e.privatehirecars.Database;
 import uk.ac.gre.ma8521e.privatehirecars.DataAccessObjects.DriverDao;
 import uk.ac.gre.ma8521e.privatehirecars.Actors.Driver;
+import uk.ac.gre.ma8521e.privatehirecars.Journey.Car;
 import uk.ac.gre.ma8521e.privatehirecars.Utils;
 
 /**
@@ -115,6 +116,7 @@ public class DriverDaoImpl implements DriverDao {
             stmt.setString(2, Utils.frommBooleanToString(driver.isOnaJourney()));
             stmt.setInt(3, driver.getRating());
             stmt.setString(4, driver.getCar().VIN);
+            stmt.setInt(5, driver.getDriverID());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

@@ -8,6 +8,9 @@ package uk.ac.gre.ma8521e.privatehirecars.GUI.Views;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JEditorPane;
+import javax.swing.JLabel;
+import uk.ac.gre.ma8521e.privatehirecars.Enquiry;
+import uk.ac.gre.ma8521e.privatehirecars.Journey.Journey;
 
 /**
  *
@@ -38,9 +41,11 @@ public class EnquiryView extends javax.swing.JPanel {
         Name3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         textBox = new javax.swing.JEditorPane();
-        Name2 = new javax.swing.JLabel();
-        listofTrips = new javax.swing.JComboBox<>();
-        sendBtn = new javax.swing.JButton();
+        Name4 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        textBox1 = new javax.swing.JEditorPane();
+        Name5 = new javax.swing.JLabel();
+        lbltrip = new javax.swing.JLabel();
 
         title_Pane.setBackground(new java.awt.Color(110, 89, 222));
 
@@ -78,16 +83,19 @@ public class EnquiryView extends javax.swing.JPanel {
 
         jScrollPane1.setViewportView(textBox);
 
-        Name2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Name2.setForeground(new java.awt.Color(51, 51, 51));
-        Name2.setText("Is this regarding one of your early trips?");
+        Name4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Name4.setForeground(new java.awt.Color(51, 51, 51));
+        Name4.setText("Question");
 
-        sendBtn.setText("Send");
-        sendBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sendBtnActionPerformed(evt);
-            }
-        });
+        jScrollPane2.setViewportView(textBox1);
+
+        Name5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        Name5.setForeground(new java.awt.Color(51, 51, 51));
+        Name5.setText("Answer");
+
+        lbltrip.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbltrip.setForeground(new java.awt.Color(51, 51, 51));
+        lbltrip.setText("Not regarding any trip");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -99,26 +107,38 @@ public class EnquiryView extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(listofTrips, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Name2)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 620, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sendBtn, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lbltrip)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Name4))
+                        .addGap(84, 84, 84)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(Name5)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addGap(147, 147, 147))))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(65, 65, 65)
                 .addComponent(title_Pane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Name2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(listofTrips, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sendBtn)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(lbltrip)
+                .addGap(36, 36, 36)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Name4)
+                    .addComponent(Name5))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -143,38 +163,35 @@ public class EnquiryView extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void sendBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sendBtnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sendBtnActionPerformed
-
-    public JComboBox getlistOfEnquiries(){
+    public JComboBox<Enquiry> getlistOfEnquiries(){
         return this.listOfEnquiries;
     }
     
-    public JComboBox getlistofTrips(){
-        return this.listofTrips;
-    }
     
-    
-    public JButton getsendBtn(){
-       return this.sendBtn; 
+    public JLabel getLblTrip(){
+        return this.lbltrip;
     }
     
     public JEditorPane getTextBox(){
         return this.textBox;
     }
     
+    public JEditorPane getAnswerTexBox(){
+        return this.textBox1;
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Name1;
-    private javax.swing.JLabel Name2;
     private javax.swing.JLabel Name3;
+    private javax.swing.JLabel Name4;
+    private javax.swing.JLabel Name5;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox<String> listOfEnquiries;
-    private javax.swing.JComboBox<String> listofTrips;
-    private javax.swing.JButton sendBtn;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JLabel lbltrip;
+    private javax.swing.JComboBox<Enquiry> listOfEnquiries;
     private javax.swing.JEditorPane textBox;
+    private javax.swing.JEditorPane textBox1;
     private javax.swing.JPanel title_Pane;
     // End of variables declaration//GEN-END:variables
 }
